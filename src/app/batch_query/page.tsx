@@ -61,7 +61,7 @@ const BatchQuery = () => {
                             <div className="flex justify-end  gap-2 mt-5">
                                 <Button onClick={handleLoadSample}>Load Sample</Button>
                                 <Link href={{
-                                    pathname: '/bquery_result',
+                                    pathname: '/batch_query/result',
                                     query: { species, bqueryInput: sampleText }
                                 }}>
                                     <Button disabled={!species} >Submit Data</Button>

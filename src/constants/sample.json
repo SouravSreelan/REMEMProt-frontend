@@ -267,5 +267,187 @@
             "id": 31,
             "name": "SLC12A4"
         }
+    ],
+    "disease_ontology": [
+        {
+            "id": 1,
+            "name": "RUSF1"
+        },
+        {
+            "id": 2,
+            "name": "SACM1L"
+        },
+        {
+            "id": 3,
+            "name": "SARAF"
+        },
+        {
+            "id": 4,
+            "name": "SCAMP2"
+        },
+        {
+            "id": 5,
+            "name": "SCAMP3"
+        },
+        {
+            "id": 6,
+            "name": "SCAP"
+        },
+        {
+            "id": 7,
+            "name": "SCARB2"
+        },
+        {
+            "id": 8,
+            "name": "SCCPDH"
+        },
+        {
+            "id": 9,
+            "name": "SCD"
+        },
+        {
+            "id": 10,
+            "name": "SDC2"
+        },
+        {
+            "id": 11,
+            "name": "SDC4"
+        },
+        {
+            "id": 12,
+            "name": "SDCBP"
+        },
+        {
+            "id": 13,
+            "name": "SDHC"
+        },
+        {
+            "id": 14,
+            "name": "SEC11A"
+        },
+        {
+            "id": 15,
+            "name": "SEC22A"
+        },
+        {
+            "id": 16,
+            "name": "SEC61A1"
+        },
+        {
+            "id": 17,
+            "name": "SEC61A2"
+        },
+        {
+            "id": 18,
+            "name": "SEC61B"
+        },
+        {
+            "id": 19,
+            "name": "SEC63"
+        },
+        {
+            "id": 20,
+            "name": "SEL1L"
+        },
+        {
+            "id": 21,
+            "name": "SEMA4C"
+        },
+        {
+            "id": 22,
+            "name": "SEMA6A"
+        },
+        {
+            "id": 23,
+            "name": "SERINC3"
+        },
+        {
+            "id": 24,
+            "name": "SFT2D3"
+        },
+        {
+            "id": 25,
+            "name": "SFXN1"
+        },
+        {
+            "id": 26,
+            "name": "SFXN2"
+        },
+        {
+            "id": 27,
+            "name": "SFXN3"
+        },
+        {
+            "id": 28,
+            "name": "SFXN4"
+        },
+        {
+            "id": 29,
+            "name": "SGPP1"
+        },
+        {
+            "id": 30,
+            "name": "SLC12A2"
+        },
+        {
+            "id": 31,
+            "name": "SLC12A4"
+        },
+        {
+            "id": 32,
+            "name": "SLC12A7"
+        },
+        {
+            "id": 33,
+            "name": "SLC12A9"
+        },
+        {
+            "id": 34,
+            "name": "SLC15A4"
+        },
+        {
+            "id": 35,
+            "name": "SLC16A1"
+        },
+        {
+            "id": 36,
+            "name": "SLC16A3"
+        },
+        {
+            "id": 37,
+            "name": "SLC25A17"
+        },
+        {
+            "id": 38,
+            "name": "SLC25A20"
+        },
+        {
+            "id": 39,
+            "name": "SLC25A22"
+        },
+        {
+            "id": 40,
+            "name": "SLC25A26"
+        },
+        {
+            "id": 41,
+            "name": "SLC25A3"
+        },
+        {
+            "id": 42,
+            "name": "SLC25A36"
+        },
+        {
+            "id": 43,
+            "name": "SLC25A4"
+        },
+        {
+            "id": 44,
+            "name": "SLC25A44"
+        },
+        {
+            "id": 45,
+            "name": "SLC25A5"
+        }
     ]
 }

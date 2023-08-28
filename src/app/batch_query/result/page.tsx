@@ -53,6 +53,7 @@ const BqueryResult = () => {
             });
             const responseData = await response.json();
             setData(responseData.results);
+            console.log({ responseData });
           }
         } catch (error) {
           console.error('Error fetching data:', error);

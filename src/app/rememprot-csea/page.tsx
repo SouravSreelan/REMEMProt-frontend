@@ -33,7 +33,10 @@ const REMEMProtCSEA = () => {
                             <div className="flex justify-end  gap-2 mt-5">
                                 <Button onClick={handleLoadSample}>Load Sample</Button>
                                 <Link href={{
-                                    pathname: '/rememprot-csea/result'
+                                    pathname: '/rememprot-csea/result',
+                                    query: {
+                                        analysisInput: sampleText
+                                    }
                                 }}>
                                     <Button disabled={!sampleText} >Submit Data</Button>
                                 </Link>

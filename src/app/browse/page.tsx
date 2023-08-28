@@ -44,7 +44,6 @@ const Browse = () => {
                     setMethods(data.methods)
                     setLoading(false)
                 }
-                console.log(methods)
 
 
             } catch (error) {
@@ -73,7 +72,6 @@ const Browse = () => {
 
                 })
                 const data = await res.json()
-                console.log(data)
                 if (data.cells) {
                     setCells(data.cells)
                     setLoading(false)
@@ -85,9 +83,7 @@ const Browse = () => {
         }
     }
 
-    const router = useRouter();
 
-    console.log(species)
     return (
         <>
             {loading && (
@@ -164,7 +160,7 @@ const Browse = () => {
                         <CardFooter className="justify-between space-x-2">
                             <Button variant="ghost">Cancel</Button>
                             <Link href={{
-                                pathname: '/browse_result',
+                                pathname: '/browse/result',
                                 query: { species, method, tissueCell: tissue }
                             }}>
                                 <Button type='submit' disabled={!species || !method || !tissue}>Submit</Button>

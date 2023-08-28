@@ -89,12 +89,10 @@ const BrowseResult = () => {
     }
 
     const handleProteinClick = (proteinData: proteinDataProps) => {
-        console.log(proteinData)
         setGene(proteinData.gene);
         setTransmemStatus(proteinData.Transmem_status)
         setCellMarker(proteinData.cell_marker_status)
 
-        console.log(proteinData.cell_marker_status)
     };
 
     return (

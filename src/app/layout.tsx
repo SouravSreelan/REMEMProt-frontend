@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/ui/Footer'
 import { useEffect, useState } from 'react'
-import { setCookie } from 'cookies-next'
+import { getCookie, setCookie } from 'cookies-next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,26 +16,28 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const [loading, setLoading] = useState(false)
+  const csrf = getCookie('csrftoken')
   useEffect(() => {
-
-    const getCsrfToken = async () => {
-      setLoading(true)
-      const url = 'http://localhost:8000/RememProt/get_csrf_token/';
-      const res = await fetch(url)
-      const data = await res.json()
-      if (data.csrfToken) {
-        setCookie('csrftoken', data.csrfToken, {
-          sameSite: 'strict',
-          secure: true
-        });
+    if (!csrf) {
+      const getCsrfToken = async () => {
+        setLoading(true)
+        const url = 'http://localhost:8000/RememProt/get_csrf_token/';
+        const res = await fetch(url)
+        const data = await res.json()
+        if (data.csrfToken) {
+          setCookie('csrftoken', data.csrfToken, {
+            sameSite: 'strict',
+            secure: true
+          });
+          setLoading(false)
+        }
         setLoading(false)
       }
-      setLoading(false)
+      getCsrfToken()
     }
-    getCsrfToken()
   }, [])
   return (
-    
+
     <html lang="en">
       <body className={`${inter.className},  min-h-screen`}>
 
