@@ -73,7 +73,7 @@
   body {
     @apply text-foreground;
     /* background-color: #ADD8E6; */
-    background-color: #fff ;
+    background-color: #fff;
   }
 }
 
@@ -295,3 +295,5 @@
     opacity: 1;
   }
 }
+
+/* Hamburger menu */

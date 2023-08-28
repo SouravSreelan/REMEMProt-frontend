@@ -1,0 +1,64 @@
+{
+    "species": [
+        {
+            "id": 1,
+            "name": "Homo Sapiens",
+            "methods": [
+                {
+                    "methodName": "Ultracentrifugation"
+                },
+                {
+                    "methodName": "Kit-Based"
+                },
+                {
+                    "methodName": "Centrifugation"
+                },
+                {
+                    "methodName": "Unclassified"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Mus musculus"
+        },
+        {
+            "id": 3,
+            "name": "Rattus norvegicus"
+        }
+    ],
+    "speciesSampleData": [
+        {
+            "id": 1,
+            "name": "Aadac"
+        },
+        {
+            "id": 2,
+            "name": "Aldob"
+        },
+        {
+            "id": 3,
+            "name": "Atp5f1d"
+        },
+        {
+            "id": 4,
+            "name": "Atp2a2"
+        },
+        {
+            "id": 5,
+            "name": "Calr"
+        },
+        {
+            "id": 6,
+            "name": "Cltc"
+        },
+        {
+            "id": 7,
+            "name": "Cpt1a"
+        },
+        {
+            "id": 8,
+            "name": "Cyp2a1"
+        }
+    ]
+}

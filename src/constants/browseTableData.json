@@ -1,0 +1,577 @@
+{
+    "organisms": "Homo Sapiens",
+    "data": [
+      
+        {
+            "analysis": "Differential expression",
+            "context": "In-depth analysis of available hESC membrane proteome reports and the existence of these markers in many other cell types, especially cancer cells",
+            "method": "Unclassified",
+            "tissue_or_cell_line": "Embryonic stem cells",
+            "pubmedId": "30358457",
+            "proteinData": [
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "IMP3",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Mitotic fetal germ cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "INF2",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Fetal gonad",
+                            "cancerType": "Normal",
+                            "cellName": "Gonadal endothelial cell"
+                        }
+                    ]
+                },
+                {
+                    "gene": "ZZEF1",
+                    "transmemStatus": "NO",
+                    "cellMarker": [
+                        {
+                            "tissueType": "Esophagus",
+                            "cancerType": "Normal",
+                            "cellName": "FGFR1HighNME5- epithelial cell"
+                        }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}
