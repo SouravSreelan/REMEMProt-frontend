@@ -1,9 +1,18 @@
+"use client"
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Textarea } from '@/components/ui/textarea'
-import React from 'react'
+import React, { useState } from 'react'
+import speciesData from '@/constants/sample.json';
+import Link from 'next/link'
 
 const REMEMProtCSEA = () => {
+    const [sampleText, setSampleText] = useState('')
+    const handleLoadSample = () => {
+        const sampleData = speciesData.rememProtData.map((gene) => gene.name);
+        console.log(sampleData)
+        setSampleText(sampleData.join('\n'));
+    };
     return (
         <div className="flex items-center justify-center h-screen/2">
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
@@ -17,10 +26,17 @@ const REMEMProtCSEA = () => {
                     </CardHeader>
                     <CardContent className="">
                         <div className="flex flex-col w-full gap-2 max-w-xl mx-auto">
-                            <Textarea placeholder="Type your message here." className="min-h-[20rem] rounded-xl" />
+                            <Textarea placeholder="Enter Genes here." className="min-h-[20rem] rounded-xl"
+                                value={sampleText}
+                                onChange={(e) => setSampleText(e.target.value)}
+                            />
                             <div className="flex justify-end  gap-2 mt-5">
-                                <Button>Load Sample</Button>
-                                <Button>Submit Data</Button>
+                                <Button onClick={handleLoadSample}>Load Sample</Button>
+                                <Link href={{
+                                    pathname: '/rememprot-csea/result'
+                                }}>
+                                    <Button disabled={!sampleText} >Submit Data</Button>
+                                </Link>
                             </div>
                         </div>
                     </CardContent>

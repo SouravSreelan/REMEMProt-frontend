@@ -56,7 +56,7 @@ const BatchQuery = () => {
                                     </SelectContent>
                                 </Select>
                             </div>
-                            <Textarea placeholder="Type your message here." className="min-h-[20rem] rounded-xl" value={sampleText}
+                            <Textarea placeholder="Enter Genes here." className="min-h-[20rem] rounded-xl" value={sampleText}
                                 onChange={(e) => setSampleText(e.target.value)} />
                             <div className="flex justify-end  gap-2 mt-5">
                                 <Button onClick={handleLoadSample}>Load Sample</Button>

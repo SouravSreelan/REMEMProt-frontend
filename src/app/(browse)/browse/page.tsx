@@ -1,16 +1,14 @@
 "use client"
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import speciesData from '@/constants/sample.json';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useCookies } from 'next-client-cookies'
-import { getCookie, setCookie } from 'cookies-next'
+import { getCookie } from 'cookies-next'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 // import { cookies } from 'next/headers'
 
 const Browse = () => {
@@ -21,24 +19,6 @@ const Browse = () => {
     const [methods, setMethods] = useState([]);
     const [cells, setCells] = useState([]);
 
-    useEffect(() => {
-
-        const getCsrfToken = async () => {
-            setLoading(true)
-            const url = 'http://localhost:8000/RememProt/get_csrf_token/';
-            const res = await fetch(url)
-            const data = await res.json()
-            if (data.csrfToken) {
-                setCookie('csrftoken', data.csrfToken, {
-                    sameSite: 'strict',
-                    secure: true
-                });
-                setLoading(false)
-            }
-            setLoading(false)
-        }
-        getCsrfToken()
-    }, [])
 
     const csrfToken = getCookie('csrftoken')
     const handleSelectSpecies = async (e: string) => {

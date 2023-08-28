@@ -144,7 +144,7 @@ const BrowseResult = () => {
                                                         <div className='p-6 sm:p-8'>
 
                                                             <h3 className="text-2xl text-center font-semibold text-gray-800 dark:text-white">
-                                                                {protein.gene.length > 7 ? `${protein.gene.slice(0, 7)} ...` : protein.gene}
+                                                                {protein.gene.length > 7 ? `${protein.gene.slice(0, 7)}...` : protein.gene}
                                                             </h3>
 
 

@@ -23,9 +23,6 @@ interface ResultItem {
   geneID: string;
   isTrans: string;
 }
-interface ResponseData {
-  results: ResultItem[];
-}
 
 const BqueryResult = () => {
   const searParams = useSearchParams();
@@ -34,35 +31,36 @@ const BqueryResult = () => {
   const csrfToken = getCookie('csrftoken');
   const [data, setData] = useState<ResultItem[] | undefined>();
 
-  const getData = async () => {
-    if (species && bqueryInput) {
-      const postData = new URLSearchParams();
-      postData.append('species', species);
-      postData.append('bqueryInput', bqueryInput);
 
-      try {
-        if (csrfToken) {
-          const response = await fetch('http://localhost:8000/RememProt/bqueryResult/', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-              'X-CSRFToken': csrfToken,
-            },
-            body: postData.toString(),
-            credentials: 'include',
-          });
-          const responseData: ResponseData = await response.json();
-          setData(responseData.results);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-  };
 
   useEffect(() => {
+    const getData = async () => {
+      if (species && bqueryInput) {
+        const postData = new URLSearchParams();
+        postData.append('species', species);
+        postData.append('bqueryInput', bqueryInput);
+
+        try {
+          if (csrfToken) {
+            const response = await fetch('http://localhost:8000/RememProt/bqueryResult/', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-CSRFToken': csrfToken,
+              },
+              body: postData.toString(),
+              credentials: 'include',
+            });
+            const responseData = await response.json();
+            setData(responseData.results);
+          }
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      }
+    };
     getData();
-  }, []);
+  }, [species, bqueryInput]);
 
   return (
     <div>
