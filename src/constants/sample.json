@@ -2,21 +2,7 @@
     "species": [
         {
             "id": 1,
-            "name": "Homo Sapiens",
-            "methods": [
-                {
-                    "methodName": "Ultracentrifugation"
-                },
-                {
-                    "methodName": "Kit-Based"
-                },
-                {
-                    "methodName": "Centrifugation"
-                },
-                {
-                    "methodName": "Unclassified"
-                }
-            ]
+            "name": "Homo Sapiens"
         },
         {
             "id": 2,
@@ -29,36 +15,131 @@
     ],
     "speciesSampleData": [
         {
-            "id": 1,
-            "name": "Aadac"
+            "species": "Homo Sapiens",
+            "genes": [
+                {
+                    "id": 1,
+                    "name": "PTPRC"
+                },
+                {
+                    "id": 2,
+                    "name": "THY1"
+                },
+                {
+                    "id": 3,
+                    "name": "NANOG"
+                },
+                {
+                    "id": 4,
+                    "name": "POU5F1"
+                },
+                {
+                    "id": 5,
+                    "name": "CYR61"
+                },
+                {
+                    "id": 6,
+                    "name": "ITGAM"
+                },
+                {
+                    "id": 7,
+                    "name": "CD14"
+                },
+                {
+                    "id": 8,
+                    "name": "ITGB2"
+                },
+                {
+                    "id": 9,
+                    "name": "FCGR2A"
+                },
+                {
+                    "id": 10,
+                    "name": "FCGR2B"
+                }
+            ]
         },
         {
-            "id": 2,
-            "name": "Aldob"
+            "species": "Mus musculus",
+            "genes": [
+                {
+                    "id": 1,
+                    "name": "A1cf"
+                },
+                {
+                    "id": 2,
+                    "name": "Aaas"
+                },
+                {
+                    "id": 3,
+                    "name": "Aadac"
+                },
+                {
+                    "id": 4,
+                    "name": "Aak1"
+                },
+                {
+                    "id": 5,
+                    "name": "Aars1"
+                },
+                {
+                    "id": 6,
+                    "name": "Aatk"
+                },
+                {
+                    "id": 7,
+                    "name": "Abca1"
+                },
+                {
+                    "id": 8,
+                    "name": "Abca13"
+                },
+                {
+                    "id": 9,
+                    "name": "Abca2"
+                },
+                {
+                    "id": 10,
+                    "name": "Abca3"
+                }
+            ]
         },
         {
-            "id": 3,
-            "name": "Atp5f1d"
-        },
-        {
-            "id": 4,
-            "name": "Atp2a2"
-        },
-        {
-            "id": 5,
-            "name": "Calr"
-        },
-        {
-            "id": 6,
-            "name": "Cltc"
-        },
-        {
-            "id": 7,
-            "name": "Cpt1a"
-        },
-        {
-            "id": 8,
-            "name": "Cyp2a1"
+            "species": "Rattus norvegicus",
+            "genes": [
+                {
+                    "id": 1,
+                    "name": "Aadac"
+                },
+                {
+                    "id": 2,
+                    "name": "Aldob"
+                },
+                {
+                    "id": 3,
+                    "name": "Atp5f1d"
+                },
+                {
+                    "id": 4,
+                    "name": "Atp2a2"
+                },
+                {
+                    "id": 5,
+                    "name": "Calr"
+                },
+                {
+                    "id": 6,
+                    "name": "Cltc"
+                },
+                {
+                    "id": 7,
+                    "name": "Cpt1a"
+                },
+                {
+                    "id": 8,
+                    "name": "Cyp2a1"
+                }
+            ]
         }
     ]
 }

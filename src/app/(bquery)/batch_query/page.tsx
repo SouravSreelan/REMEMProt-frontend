@@ -18,11 +18,16 @@ const BatchQuery = () => {
     const csrfToken = getCookie('csrftoken')
 
     const handleLoadSample = () => {
-        const sampleData = speciesData.speciesSampleData.map((item) => item.name);
-        setSampleText(sampleData.join('\n'));
-    }
+        const selectedSpeciesData = speciesData.speciesSampleData.find((item) => item.species === species);
 
-
+        if (selectedSpeciesData) {
+            const sampleData = selectedSpeciesData.genes.map((gene) => gene.name);
+            setSampleText(sampleData.join('\n'));
+        } else {
+            // Handle the case when selectedSpeciesData is not found
+            console.error('Selected species data not found');
+        }
+    };
 
     return (
         <div className='flex justify-center'>
