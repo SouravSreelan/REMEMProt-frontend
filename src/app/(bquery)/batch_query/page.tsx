@@ -22,42 +22,6 @@ const BatchQuery = () => {
         setSampleText(sampleData.join('\n'));
     }
 
-    console.log(sampleText)
-    const fetchHtmlContent = async () => {
-        const postData = {
-            species: species,
-            bqueryInput: sampleText
-        }
-
-        console.log(sampleText)
-        try {
-            if (csrfToken) {
-                const response = await fetch('http://localhost:8000/RememProt/bqueryResult/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'X-CSRFToken': csrfToken, // Set the CSRF token here
-                    },
-                    body: postData.toString(), // Use the formatted form data
-                    credentials: 'include', // Include cookies in the request
-
-                })
-                const htmlContent = await response.text();
-                console.log(htmlContent)
-                return htmlContent;
-            }
-        } catch (error) {
-            console.error('Error fetching HTML content:', error);
-            return '';
-        }
-    };
-    useEffect(() => {
-        fetchHtmlContent().then((htmlContent) => {
-            // console.log(htmlContent)
-            setHtmlContent(htmlContent as string);
-        })
-    }, [])
-
 
 
     return (
@@ -92,10 +56,10 @@ const BatchQuery = () => {
                             <div className="flex justify-end  gap-2 mt-5">
                                 <Button onClick={handleLoadSample}>Load Sample</Button>
                                 <Link href={{
-                                    pathname: 'http://localhost:8000/RememProt/batch_query/bqueryResult',
-                                    query: { species: species, bqueryInput: sampleText },
+                                    pathname: '/bquery_result',
+                                    query: { species, bqueryInput: sampleText }
                                 }}>
-                                    <Button disabled={!species}>Submit Data</Button>
+                                    <Button disabled={!species} >Submit Data</Button>
                                 </Link>
                             </div>
                         </div>
