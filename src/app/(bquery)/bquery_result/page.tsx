@@ -4,18 +4,25 @@ import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 interface ResultItem {
-  gene: string;
-  Transmem_status: string;
-  profileOrDifferenial: string;
-  contextOfIdent: string;
+  id: string;
   pmid: string;
-  cellMarker: {
-    tissueType: string;
-    cancerType: string;
-    cellName: string;
-  }[];
+  author: string;
+  paper: string;
+  organism: string;
+  CellOrtissue: string;
+  disease: string;
+  profileOrDifex: string;
+  contxtOfIdent: string;
+  contxtOfDiferentialREG: string;
+  test: string;
+  control: string;
+  foldchange: string;
+  expression: string;
+  protienExtractMethod: string;
+  geneSymbol: string;
+  geneID: string;
+  isTrans: string;
 }
-
 interface ResponseData {
   results: ResultItem[];
 }
@@ -62,7 +69,9 @@ const BqueryResult = () => {
       {data &&
         data.map((item, index) => (
           <div key={index}>
-            <pre>{JSON.stringify(item, null, 2)}</pre>
+
+            {/* <pre>{JSON.stringify(item, null, 2)}</pre> */}
+            <pre>{item.contxtOfIdent}</pre>
           </div>
         ))}
     </div>
