@@ -1,4 +1,5 @@
 "use client"
+import { BubbleChart } from '@/components/Chart';
 import { getCookie } from 'cookies-next';
 import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
@@ -37,6 +38,7 @@ const RemprotResult = () => {
 
   return (
     <div>{JSON.stringify(data)}</div>
+    // <BubbleChart />
   )
 }
 
