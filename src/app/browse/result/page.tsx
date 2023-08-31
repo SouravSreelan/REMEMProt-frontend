@@ -8,6 +8,8 @@ import { Label } from '@/components/ui/label';
 import { useSearchParams } from 'next/navigation';
 import { getCookie } from 'cookies-next';
 import Spinner from '@/components/ui/Spinner';
+import { fetcher } from '@/lib/utils';
+import { url } from '@/constants';
 
 const BrowseResult = () => {
     const resultArray = [{}, {}]; // Your mock result array
@@ -28,24 +30,16 @@ const BrowseResult = () => {
     useEffect(() => {
         const getData = async () => {
             if (species && method && tissueCell) {
-                const postData = new URLSearchParams();
-                postData.append('species', species);
-                postData.append('method', method);
-                postData.append('tissueCell', tissueCell);
+
+                const postData = {
+                    species: species,
+                    method: method,
+                    tissueCell: tissueCell
+                }
                 try {
                     setLoading(true)
                     if (csrfToken) {
-                        const res = await fetch('http://localhost:8000/RememProt/browseResult/', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/x-www-form-urlencoded',
-                                'X-CSRFToken': csrfToken, // Set the CSRF token here
-                            },
-                            body: postData.toString(), // Use the formatted form data
-                            credentials: 'include', // Include cookies in the request
-
-                        })
-                        const jsonData = await res.json()
+                        const jsonData = await fetcher(`${url}/RememProt/browseResult/`, csrfToken, postData)
                         setData(jsonData)
 
                         setLoading(false)
@@ -96,7 +90,7 @@ const BrowseResult = () => {
 
     };
 
-    console.log({ browseData, data})
+    console.log({ browseData, data })
     return (
         <>
             {loading && (

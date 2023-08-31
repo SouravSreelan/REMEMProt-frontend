@@ -22,7 +22,7 @@ export default function RootLayout({
     if (!csrf) {
       const getCsrfToken = async () => {
         setLoading(true)
-        const url = 'http://localhost:8000/RememProt/get_csrf_token/';
+        const url = `${process.env.BACKEND_URL}/RememProt/get_csrf_token/`;
         const res = await fetch(url)
         const data = await res.json()
         if (data.csrfToken) {

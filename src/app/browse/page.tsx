@@ -10,6 +10,8 @@ import { getCookie } from 'cookies-next'
 
 import React, { useState } from 'react'
 import Spinner from '@/components/ui/Spinner'
+import { fetcher } from '@/lib/utils'
+import { url } from '@/constants'
 // import { cookies } from 'next/headers'
 
 const Browse = () => {
@@ -26,21 +28,13 @@ const Browse = () => {
         setSpecies(e)
         if (csrfToken) {
 
-            const postData = new URLSearchParams();
-            postData.append('selectedSpecies', e);
+            const postData = {
+                selectedSpecies: e
+            }
             try {
                 setLoading(true)
-                const res = await fetch('http://localhost:8000/RememProt/selectedSpecies/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'X-CSRFToken': csrfToken, // Set the CSRF token here
-                    },
-                    body: postData.toString(), // Use the formatted form data
-                    credentials: 'include', // Include cookies in the request
 
-                })
-                const data = await res.json()
+                const data = await fetcher(`${url}/RememProt/selectedSpecies/`, csrfToken, postData)
                 if (data.methods) {
                     setMethods(data.methods)
                     setLoading(false)
@@ -57,22 +51,14 @@ const Browse = () => {
     const handleSelectMethod = async (e: string) => {
         setMethod(e)
         if (csrfToken) {
-            const postData = new URLSearchParams();
-            postData.append('selectedSpecies', species);
-            postData.append('methodSelect', e);
+
+            const postData = {
+                selectedSpecies: species,
+                methodSelect: e
+            }
             try {
                 setLoading(true)
-                const res = await fetch('http://localhost:8000/RememProt/selectedMethod/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'X-CSRFToken': csrfToken, // Set the CSRF token here
-                    },
-                    body: postData.toString(), // Use the formatted form data
-                    credentials: 'include', // Include cookies in the request
-
-                })
-                const data = await res.json()
+                const data = await fetcher(`${url}/RememProt/selectedMethod/`, csrfToken, postData)
                 if (data.cells) {
                     setCells(data.cells)
                     setLoading(false)

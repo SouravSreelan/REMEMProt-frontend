@@ -1,6 +1,8 @@
 "use client"
 import Spinner from '@/components/ui/Spinner';
+import { fetcher } from '@/lib/utils';
 import { getCookie } from 'cookies-next';
+import { url } from 'inspector';
 import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
@@ -17,21 +19,14 @@ const DiseaseResult = () => {
 
     useEffect(() => {
         if (doseInput && csrfToken) {
-            const postData = new URLSearchParams();
-            postData.append('doseInput', doseInput);
+
             try {
                 const getData = async () => {
                     setLoading(true);
-                    const res = await fetch('http://localhost:8000/RememProt/dose_ontology/', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                            'X-CSRFToken': csrfToken,
-                        },
-                        body: postData.toString(),
-                        credentials: 'include',
-                    });
-                    const responseData = await res.json();
+                    const postData = {
+                        doseInput: doseInput,
+                    }
+                    const responseData = await fetcher(`${url}/RememProt/dose_ontology/`, csrfToken, postData);
                     setfinal_np(responseData.final_np);
                     setgenes(responseData.genes);
                     setn(responseData.n);
