@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Textarea } from '@/components/ui/textarea'
 import React, { useState } from 'react'
-import speciesData from '@/constants/sample.json';
+import speciesData from '@/constants/data.json';
 import Link from 'next/link'
 
 const REMEMProtCSEA = () => {

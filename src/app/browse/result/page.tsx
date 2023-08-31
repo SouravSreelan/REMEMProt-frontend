@@ -7,6 +7,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Label } from '@/components/ui/label';
 import { useSearchParams } from 'next/navigation';
 import { getCookie } from 'cookies-next';
+import Spinner from '@/components/ui/Spinner';
 
 const BrowseResult = () => {
     const resultArray = [{}, {}]; // Your mock result array
@@ -95,16 +96,11 @@ const BrowseResult = () => {
 
     };
 
+    console.log({ browseData, data})
     return (
         <>
             {loading && (
-                <div className="fixed top-0 left-0 z-50 flex items-center justify-center w-screen h-screen bg-gray-900 bg-opacity-50">
-                    <div
-                        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                        role="status">
-                        <span
-                            className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
-                    </div>                </div>
+                <Spinner />
             )}
             <div className="w-full px-4 py-10 sm:px-6 lg:px-8  lg:py-14 mx-auto mt-12 lg:mt-0">
                 <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14 ">
@@ -116,7 +112,7 @@ const BrowseResult = () => {
 
                     <div className={`w-full mx-auto ${browseData.data.length > 1 ? 'grid grid-cols-2 gap-4' : ''}`}>
                         {
-                            <Dialog >
+                            <Dialog>
                                 <Card className="bg-slate-200  max-w-full p-5">
                                     <h2 className='text-lg font-semibold'>Analysis : <span className='font-normal'>{data?.final_formatted_data[0].profileOrDifferential}</span></h2>
                                     <Separator className='flex justify-center mt-5' />

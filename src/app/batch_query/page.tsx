@@ -5,7 +5,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@radix-ui/react-label'
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select'
 import React, { useEffect, useState } from 'react'
-import speciesData from '@/constants/sample.json';
+import speciesData from '@/constants/data.json';
 import { useRouter } from 'next/navigation'
 import { getCookie } from 'cookies-next'
 import Link from 'next/link'

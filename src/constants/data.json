@@ -1,0 +1,807 @@
+{
+    "species": [
+        {
+            "id": 1,
+            "name": "Homo Sapiens"
+        },
+        {
+            "id": 2,
+            "name": "Mus musculus"
+        },
+        {
+            "id": 3,
+            "name": "Rattus norvegicus"
+        }
+    ],
+    "speciesSampleData": [
+        {
+            "species": "Homo Sapiens",
+            "genes": [
+                {
+                    "id": 1,
+                    "name": "PTPRC"
+                },
+                {
+                    "id": 2,
+                    "name": "THY1"
+                },
+                {
+                    "id": 3,
+                    "name": "NANOG"
+                },
+                {
+                    "id": 4,
+                    "name": "POU5F1"
+                },
+                {
+                    "id": 5,
+                    "name": "CYR61"
+                },
+                {
+                    "id": 6,
+                    "name": "ITGAM"
+                },
+                {
+                    "id": 7,
+                    "name": "CD14"
+                },
+                {
+                    "id": 8,
+                    "name": "ITGB2"
+                },
+                {
+                    "id": 9,
+                    "name": "FCGR2A"
+                },
+                {
+                    "id": 10,
+                    "name": "FCGR2B"
+                }
+            ]
+        },
+        {
+            "species": "Mus musculus",
+            "genes": [
+                {
+                    "id": 1,
+                    "name": "A1cf"
+                },
+                {
+                    "id": 2,
+                    "name": "Aaas"
+                },
+                {
+                    "id": 3,
+                    "name": "Aadac"
+                },
+                {
+                    "id": 4,
+                    "name": "Aak1"
+                },
+                {
+                    "id": 5,
+                    "name": "Aars1"
+                },
+                {
+                    "id": 6,
+                    "name": "Aatk"
+                },
+                {
+                    "id": 7,
+                    "name": "Abca1"
+                },
+                {
+                    "id": 8,
+                    "name": "Abca13"
+                },
+                {
+                    "id": 9,
+                    "name": "Abca2"
+                },
+                {
+                    "id": 10,
+                    "name": "Abca3"
+                }
+            ]
+        },
+        {
+            "species": "Rattus norvegicus",
+            "genes": [
+                {
+                    "id": 1,
+                    "name": "Aadac"
+                },
+                {
+                    "id": 2,
+                    "name": "Aldob"
+                },
+                {
+                    "id": 3,
+                    "name": "Atp5f1d"
+                },
+                {
+                    "id": 4,
+                    "name": "Atp2a2"
+                },
+                {
+                    "id": 5,
+                    "name": "Calr"
+                },
+                {
+                    "id": 6,
+                    "name": "Cltc"
+                },
+                {
+                    "id": 7,
+                    "name": "Cpt1a"
+                },
+                {
+                    "id": 8,
+                    "name": "Cyp2a1"
+                }
+            ]
+        }
+    ],
+    "rememProtData": [
+        {
+            "id": 1,
+            "name": "RUSF1"
+        },
+        {
+            "id": 2,
+            "name": "SACM1L"
+        },
+        {
+            "id": 3,
+            "name": "SARAF"
+        },
+        {
+            "id": 4,
+            "name": "SCAMP2"
+        },
+        {
+            "id": 5,
+            "name": "SCAMP3"
+        },
+        {
+            "id": 6,
+            "name": "SCAP"
+        },
+        {
+            "id": 7,
+            "name": "SCARB2"
+        },
+        {
+            "id": 8,
+            "name": "SCCPDH"
+        },
+        {
+            "id": 9,
+            "name": "SCD"
+        },
+        {
+            "id": 10,
+            "name": "SDC2"
+        },
+        {
+            "id": 11,
+            "name": "SDC4"
+        },
+        {
+            "id": 12,
+            "name": "SDCBP"
+        },
+        {
+            "id": 13,
+            "name": "SDHC"
+        },
+        {
+            "id": 14,
+            "name": "SEC11A"
+        },
+        {
+            "id": 15,
+            "name": "SEC22A"
+        },
+        {
+            "id": 16,
+            "name": "SEC61A1"
+        },
+        {
+            "id": 17,
+            "name": "SEC61A2"
+        },
+        {
+            "id": 18,
+            "name": "SEC61B"
+        },
+        {
+            "id": 19,
+            "name": "SEC63"
+        },
+        {
+            "id": 20,
+            "name": "SEL1L"
+        },
+        {
+            "id": 21,
+            "name": "SEMA4C"
+        },
+        {
+            "id": 22,
+            "name": "SEMA6A"
+        },
+        {
+            "id": 23,
+            "name": "SERINC3"
+        },
+        {
+            "id": 24,
+            "name": "SFT2D3"
+        },
+        {
+            "id": 25,
+            "name": "SFXN1"
+        },
+        {
+            "id": 26,
+            "name": "SFXN2"
+        },
+        {
+            "id": 27,
+            "name": "SFXN3"
+        },
+        {
+            "id": 28,
+            "name": "SFXN4"
+        },
+        {
+            "id": 29,
+            "name": "SGPP1"
+        },
+        {
+            "id": 30,
+            "name": "SLC12A2"
+        },
+        {
+            "id": 31,
+            "name": "SLC12A4"
+        }
+    ],
+    "disease_ontology": [
+        {
+            "id": 1,
+            "name": "RUSF1"
+        },
+        {
+            "id": 2,
+            "name": "SACM1L"
+        },
+        {
+            "id": 3,
+            "name": "SARAF"
+        },
+        {
+            "id": 4,
+            "name": "SCAMP2"
+        },
+        {
+            "id": 5,
+            "name": "SCAMP3"
+        },
+        {
+            "id": 6,
+            "name": "SCAP"
+        },
+        {
+            "id": 7,
+            "name": "SCARB2"
+        },
+        {
+            "id": 8,
+            "name": "SCCPDH"
+        },
+        {
+            "id": 9,
+            "name": "SCD"
+        },
+        {
+            "id": 10,
+            "name": "SDC2"
+        },
+        {
+            "id": 11,
+            "name": "SDC4"
+        },
+        {
+            "id": 12,
+            "name": "SDCBP"
+        },
+        {
+            "id": 13,
+            "name": "SDHC"
+        },
+        {
+            "id": 14,
+            "name": "SEC11A"
+        },
+        {
+            "id": 15,
+            "name": "SEC22A"
+        },
+        {
+            "id": 16,
+            "name": "SEC61A1"
+        },
+        {
+            "id": 17,
+            "name": "SEC61A2"
+        },
+        {
+            "id": 18,
+            "name": "SEC61B"
+        },
+        {
+            "id": 19,
+            "name": "SEC63"
+        },
+        {
+            "id": 20,
+            "name": "SEL1L"
+        },
+        {
+            "id": 21,
+            "name": "SEMA4C"
+        },
+        {
+            "id": 22,
+            "name": "SEMA6A"
+        },
+        {
+            "id": 23,
+            "name": "SERINC3"
+        },
+        {
+            "id": 24,
+            "name": "SFT2D3"
+        },
+        {
+            "id": 25,
+            "name": "SFXN1"
+        },
+        {
+            "id": 26,
+            "name": "SFXN2"
+        },
+        {
+            "id": 27,
+            "name": "SFXN3"
+        },
+        {
+            "id": 28,
+            "name": "SFXN4"
+        },
+        {
+            "id": 29,
+            "name": "SGPP1"
+        },
+        {
+            "id": 30,
+            "name": "SLC12A2"
+        },
+        {
+            "id": 31,
+            "name": "SLC12A4"
+        },
+        {
+            "id": 32,
+            "name": "SLC12A7"
+        },
+        {
+            "id": 33,
+            "name": "SLC12A9"
+        },
+        {
+            "id": 34,
+            "name": "SLC15A4"
+        },
+        {
+            "id": 35,
+            "name": "SLC16A1"
+        },
+        {
+            "id": 36,
+            "name": "SLC16A3"
+        },
+        {
+            "id": 37,
+            "name": "SLC25A17"
+        },
+        {
+            "id": 38,
+            "name": "SLC25A20"
+        },
+        {
+            "id": 39,
+            "name": "SLC25A22"
+        },
+        {
+            "id": 40,
+            "name": "SLC25A26"
+        },
+        {
+            "id": 41,
+            "name": "SLC25A3"
+        },
+        {
+            "id": 42,
+            "name": "SLC25A36"
+        },
+        {
+            "id": 43,
+            "name": "SLC25A4"
+        },
+        {
+            "id": 44,
+            "name": "SLC25A44"
+        },
+        {
+            "id": 45,
+            "name": "SLC25A5"
+        }
+    ],
+    "disease": [
+        {
+            "id": 1,
+            "heading": "BT",
+            "disease": "Brain tumor"
+        },
+        {
+            "id": 2,
+            "heading": "BTC",
+            "disease": "Breast cancer"
+        },
+        {
+            "id": 3,
+            "heading": "SCLC",
+            "disease": "Squamous cell lung carcinoma"
+        },
+        {
+            "id": 4,
+            "heading": "C",
+            "disease": "Cancer"
+        },
+        {
+            "id": 5,
+            "heading": "OS",
+            "disease": "Osteosarcoma"
+        },
+        {
+            "id": 6,
+            "heading": "EC",
+            "disease": "Endometrial cancer"
+        },
+        {
+            "id": 7,
+            "heading": "MM",
+            "disease": "Multiple myeloma"
+        },
+        {
+            "id": 8,
+            "heading": "RCC",
+            "disease": "Renal cell carcinoma"
+        },
+        {
+            "id": 9,
+            "heading": "RB",
+            "disease": "Retinoblastoma"
+        },
+        {
+            "id": 10,
+            "heading": "HNSCC",
+            "disease": "Head and neck squamous cell carcinoma"
+        },
+        {
+            "id": 11,
+            "heading": "MCL",
+            "disease": "Mantle Cell Lymphoma"
+        },
+        {
+            "id": 12,
+            "heading": "AM",
+            "disease": "Astrocytoma"
+        },
+        {
+            "id": 13,
+            "heading": "POAG",
+            "disease": "Primary Open-Angle Glaucoma"
+        },
+        {
+            "id": 14,
+            "heading": "LC",
+            "disease": "Lung cancer"
+        },
+        {
+            "id": 15,
+            "heading": "D",
+            "disease": "Type 2 diabetes"
+        },
+        {
+            "id": 16,
+            "heading": "HP",
+            "disease": "Hepatotoxicity"
+        }
+    ],
+    "mpem": [
+        {
+            "id": 1,
+            "heading": "UC",
+            "name": "Ultracentrifuge"
+        },
+        {
+            "id": 2,
+            "heading": "AT",
+            "name": "Aqueous two-phase system"
+        },
+        {
+            "id": 3,
+            "heading": "BT",
+            "name": "Biotynylation"
+        },
+        {
+            "id": 4,
+            "heading": "KB",
+            "name": "Kit-based"
+        },
+        {
+            "id": 5,
+            "heading": "UC and CSC",
+            "name": "Ultracentrifuge and Cell surface capture system"
+        },
+        {
+            "id": 6,
+            "heading": "SC",
+            "name": "Sucrose gradient centrifugation"
+        },
+        {
+            "id": 7,
+            "heading": "C",
+            "name": "Centrifugation"
+        }
+    ],
+    "organism": [
+        {
+            "id": 1,
+            "heading": "H",
+            "name": "Human"
+        },
+        {
+            "id": 2,
+            "heading": "M",
+            "name": "Mouse"
+        },
+        {
+            "id": 3,
+            "heading": "R",
+            "name": "Rat"
+        }
+    ],
+    "analysis": [
+        {
+            "id": 1,
+            "heading": "P",
+            "name": "Profile"
+        },
+        {
+            "id": 2,
+            "heading": "DEX",
+            "name": "Differential Expression"
+        },
+        {
+            "id": 3,
+            "heading": "BT",
+            "name": "Biotynylation"
+        }
+    ],
+    "faq": [
+        {
+            "id": 1,
+            "question": " What is REMEMProt?",
+            "answer": "REMEMProt is a resource of proteins that are identified from distinct membrane-enriched fractions in diverse biological/experimental contexts using mass spectrometry in Homo sapiens, Mus musculus, and Rattus norvegicus systems."
+        },
+        {
+            "id": 2,
+            "question": "Why REMEMProt?",
+            "answer": "Membrane proteins are a significant group of proteins that serve as cellular/tissue markers, targets for therapeutic approaches, and interaction partners/facilitators for the entry of diverse infectious agents. Researchers face a lot of challenges in choosing suitable membrane enrichment approaches to extract and subsequently, identify membrane proteins in diverse biological contexts at the global or targeted level. Mass spectrometry has evolved as a global platform for unbiased and targeted identification of proteins from any biological sample. We compiled proteins enriched by distinct membrane protein enrichment methods that were identified by mass spectrometry across multiple studies from diverse cell lines and tissues of different biological conditions. Hence, REMEMProt represents the compendium of such proteins that are identified thus far by diverse enrichment methods coupled to their identification by mass spectrometry. This resource will serve as a reference platform for the selection of suitable enrichment methods for a specific or set of proteins of choice, or for comparative analysis of proteins derived using currently available or novel membrane enrichment platforms in the future. We are committed to continued update, addition of sequence and structural level information in the future. We request the support and active participation of the scientific community towards the efficient annotation of membrane proteins into REMEMProt."
+        },
+        {
+            "id": 3,
+            "question": " What are the information available in REMEMProt?",
+            "answer": "REMEMProt encompasses the list of membrane proteins identified across multiple studies including both profiling and differential expression along with the method of enrichment and their cellular origin. We also provide the biological context of the identification of proteins and their other biological features. REMEMProt also facilitates disease ontology analysis."
+        },
+        {
+            "id": 4,
+            "question": "How to download the REMEMProt data?",
+            "answer": "The data curated in REMEMProt can be searched in batches in the ‘Batch Query’ option. Please “Contact Us” if you want to access all the data at once."
+        },
+        {
+            "id": 5,
+            "question": "What are the enrichment analysis facilitated by REMEMProt?",
+            "answer": "The REMEMProt provides information on the organism, cellular source, disease, profiling/ differential expression, method of enrichment and biological context of identification of proteins. Currently, the REMEMProt is also enabled to batch query and enrich for a set of user query proteins based on the data in REMEMProt for the disease ontology, biological features of proteins, Gene Ontology and markers from the CellMarker database."
+        }
+    ],
+    "contributors": [
+        {
+            "id": 1,
+            "details": "Vit O, Harant K, Klener P, Man P, Petrak J. A three-pronged \"Pitchfork\" strategy enables an extensive description of the human membrane proteome and the identification of missing proteins. J Proteomics. 2019 Jul 30;204:103411. doi: 10.1016/j.jprot.2019.103411. Epub 2019 Jun 6. PMID: 31176011."
+        },
+        {
+            "id": 2,
+            "details": "Lewandrowski U, Wortelkamp S, Lohrig K, Zahedi RP, Wolters DA, Walter U, Sickmann A. Platelet membrane proteomics: a novel repository for functional research. Blood. 2009 Jul 2;114(1):e10-9. doi: 10.1182/blood-2009-02-203828. Epub 2009 May 12. PMID: 19436052."
+        },
+        {
+            "id": 3,
+            "details": "Danda R, Ganapathy K, Sathe G, Madugundu AK, Krishnan UM, Khetan V, Rishi P, Gowda H, Pandey A, Subramanian K, Prasad TSK, Elchuri SV. Membrane Proteome of Invasive Retinoblastoma: Differential Proteins and Biomarkers. Proteomics Clin Appl. 2018 Sep;12(5):e1700101. doi: 10.1002/prca.201700101. Epub 2018 Jun 13. PMID: 29742327."
+        },
+        {
+            "id": 4,
+            "details": "Kakar-Bhanot R, Brahmbhatt K, Kumar V, Suryawanshi AR, Srivastava S, Chaudhari U, Sachdeva G. Plasma membrane proteome of adhesion-competent endometrial epithelial cells and its modulation by Rab11a. Mol Reprod Dev. 2020 Jan;87(1):17-29. doi: 10.1002/mrd.23292. Epub 2019 Nov 18. PMID: 31737970."
+        },
+        {
+            "id": 5,
+            "details": "Tien WS, Chen PM, Chuang CY, Lui SM, Kuo HC, Chen YJ, Wu KP. Combining membrane proteomics and computational three-way pathway analysis revealed signalling pathways preferentially regulated in human iPSCs and human ESCs. Sci Rep. 2017 Nov 8;7(1):15055. doi: 10.1038/s41598-017-15347-z. PMID: 29118436; PMCID: PMC5678157."
+        },
+        {
+            "id": 6,
+            "details": "Dormeyer W, van Hoof D, Braam SR, Heck AJ, Mummery CL, Krijgsveld J. Plasma membrane proteomics of human embryonic stem cells and human embryonal carcinoma cells. J Proteome Res. 2008 Jul;7(7):2936-51. doi: 10.1021/pr800056j. Epub 2008 May 20. PMID: 18489135."
+        },
+        {
+            "id": 7,
+            "details": "Lai X. Reproducible method to enrich membrane proteins with high purity and high yield for an LC-MS/MS approach in quantitative membrane proteomics. Electrophoresis. 2013 Mar;34(6):809-17. doi: 10.1002/elps.201200503. Epub 2013 Feb 25. PMID: 23334993; PMCID: PMC3749515."
+        },
+        {
+            "id": 8,
+            "details": "Ye X, Chan KC, Waters AM, Bess M, Harned A, Wei BR, Loncarek J, Luke BT, Orsburn BC, Hollinger BD, Stephens RM, Bagni R, Martinko A, Wells JA, Nissley DV, McCormick F, Whiteley G, Blonder J. Comparative proteomics of a model MCF10A-KRasG12V cell line reveals a distinct molecular signature of the KRasG12V cell surface. Oncotarget. 2016 Dec 27;7(52):86948-86971. doi: 10.18632/oncotarget.13566. PMID: 27894102; PMCID: PMC5341332."
+        },
+        {
+            "id": 9,
+            "details": "Van Hoof D, Dormeyer W, Braam SR, Passier R, Monshouwer-Kloots J, Ward-van Oostwaard D, Heck AJ, Krijgsveld J, Mummery CL. Identification of cell surface proteins for antibody-based selection of human embryonic stem cell-derived cardiomyocytes. J Proteome Res. 2010 Mar 5;9(3):1610-8. doi: 10.1021/pr901138a. PMID: 20088484."
+        },
+        {
+            "id": 10,
+            "details": "Shekari F, Han CL, Lee J, Mirzaei M, Gupta V, Haynes PA, Lee B, Baharvand H, Chen YJ, Hosseini Salekdeh G. Surface markers of human embryonic stem cells: a meta analysis of membrane proteomics reports. Expert Rev Proteomics. 2018 Nov;15(11):911-922. doi: 10.1080/14789450.2018.1539669. Epub 2018 Oct 29. PMID: 30358457."
+        },
+        {
+            "id": 11,
+            "details": "Uzzaman A, Shang Z, Qiao Z, Cao CX, Xiao H. Graphene and graphene oxide as a solid matrix for extraction of membrane and membrane-associated proteins. Mikrochim Acta. 2018 Jan 19;185(2):123. doi: 10.1007/s00604-017-2658-5. PMID: 29594406."
+        },
+        {
+            "id": 12,
+            "details": "Ziegler YS, Moresco JJ, Tu PG, Yates JR 3rd, Nardulli AM. Plasma membrane proteomics of human breast cancer cell lines identifies potential targets for breast cancer diagnosis and treatment. PLoS One. 2014 Jul 16;9(7):e102341. doi: 10.1371/journal.pone.0102341. PMID: 25029196; PMCID: PMC4100819."
+        },
+        {
+            "id": 13,
+            "details": "Raimondo F, Corbetta S, Savoia A, Chinello C, Cazzaniga M, Rocco F, Bosari S, Grasso M, Bovo G, Magni F, Pitto M. Comparative membrane proteomics: a technical advancement in the search of renal cell carcinoma biomarkers. Mol Biosyst. 2015 Jun;11(6):1708-16. doi: 10.1039/c5mb00020c. PMID: 25926002."
+        },
+        {
+            "id": 14,
+            "details": "Xie Z, Gunaratne J, Cheong LL, Liu SC, Koh TL, Huang G, Blackstock WP, Chng WJ. Plasma membrane proteomics identifies biomarkers associated with MMSET overexpression in T(4;14) multiple myeloma. Oncotarget. 2013 Jul;4(7):1008-18. doi: 10.18632/oncotarget.1049. PMID: 23900284; PMCID: PMC3759662."
+        },
+        {
+            "id": 15,
+            "details": "McQuade LR, Schmidt U, Pascovici D, Stojanov T, Baker MS. Improved membrane proteomics coverage of human embryonic stem cells by peptide IPG-IEF. J Proteome Res. 2009 Dec;8(12):5642-9. doi: 10.1021/pr900597s. PMID: 19899800"
+        },
+        {
+            "id": 16,
+            "details": "Zhao M, Xu F, Wu F, Yu D, Su N, Zhang Y, Cheng L, Xu P. iTRAQ-Based Membrane Proteomics Reveals Plasma Membrane Proteins Change During HepaRG Cell Differentiation. J Proteome Res. 2016 Dec 2;15(12):4245-4257. doi: 10.1021/acs.jproteome.6b00305. Epub 2016 Nov 10. PMID: 27790907."
+        },
+        {
+            "id": 17,
+            "details": "Hong WX, Huang A, Lin S, Yang X, Yang L, Zhou L, Huang H, Wu D, Huang X, Xu H, Liu J. Differential expression profile of membrane proteins in L-02 cells exposed to trichloroethylene. Toxicol Ind Health. 2016 Oct;32(10):1774-83. doi: 10.1177/0748233715588438. Epub 2015 Jun 4. PMID: 26045551."
+        },
+        {
+            "id": 18,
+            "details": "Zhang Z, Zhang L, Hua Y, Jia X, Li J, Hu S, Peng X, Yang P, Sun M, Ma F, Cai Z. Comparative proteomic analysis of plasma membrane proteins between human osteosarcoma and normal osteoblastic cell lines. BMC Cancer. 2010 May 14;10:206. doi: 10.1186/1471-2407-10-206. PMID: 20470422; PMCID: PMC2880991."
+        },
+        {
+            "id": 19,
+            "details": "Ravenhill BJ, Soday L, Houghton J, Antrobus R, Weekes MP. Comprehensive cell surface proteomics defines markers of classical, intermediate and non-classical monocytes. Sci Rep. 2020 Mar 12;10(1):4560. doi: 10.1038/s41598-020-61356-w. PMID: 32165698; PMCID: PMC7067879."
+        },
+        {
+            "id": 20,
+            "details": "Yan M, Yang X, Wang L, Clark D, Zuo H, Ye D, Chen W, Zhang P. Plasma membrane proteomics of tumor spheres identify CD166 as a novel marker for cancer stem-like cells in head and neck squamous cell carcinoma. Mol Cell Proteomics. 2013 Nov;12(11):3271-84. doi: 10.1074/mcp.M112.025460. Epub 2013 Jul 31. PMID: 23903875; PMCID: PMC3820938."
+        },
+        {
+            "id": 21,
+            "details": "Digomann D, Kurth I, Tyutyunnykova A, Chen O, Löck S, Gorodetska I, Peitzsch C, Skvortsova II, Negro G, Aschenbrenner B, Eisenhofer G, Richter S, Heiden S, Porrmann J, Klink B, Schwager C, Dowle AA, Hein L, Kunz-Schughart LA, Abdollahi A, Lohaus F, Krause M, Baumann M, Linge A, Dubrovska A. The CD98 Heavy Chain Is a Marker and Regulator of Head and Neck Squamous Cell Carcinoma Radiosensitivity. Clin Cancer Res. 2019 May 15;25(10):3152-3163. doi: 10.1158/1078-0432.CCR-18-2951. Epub 2019 Jan 22. PMID: 30670494."
+        },
+        {
+            "id": 22,
+            "details": "Li B, Chang J, Chu Y, Kang H, Yang J, Jiang J, Ma H. Membrane proteomic analysis comparing squamous cell lung cancer tissue and tumour-adjacent normal tissue. Cancer Lett. 2012 Jun 1;319(1):118-24. doi: 10.1016/j.canlet.2011.12.037. Epub 2012 Jan 15. PMID: 22252117."
+        },
+        {
+            "id": 23,
+            "details": "Zhang Y, Gao Q, Duan S, He Y, Sun X, Jiang R, Duan Y, Zhong X, Ge J. Upregulation of Copine1 in trabecular meshwork cells of POAG patients: a membrane proteomics approach. Mol Vis. 2008 May 30;14:1028-36. PMID: 18523666; PMCID: PMC2408776."
+        },
+        {
+            "id": 24,
+            "details": "Putri DU, Feng PH, Hsu YH, Lee KY, Jiang FW, Kuo LW, Chen YJ, Han CL. Chemotherapy Immunophenoprofiles in Non-Small-Cell Lung Cancer by Personalized Membrane Proteomics. Proteomics Clin Appl. 2018 Mar;12(2). doi: 10.1002/prca.201700040. Epub 2018 Jan 19. Erratum in: Proteomics Clin Appl. 2020 Mar;14(2):e1970064. PMID: 29278294."
+        },
+        {
+            "id": 25,
+            "details": "Yokoyama T, Enomoto T, Serada S, Morimoto A, Matsuzaki S, Ueda Y, Yoshino K, Fujita M, Kyo S, Iwahori K, Fujimoto M, Kimura T, Naka T. Plasma membrane proteomics identifies bone marrow stromal antigen 2 as a potential therapeutic target in endometrial cancer. Int J Cancer. 2013 Jan 15;132(2):472-84. doi: 10.1002/ijc.27679. Epub 2012 Jul 9. PMID: 22729361."
+        },
+        {
+            "id": 26,
+            "details": "Zhang Y, Qi X, Zheng J, Luo Y, Zhao C, Hao J, Li X, Huang K, Xu W. Lipid Rafts Disruption Increases Ochratoxin A Cytotoxicity to Hepatocytes. J Biochem Mol Toxicol. 2016 Feb;30(2):71-9. doi: 10.1002/jbt.21738. Epub 2015 Aug 25. PMID: 26861962."
+        },
+        {
+            "id": 27,
+            "details": "Eriksson H, Lengqvist J, Hedlund J, Uhlén K, Orre LM, Bjellqvist B, Persson B, Lehtiö J, Jakobsson PJ. Quantitative membrane proteomics applying narrow range peptide isoelectric focusing for studies of small cell lung cancer resistance mechanisms. Proteomics. 2008 Aug;8(15):3008-18. doi: 10.1002/pmic.200800174. PMID: 18654985."
+        },
+        {
+            "id": 28,
+            "details": "Fang X, Zhao J, Zhang K, Yang P, Qiao L, Liu B. Polydopamine Grafted Porous Graphene as Biocompatible Nanoreactor for Efficient Identification of Membrane Proteins. ACS Appl Mater Interfaces. 2016 Mar;8(10):6363-70. doi: 10.1021/acsami.6b00407. Epub 2016 Mar 3. PMID: 26913964."
+        },
+        {
+            "id": 29,
+            "details": "Ye X, Johann DJ Jr, Hakami RM, Xiao Z, Meng Z, Ulrich RG, Issaq HJ, Veenstra TD, Blonder J. Optimization of protein solubilization for the analysis of the CD14 human monocyte membrane proteome using LC-MS/MS. J Proteomics. 2009 Nov 2;73(1):112-22. doi: 10.1016/j.jprot.2009.08.008. Epub 2009 Aug 24. PMID: 19709643; PMCID: PMC3159575."
+        },
+        {
+            "id": 30,
+            "details": "Bausch-Fluck D, Hofmann A, Bock T, Frei AP, Cerciello F, Jacobs A, Moest H, Omasits U, Gundry RL, Yoon C, Schiess R, Schmidt A, Mirkowska P, Härtlová A, Van Eyk JE, Bourquin JP, Aebersold R, Boheler KR, Zandstra P, Wollscheid B. A mass spectrometric-derived cell surface protein atlas. PLoS One. 2015 Apr 20;10(3):e0121314. doi: 10.1371/journal.pone.0121314. PMID: 25894527; PMCID: PMC4404347."
+        },
+        {
+            "id": 31,
+            "details": "Liu Y, Yan G, Gao M, Deng C, Zhang X. Membrane protein isolation and identification by covalent binding for proteome research. Proteomics. 2015 Nov;15(22):3892-900. doi: 10.1002/pmic.201400572. Epub 2015 Oct 23. PMID: 26376103."
+        },
+        {
+            "id": 32,
+            "details": "Ye X, Chan KC, Waters AM, Bess M, Harned A, Wei BR, Loncarek J, Luke BT, Orsburn BC, Hollinger BD, Stephens RM, Bagni R, Martinko A, Wells JA, Nissley DV, McCormick F, Whiteley G, Blonder J. Comparative proteomics of a model MCF10A-KRasG12V cell line reveals a distinct molecular signature of the KRasG12V cell surface. Oncotarget. 2016 Dec 27;7(52):86948-86971. doi: 10.18632/oncotarget.13566. PMID: 27894102; PMCID: PMC5341332."
+        },
+        {
+            "id": 33,
+            "details": "Peng L, Kapp EA, Fenyö D, Kwon MS, Jiang P, Wu S, Jiang Y, Aguilar MI, Ahmed N, Baker MS, Cai Z, Chen YJ, Van Chi P, Chung MC, He F, Len AC, Liao PC, Nakamura K, Ngai SM, Paik YK, Pan TL, Poon TC, Salekdeh GH, Simpson RJ, Sirdeshmukh R, Srisomsap C, Svasti J, Tyan YC, Dreyer FS, McLauchlan D, Rawson P, Jordan TW. The Asia Oceania Human Proteome Organisation Membrane Proteomics Initiative. Preparation and characterisation of the carbonate-washed membrane standard. Proteomics. 2010 Nov;10(22):4142-8. doi: 10.1002/pmic.201000126. PMID: 20486120; PMCID: PMC3891941."
+        },
+        {
+            "id": 34,
+            "details": "Smolders K, Lombaert N, Valkenborg D, Baggerman G, Arckens L. An effective plasma membrane proteomics approach for small tissue samples. Sci Rep. 2015 Jun 5;5:10917. doi: 10.1038/srep10917. PMID: 26047021; PMCID: PMC4456939."
+        },
+        {
+            "id": 35,
+            "details": "Wiśniewski JR, Zougman A, Mann M. Combination of FASP and StageTip-based fractionation allows in-depth analysis of the hippocampal membrane proteome. J Proteome Res. 2009 Dec;8(12):5674-8. doi: 10.1021/pr900748n. PMID: 19848406."
+        },
+        {
+            "id": 36,
+            "details": "Hung CL, Pan SH, Han CL, Chang CW, Hsu YL, Su CH, Shih SC, Lai YJ, Chiang Chiau JS, Yeh HI, Liu CY, Lee HC, Lam CSP. Membrane Proteomics of Impaired Energetics and Cytoskeletal Disorganization in Elderly Diet-Induced Diabetic Mice. J Proteome Res. 2017 Oct 6;16(10):3504-3513. doi: 10.1021/acs.jproteome.7b00148. Epub 2017 Sep 13. PMID: 28823169."
+        },
+        {
+            "id": 37,
+            "details": "Shui W, Sheu L, Liu J, Smart B, Petzold CJ, Hsieh TY, Pitcher A, Keasling JD, Bertozzi CR. Membrane proteomics of phagosomes suggests a connection to autophagy. Proc Natl Acad Sci U S A. 2008 Nov 4;105(44):16952-7. doi: 10.1073/pnas.0809218105. Epub 2008 Oct 29. PMID: 18971338; PMCID: PMC2579359."
+        },
+        {
+            "id": 38,
+            "details": "Peng L, Kapp EA, McLauchlan D, Jordan TW. Characterization of the Asia Oceania Human Proteome Organisation Membrane Proteomics Initiative Standard using SDS-PAGE shotgun proteomics. Proteomics. 2011 Nov;11(22):4376-84. doi: 10.1002/pmic.201100169. Epub 2011 Oct 4. PMID: 21887821."
+        },
+        {
+            "id": 39,
+            "details": "Seyfried NT, Huysentruyt LC, Atwood JA 3rd, Xia Q, Seyfried TN, Orlando R. Up-regulation of NG2 proteoglycan and interferon-induced transmembrane proteins 1 and 3 in mouse astrocytoma: a membrane proteomics approach. Cancer Lett. 2008 May 18;263(2):243-52. doi: 10.1016/j.canlet.2008.01.007. Epub 2008 Feb 20. PMID: 18281150; PMCID: PMC2726046."
+        },
+        {
+            "id": 40,
+            "details": "Loo CS, Chen CW, Wang PJ, Chen PY, Lin SY, Khoo KH, Fenton RA, Knepper MA, Yu MJ. Quantitative apical membrane proteomics reveals vasopressin-induced actin dynamics in collecting duct cells. Proc Natl Acad Sci U S A. 2013 Oct 15;110(42):17119-24. doi: 10.1073/pnas.1309219110. Epub 2013 Oct 1. PMID: 24085853; PMCID: PMC3800992."
+        },
+        {
+            "id": 41,
+            "details": "Shi P, Liao M, Chuang BC, Griffin R, Shi J, Hyer M, Fallon JK, Smith PC, Li C, Xia CQ. Efflux transporter breast cancer resistance protein dominantly expresses on the membrane of red blood cells, hinders partitioning of its substrates into the cells, and alters drug-drug interaction profiles. Xenobiotica. 2018 Nov;48(11):1173-1183. doi: 10.1080/00498254.2017.1397812. Epub 2017 Nov 16. PMID: 29098941."
+        },
+        {
+            "id": 42,
+            "details": "Lin Y, Huo L, Liu Z, Li J, Liu Y, He Q, Wang X, Liang S. Sodium laurate, a novel protease- and mass spectrometry-compatible detergent for mass spectrometry-based membrane proteomics. PLoS One. 2013;8(3):e59779. doi: 10.1371/journal.pone.0059779. Epub 2013 Mar 28. PMID: 23555778; PMCID: PMC3610932."
+        },
+        {
+            "id": 43,
+            "details": "Lin Y, Wang K, Yan Y, Lin H, Peng B, Liu Z. Evaluation of the combinative application of SDS and sodium deoxycholate to the LC-MS-based shotgun analysis of membrane proteomes. J Sep Sci. 2013 Sep;36(18):3026-34. doi: 10.1002/jssc.201300413. Epub 2013 Aug 2. PMID: 23832743."
+        }
+    ]
+}

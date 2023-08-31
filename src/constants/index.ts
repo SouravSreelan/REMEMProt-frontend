@@ -6,11 +6,6 @@ export const navLinks = [
         link: '/',
     },
     {
-        id: 'about',
-        title: 'About',
-        link: '/about'
-    },
-    {
         id: 'browse',
         title: 'Browse',
         link: '/browse'
@@ -71,3 +66,5 @@ export const servicesData = [
         link: '/batch_query'
     },
 ]
+
+export const url = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://ciods.in'

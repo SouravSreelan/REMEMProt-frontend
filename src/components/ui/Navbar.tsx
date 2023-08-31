@@ -8,10 +8,12 @@ import { Button } from "./button";
 import Link from "next/link";
 import HamburgerMenu from "./Hamburger";
 import { usePathname, useRouter } from "next/navigation";
+import Spinner from "./Spinner";
 
 const Navbar = () => {
     const [active, setActive] = useState("home");
     const [toggle, setToggle] = useState(false);
+    const [loading, setLoading] = useState(false)
     const router = useRouter();
     const pathname = usePathname();
     console.log(pathname)
@@ -23,11 +25,20 @@ const Navbar = () => {
         const currentPath = pathname;
 
         // Update the active state based on the current path
+
         const matchingNavLink = navLinks.find(nav => nav.link === currentPath);
         if (matchingNavLink) {
             setActive(matchingNavLink.id);
+            setLoading(false);
         }
+
     }, [pathname]);
+    const handleNavigation = (link: any) => {
+        setLoading(true);
+        setActive(link);
+        setToggle(false);
+        router.push(link);
+    };
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (
@@ -40,10 +51,6 @@ const Navbar = () => {
                 setToggle(false);
             }
         }
-
-        function isNode(value: unknown): value is Node {
-            return value instanceof Node;
-        }
         document.addEventListener("mousedown", handleClickOutside);
 
         return () => {
@@ -52,7 +59,7 @@ const Navbar = () => {
     }, []);
     return (
         <div className="max-w-8xl mx-auto px-6 md:px-3 xl:px-6 ">
-
+            {loading && <Spinner />}
             <nav className="w-full flex py-6 justify-between items-center navbar z-10">
                 {/* <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" /> */}
                 <h1 className="font-bold text-3xl">REMEMProt</h1>
@@ -62,7 +69,7 @@ const Navbar = () => {
                             key={nav.id}
                             className={`font-poppins font-normal text-md cursor-pointer text-[16px] ${active === nav.id ? "text-blue-400" : "text-dimWhite"
                                 } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
-                            onClick={() => setTimeout(() => setActive(nav.id), 300)}
+                            onClick={() => handleNavigation(nav.link)}
                         >
                             <Link href={`${nav.link}`}>{nav.title}</Link>
                         </li>
@@ -93,7 +100,7 @@ const Navbar = () => {
                                     key={nav.id}
                                     className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? "text-white" : "text-dimWhite"
                                         } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
-                                    onClick={() => setActive(nav.title)}
+                                    onClick={() => handleNavigation(nav.link)}
                                 >
                                     <Link href={`${nav.link}`}>{nav.title}</Link>
                                 </li>
