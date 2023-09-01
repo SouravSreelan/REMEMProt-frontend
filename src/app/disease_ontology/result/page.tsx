@@ -26,7 +26,7 @@ const DiseaseResult = () => {
                     const postData = {
                         doseInput: doseInput,
                     }
-                    const responseData = await fetcher(`${url}/RememProt/dose_ontology/`, csrfToken, postData);
+                    const responseData = await fetcher(`https://ciods.in/RememProt/dose_ontology/`, csrfToken, postData);
                     setfinal_np(responseData.final_np);
                     setgenes(responseData.genes);
                     setn(responseData.n);

@@ -32,7 +32,7 @@ const BqueryResult = () => {
 
       try {
         if (csrfToken) {
-          const responseData = await fetcher(`${url}/RememProt/bqueryResult/`, csrfToken, postData)
+          const responseData = await fetcher(`https://ciods.in/RememProt/bqueryResult/`, csrfToken, postData)
           // const responseData = await response.json();
           setData(prevData => ({
             ...prevData,

@@ -19,7 +19,7 @@ const ContactUs = () => {
             message: message
         }
         try {
-            const response = fetcher(`${url}/contact/contact/`, csrfToken as string, postData);
+            const response = fetcher(`https://ciods.in/contact/contact/`, csrfToken as string, postData);
             console.log(response)
 
         } catch (error) {

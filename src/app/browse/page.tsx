@@ -10,7 +10,6 @@ import { Doughnut } from 'react-chartjs-2'
 import React, { useState } from 'react'
 import Spinner from '@/components/ui/Spinner'
 import { fetcher } from '@/lib/utils'
-import { url } from '@/constants'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -69,7 +68,7 @@ const Browse = () => {
             try {
                 setLoading(true)
 
-                const data = await fetcher(`${url}/RememProt/selectedSpecies/`, csrfToken, postData)
+                const data = await fetcher(`https://ciods.in/RememProt/selectedSpecies/`, csrfToken, postData)
                 if (data.methods) {
                     setMethods(data.methods)
                     setLoading(false)
@@ -93,7 +92,7 @@ const Browse = () => {
             }
             try {
                 setLoading(true)
-                const data = await fetcher(`${url}/RememProt/selectedMethod/`, csrfToken, postData)
+                const data = await fetcher(`https://ciods.in/RememProt/selectedMethod/`, csrfToken, postData)
                 if (data.cells) {
                     setCells(data.cells)
                     setLoading(false)
