@@ -9,7 +9,7 @@ import { getCookie, setCookie } from 'cookies-next'
 import { Doughnut } from 'react-chartjs-2'
 import React, { useEffect, useState } from 'react'
 import Spinner from '@/components/ui/Spinner'
-import { fetchCsrf, fetcher } from '@/lib/utils'
+import { fetcher } from '@/lib/utils'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
 import axios from 'axios';
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -73,7 +73,6 @@ const Browse = () => {
                 });
                 // setLoading(false)
             }
-          
         }
 
         getCsrfToken()
