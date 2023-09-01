@@ -60,7 +60,7 @@ const Browse = () => {
         // if (!csrf) {
         const getCsrfToken = async () => {
             // setLoading(true)
-            const res = await fetch(`http://localhost:8000/RememProt/get_csrf_token/`, {
+            const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`, {
                 credentials: 'include',
             })
             // const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
@@ -94,7 +94,7 @@ const Browse = () => {
         try {
             setLoading(true)
 
-            const data = await fetcher(`http://localhost:8000/RememProt/selectedSpecies/`, csrfToken as string, postData)
+            const data = await fetcher(`http://ciods.in/RememProt/selectedSpecies/`, csrfToken as string, postData)
             if (data.methods) {
                 setMethods(data.methods)
                 setLoading(false)
