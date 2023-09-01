@@ -57,9 +57,7 @@ const Browse = () => {
     const [cells, setCells] = useState([]);
 
 
-    const csrfToken = getCookie('csrftoken', {
-        domain: 'remem-prot.vercel.app',
-    })
+    const csrfToken = getCookie('csrftoken')
     const handleSelectSpecies = async (e: string) => {
         setSpecies(e)
         if (csrfToken) {
