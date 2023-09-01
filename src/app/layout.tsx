@@ -27,9 +27,10 @@ export default function RootLayout({
         const data = await res.json()
         if (data.csrfToken) {
           setCookie('csrftoken', data.csrfToken, {
-            secure: true,
-            sameSite: 'none',
-            domain: 'ciods.in',
+            path: '/', // The root path to make the cookie available site-wide.
+            domain: '.vercel.app', // Allow subdomains of vercel.app to access the cookie.
+            secure: true, // Enforce secure (HTTPS) connections for the cookie.
+            sameSite: 'lax', // Adjust as needed for your use case.
           });
           setLoading(false)
         }
