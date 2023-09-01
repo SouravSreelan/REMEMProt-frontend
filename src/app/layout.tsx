@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   const [loading, setLoading] = useState(false)
   const csrf = getCookie('csrftoken', {
-    domain: 'ciods.in',
+    domain: 'remem-prot.vercel.app',
   })
   useEffect(() => {
     if (!csrf) {
