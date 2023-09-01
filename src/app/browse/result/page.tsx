@@ -9,7 +9,6 @@ import { useSearchParams } from 'next/navigation';
 import { getCookie } from 'cookies-next';
 import Spinner from '@/components/ui/Spinner';
 import { fetcher } from '@/lib/utils';
-import { url } from '@/constants';
 
 const BrowseResult = () => {
     const resultArray = [{}, {}]; // Your mock result array

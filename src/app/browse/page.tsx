@@ -57,7 +57,9 @@ const Browse = () => {
     const [cells, setCells] = useState([]);
 
 
-    const csrfToken = getCookie('csrftoken')
+    const csrfToken = getCookie('csrftoken', {
+        domain: 'ciods.in',
+    })
     const handleSelectSpecies = async (e: string) => {
         setSpecies(e)
         if (csrfToken) {

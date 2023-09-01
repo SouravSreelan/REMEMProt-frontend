@@ -1,7 +1,6 @@
 "use client"
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { url } from '@/constants';
 import { fetcher } from '@/lib/utils';
 import { getCookie } from 'cookies-next';
 import Link from 'next/link';

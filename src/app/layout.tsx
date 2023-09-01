@@ -7,7 +7,6 @@ import Footer from '@/components/ui/Footer'
 import { useEffect, useState } from 'react'
 import { getCookie, setCookie } from 'cookies-next'
 import Spinner from '@/components/ui/Spinner'
-import { url } from '@/constants'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +17,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const [loading, setLoading] = useState(false)
-  const csrf = getCookie('csrftoken')
+  const csrf = getCookie('csrftoken', {
+    domain: 'ciods.in',
+  })
   useEffect(() => {
     if (!csrf) {
       const getCsrfToken = async () => {
@@ -28,7 +29,8 @@ export default function RootLayout({
         if (data.csrfToken) {
           setCookie('csrftoken', data.csrfToken, {
             sameSite: 'strict',
-            secure: true
+            secure: true,
+            domain: 'ciods.in',
           });
           setLoading(false)
         }

@@ -5,7 +5,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { fetcher } from '@/lib/utils';
 import { getCookie } from 'cookies-next';
-import { url } from '@/constants';
 
 const ContactUs = () => {
     const [name, setName] = useState('');

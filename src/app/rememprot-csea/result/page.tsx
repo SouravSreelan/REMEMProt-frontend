@@ -6,7 +6,6 @@ import { getCookie } from 'cookies-next';
 import { useSearchParams } from 'next/navigation';
 import Spinner from '@/components/ui/Spinner';
 import Chart from '@/components/ui/Chart';  // Import your Chart component
-import { url } from '@/constants';
 import { Table, TableBody, TableCaption, TableHead, TableHeader, TableRow, TableCell, TableFooter } from '@/components/ui/table';
 import Link from 'next/link';
 
