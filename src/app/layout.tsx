@@ -26,13 +26,14 @@ export default function RootLayout({
         setLoading(true)
         const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
         const data = await res.json()
-        if (data.csrfToken) {
-          setCookie('csrftoken', data.csrfToken, {
-            sameSite: 'strict',
-            secure: true,
-          });
-          setLoading(false)
-        }
+        // if (data.csrfToken) {
+        //   setCookie('csrftoken', data.csrfToken, {
+        //     sameSite: 'strict',
+        //     secure: true,
+        //   });
+        //   setLoading(false)
+        // }
+        return data
         setLoading(false)
       }
       getCsrfToken()
