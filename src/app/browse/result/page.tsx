@@ -90,6 +90,7 @@ const BrowseResult = () => {
 
     };
 
+
     console.log({ browseData, data })
     return (
         <>

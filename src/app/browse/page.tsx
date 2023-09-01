@@ -5,13 +5,13 @@ import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import speciesData from '@/constants/data.json';
 import Link from 'next/link'
-import { getCookie } from 'cookies-next'
+import { getCookie, setCookie } from 'cookies-next'
 import { Doughnut } from 'react-chartjs-2'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Spinner from '@/components/ui/Spinner'
-import { fetcher } from '@/lib/utils'
+import { fetchCsrf, fetcher } from '@/lib/utils'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
-
+import axios from 'axios';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const data = [
@@ -56,28 +56,72 @@ const Browse = () => {
     const [methods, setMethods] = useState([]);
     const [cells, setCells] = useState([]);
 
-
-    const csrfToken = localStorage.getItem('crftoken')
-    const handleSelectSpecies = async (e: string) => {
-        setSpecies(e)
-        if (csrfToken) {
-
-            const postData = {
-                selectedSpecies: e
+    useEffect(() => {
+        // if (!csrf) {
+        const getCsrfToken = async () => {
+            // setLoading(true)
+            const res = await fetch(`http://localhost:8000/RememProt/get_csrf_token/`, {
+                credentials: 'include',
+            })
+            // const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
+            const data = await res.json()
+            if (data.csrfToken) {
+                setCookie('csrftoken', data.csrfToken, {
+                    domain: '.vercel.app', // Allow subdomains of vercel.app to access the cookie.
+                    secure: true, // Enforce secure (HTTPS) connections for the cookie.
+                    sameSite: 'lax', // Adjust as needed for your use case.
+                });
+                // setLoading(false)
             }
-            try {
-                setLoading(true)
-
-                const data = await fetcher(`http://localhost:8000/RememProt/selectedSpecies/`, csrfToken, postData)
-                if (data.methods) {
-                    setMethods(data.methods)
-                    setLoading(false)
-                }
-            } catch (error) {
-                console.error('Fetch error:', error);
-            }
-
+          
         }
+
+        getCsrfToken()
+    }, [])
+
+
+
+    const csrfToken = getCookie('csrftoken')
+    const handleSelectSpecies = async (e: string) => {
+        console.log(csrfToken)
+        setSpecies(e)
+
+        const postData = {
+            selectedSpecies: e
+        }
+        // const postData = new URLSearchParams();
+        // postData.append('selectedSpecies', e);
+        try {
+            setLoading(true)
+
+            const data = await fetcher(`http://localhost:8000/RememProt/selectedSpecies/`, csrfToken as string, postData)
+            if (data.methods) {
+                setMethods(data.methods)
+                setLoading(false)
+            }
+            // axios.get('http://localhost:8000/RememProt/get_csrf_token/', {
+            //     withCredentials: true
+            // }).then((res) => {
+            //     axios.post('http://localhost:8000/RememProt/selectedSpecies/', {
+            //         method: 'POST',
+            //         data: postData,
+            //         withCredentials: true,
+            //     }).then((res) => {
+            //         console.log(res)
+            //     }
+            //     ).catch((err) => {
+            //         console.log(err)
+            //     }
+            //     )
+            // }).catch((err) => {
+            //     console.log(err)
+            // }
+            // )
+        } catch (error) {
+            console.error('Fetch error:', error);
+        }
+
+
     }
 
     const handleSelectMethod = async (e: string) => {
