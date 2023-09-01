@@ -26,12 +26,15 @@ export default function RootLayout({
         const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
         const data = await res.json()
         if (data.csrfToken) {
-          setCookie('csrftoken', data.csrfToken, {
-            path: '/', // The root path to make the cookie available site-wide.
-            domain: '.vercel.app', // Allow subdomains of vercel.app to access the cookie.
-            secure: true, // Enforce secure (HTTPS) connections for the cookie.
-            sameSite: 'lax', // Adjust as needed for your use case.
-          });
+          // setCookie('csrftoken', data.csrfToken, {
+          //   path: '/', // The root path to make the cookie available site-wide.
+          //   domain: '.vercel.app', // Allow subdomains of vercel.app to access the cookie.
+          //   secure: true, // Enforce secure (HTTPS) connections for the cookie.
+          //   sameSite: 'lax', // Adjust as needed for your use case.
+          // });
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('crftoken', data.csrfToken)
+          }
           setLoading(false)
         }
         setLoading(false)
