@@ -24,7 +24,8 @@ export default function RootLayout({
     if (!csrf) {
       const getCsrfToken = async () => {
         setLoading(true)
-        const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
+        const res = await fetch(`http://localhost:8000/RememProt/get_csrf_token/`)
+        // const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
         const data = await res.json()
         if (data.csrfToken) {
           setCookie('csrftoken', data.csrfToken, {

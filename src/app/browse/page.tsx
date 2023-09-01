@@ -68,13 +68,11 @@ const Browse = () => {
             try {
                 setLoading(true)
 
-                const data = await fetcher(`https://ciods.in/RememProt/selectedSpecies/`, csrfToken, postData)
+                const data = await fetcher(`http://localhost:8000/RememProt/selectedSpecies/`, csrfToken, postData)
                 if (data.methods) {
                     setMethods(data.methods)
                     setLoading(false)
                 }
-
-
             } catch (error) {
                 console.error('Fetch error:', error);
             }

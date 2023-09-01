@@ -38,7 +38,8 @@ const BrowseResult = () => {
                 try {
                     setLoading(true)
                     if (csrfToken) {
-                        const jsonData = await fetcher(`https://ciods.in/RememProt/browseResult/`, csrfToken, postData)
+                        const jsonData = await fetcher(`http://localhost:8000/RememProt/browseResult/`, csrfToken, postData)
+                        // const jsonData = await fetcher(`https://ciods.in/RememProt/browseResult/`, csrfToken, postData)
                         setData(jsonData)
 
                         setLoading(false)

@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
- 
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
@@ -8,7 +8,7 @@ export const fetcher = async (url: string, csrfToken: string, postData: Record<s
   const formattedPostData = new URLSearchParams();
 
   for (const key in postData) {
-    formattedPostData.append( key, postData[key] as string);
+    formattedPostData.append(key, postData[key] as string);
 
   }
 
@@ -18,6 +18,7 @@ export const fetcher = async (url: string, csrfToken: string, postData: Record<s
       'Content-Type': 'application/x-www-form-urlencoded',
       'X-CSRFToken': csrfToken,
     },
+    mode: 'same-origin',
     body: formattedPostData.toString(),
     credentials: 'include',
     cache: 'default'
