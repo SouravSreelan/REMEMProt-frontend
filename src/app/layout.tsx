@@ -63,30 +63,30 @@ export default function RootLayout({
   //   // }
   // }, [])
 
-  const getCsrfToken = async () => {
-    // setLoading(true)
-    const res = await fetch(`http://localhost:8000/RememProt/get_csrf_token/`)
-    // const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
-    const data = await res.json()
-    if (data.csrfToken) {
-      cookies().set('csrftoken', data.csrfToken, {
-        path: '/browse', // The root path to make the cookie available site-wide.
-        domain: 'localhost', // Allow subdomains of vercel.app to access the cookie.
-        secure: true, // Enforce secure (HTTPS) connections for the cookie.
-        sameSite: 'lax', // Adjust as needed for your use case.
-      });
-      // setLoading(false)
-    }
-    // if (res.status === 200) {
-    //   const data = await res.json();
-    //   setLoading(false)
-    //   return data;
-    // } else {
-    //   throw new Error(res.statusText);
-    // }
-  }
+  // const getCsrfToken = async () => {
+  //   // setLoading(true)
+  //   const res = await fetch(`http://localhost:8000/RememProt/get_csrf_token/`)
+  //   // const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
+  //   const data = await res.json()
+  //   if (data.csrfToken) {
+  //     cookies().set('csrftoken', data.csrfToken, {
+  //       path: '/browse', // The root path to make the cookie available site-wide.
+  //       domain: 'localhost', // Allow subdomains of vercel.app to access the cookie.
+  //       secure: true, // Enforce secure (HTTPS) connections for the cookie.
+  //       sameSite: 'lax', // Adjust as needed for your use case.
+  //     });
+  //     // setLoading(false)
+  //   }
+  //   // if (res.status === 200) {
+  //   //   const data = await res.json();
+  //   //   setLoading(false)
+  //   //   return data;
+  //   // } else {
+  //   //   throw new Error(res.statusText);
+  //   // }
+  // }
 
-  getCsrfToken()
+  // getCsrfToken()
   return (
 
     <html lang="en">
