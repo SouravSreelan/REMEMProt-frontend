@@ -30,7 +30,7 @@ const RemprotResult = () => {
       };
 
       try {
-        const response = await fetcher(`${url}/RememProt/enrichment/`, csrfToken, postData);
+        const response = await fetcher(`https://ciods.in/RememProt/enrichment/`, csrfToken, postData);
         setEnrichmentData(response.enrichment_result);
       } catch (error) {
         console.error('Error fetching data:', error);
