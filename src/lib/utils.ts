@@ -11,14 +11,15 @@ export const fetcher = async (url: string, csrfToken: string, postData: Record<s
     formattedPostData.append(key, postData[key] as string);
 
   }
+  console.log({ csrfToken })
 
   const res = await fetch(url, {
+
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
       'X-CSRFToken': csrfToken,
     },
-    mode: 'same-origin',
     body: formattedPostData.toString(),
     credentials: 'include',
     cache: 'default'

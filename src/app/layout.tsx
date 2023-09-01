@@ -17,19 +17,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const [loading, setLoading] = useState(false)
-  const csrf = getCookie('csrftoken', {
-    domain: 'remem-prot.vercel.app',
-  })
+  const csrf = getCookie('csrftoken')
   useEffect(() => {
     if (!csrf) {
       const getCsrfToken = async () => {
         setLoading(true)
-        const res = await fetch(`http://localhost:8000/RememProt/get_csrf_token/`)
-        // const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
+        // const res = await fetch(`http://localhost:8000/RememProt/get_csrf_token/`)
+        const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
         const data = await res.json()
         if (data.csrfToken) {
           setCookie('csrftoken', data.csrfToken, {
-            sameSite: 'strict',
             secure: true,
           });
           setLoading(false)
