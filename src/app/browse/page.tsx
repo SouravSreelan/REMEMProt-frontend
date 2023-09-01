@@ -58,7 +58,7 @@ const Browse = () => {
 
 
     const csrfToken = getCookie('csrftoken', {
-        domain: 'www.ciods.in',
+        domain: 'ciods.in',
     })
     const handleSelectSpecies = async (e: string) => {
         setSpecies(e)
