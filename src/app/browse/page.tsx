@@ -94,7 +94,7 @@ const Browse = () => {
         try {
             setLoading(true)
 
-            const data = await fetcher(`http://ciods.in/RememProt/selectedSpecies/`, csrfToken as string, postData)
+            const data = await fetcher(`https://ciods.in/RememProt/selectedSpecies/`, csrfToken as string, postData)
             if (data.methods) {
                 setMethods(data.methods)
                 setLoading(false)
