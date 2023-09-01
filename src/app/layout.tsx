@@ -30,7 +30,6 @@ export default function RootLayout({
           setCookie('csrftoken', data.csrfToken, {
             sameSite: 'strict',
             secure: true,
-            domain: 'ciods.in',
           });
           setLoading(false)
         }
