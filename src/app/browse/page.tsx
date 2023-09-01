@@ -57,7 +57,7 @@ const Browse = () => {
     const [cells, setCells] = useState([]);
 
 
-    const csrfToken = getCookie('csrftoken')
+    const csrfToken = localStorage.getItem('crftoken')
     const handleSelectSpecies = async (e: string) => {
         setSpecies(e)
         if (csrfToken) {
