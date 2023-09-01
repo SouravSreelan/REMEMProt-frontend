@@ -8,7 +8,7 @@ import { TooltipItem } from 'chart.js';
 
 ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
 
-const D3chart = ({ data }: any) => {
+const Chart = ({ data }: any) => {
     const groupedData: Record<string, EnrichmentResult[]> = {};
     const groupSpacing = 30;
     const bubbleRadius = 13;
@@ -101,4 +101,4 @@ const D3chart = ({ data }: any) => {
     );
 };
 
-export default D3chart;
+export default Chart;

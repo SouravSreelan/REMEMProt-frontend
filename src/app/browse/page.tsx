@@ -5,13 +5,48 @@ import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import speciesData from '@/constants/data.json';
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { getCookie } from 'cookies-next'
-
+import { Doughnut } from 'react-chartjs-2'
 import React, { useState } from 'react'
 import Spinner from '@/components/ui/Spinner'
 import { fetcher } from '@/lib/utils'
 import { url } from '@/constants'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+const data = [
+    {
+        datasets: [{
+            data: [10, 20, 30]
+        }],
+        labels: [
+            'Red',
+            'Yellow',
+            'Blue'
+        ]
+    },
+    {
+        datasets: [{
+            data: [10, 20, 30]
+        }],
+        labels: [
+            'Red',
+            'Yellow',
+            'Blue'
+        ]
+    },
+    {
+        datasets: [{
+            data: [10, 20, 30]
+        }],
+        labels: [
+            'Red',
+            'Yellow',
+            'Blue'
+        ]
+    }
+]
 // import { cookies } from 'next/headers'
 
 const Browse = () => {
@@ -68,6 +103,18 @@ const Browse = () => {
             }
 
         }
+    }
+
+    const options: ChartOptions<"doughnut"> = {
+
+        plugins: {
+            legend: {
+                position: 'bottom'
+            },
+
+        },
+        responsive: true,
+        maintainAspectRatio: true,
     }
 
 
@@ -149,9 +196,23 @@ const Browse = () => {
                             </CardFooter>
                         </Card>
                     </div>
+
                 </div >
             </div>
+            <div>
+                <div className='grid grid-cols-1  lg:grid-cols-3 gap-4'>
+                    {data.map((item, index) => (
+                        <div className='max-w-5xl mx-auto h-auto w-[30rem]' key={index}>
+                            <Doughnut
+                                data={item}
+                                options={options}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
         </>
+
     )
 }
 

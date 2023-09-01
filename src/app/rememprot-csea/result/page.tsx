@@ -5,7 +5,7 @@ import { fetcher } from '@/lib/utils';
 import { getCookie } from 'cookies-next';
 import { useSearchParams } from 'next/navigation';
 import Spinner from '@/components/ui/Spinner';
-import D3chart from '@/components/ui/D3chart';  // Import your D3chart component
+import Chart from '@/components/ui/Chart';  // Import your Chart component
 import { url } from '@/constants';
 import { Table, TableBody, TableCaption, TableHead, TableHeader, TableRow, TableCell, TableFooter } from '@/components/ui/table';
 import Link from 'next/link';
@@ -46,7 +46,7 @@ const RemprotResult = () => {
     <div className='p-10 flex justify-center items-center flex-col'>
       {enrichmentData &&
         <>
-          <D3chart data={enrichmentData} />
+          <Chart data={enrichmentData} />
           <div className='w-full mt-10 p-5'>
 
             <Table className='w-full'>

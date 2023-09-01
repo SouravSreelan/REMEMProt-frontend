@@ -7,6 +7,7 @@ import Footer from '@/components/ui/Footer'
 import { useEffect, useState } from 'react'
 import { getCookie, setCookie } from 'cookies-next'
 import Spinner from '@/components/ui/Spinner'
+import { url } from '@/constants'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,8 +23,7 @@ export default function RootLayout({
     if (!csrf) {
       const getCsrfToken = async () => {
         setLoading(true)
-        const url = `${process.env.BACKEND_URL}/RememProt/get_csrf_token/`;
-        const res = await fetch(url)
+        const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
         const data = await res.json()
         if (data.csrfToken) {
           setCookie('csrftoken', data.csrfToken, {
