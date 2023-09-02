@@ -32,7 +32,7 @@ const BrowseResult = () => {
                 }
                 try {
                     setLoading(true)
-                    const jsonData = await fetcher(`http://ciods.in/RememProt/browseResult/`, postData)
+                    const jsonData = await fetcher(`https://ciods.in/RememProt/browseResult/`, postData)
                     setData(jsonData)
 
                     setLoading(false)
