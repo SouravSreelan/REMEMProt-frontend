@@ -30,8 +30,7 @@ const BqueryResult = () => {
       }
 
       try {
-        if (csrfToken) {
-          const responseData = await fetcher(`https://ciods.in/RememProt/bqueryResult/`, csrfToken, postData)
+          const responseData = await fetcher(`https://ciods.in/RememProt/bqueryResult/`, postData)
           // const responseData = await response.json();
           setData(prevData => ({
             ...prevData,
@@ -39,7 +38,7 @@ const BqueryResult = () => {
           }));
           setTotalPages(responseData.pagination.total_pages);
           setPagination(responseData.pagination);
-        }
+        
       } catch (error) {
         console.error('Error fetching data:', error);
       }
