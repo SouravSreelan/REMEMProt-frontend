@@ -36,23 +36,3 @@ export function getRandomColor(index: number, opacity: number) {
   const lightness = 50 + (index * 10) % 50; // Vary the lightness
   return `hsla(${hue}, ${saturation}%, ${lightness}%, ${opacity})`;
 }
-
-
-export const fetchCsrf = async () => {
-  try {
-    const response = await fetch('http://localhost:8000/RememProt/get_csrf_token/');
-    const data = await response.json();
-    if (data.csrfToken) {
-      // Set the CSRF token cookie
-      setCookie('csrftoken', data.csrfToken, {
-        path: '/',
-        domain: '.ciods.in', // Allow subdomains of ciods.in to access the cookie.
-        secure: true,
-        sameSite: 'lax',
-      });
-    }
-
-  } catch (err) {
-    console.log(err)
-  }
-}

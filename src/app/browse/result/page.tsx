@@ -3,17 +3,13 @@ import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import React, { useEffect, useState } from 'react'
 import browseData from '@/constants/browseTableData.json';
 import { Separator } from '@/components/ui/separator'
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent,  DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Label } from '@/components/ui/label';
 import { useSearchParams } from 'next/navigation';
-import { getCookie } from 'cookies-next';
 import Spinner from '@/components/ui/Spinner';
 import { fetcher } from '@/lib/utils';
 
 const BrowseResult = () => {
-    const resultArray = [{}, {}]; // Your mock result array
-    const noOfResult = resultArray.length;
-    const [selectedProtein, setSelectedProtein] = useState('');
     const [gene, setGene] = useState('');
     const [loading, setLoading] = useState(false);
     const [transmemStatus, setTransmemStatus] = useState('');
@@ -22,7 +18,6 @@ const BrowseResult = () => {
     const species = searchParams.get('species')
     const method = searchParams.get('method')
     const tissueCell = searchParams.get('tissueCell')
-    const csrfToken = getCookie('csrftoken')
     const [data, setData] = useState<JsonDataProps>();
 
 
@@ -37,21 +32,19 @@ const BrowseResult = () => {
                 }
                 try {
                     setLoading(true)
-                    if (csrfToken) {
-                        const jsonData = await fetcher(`http://localhost:8000/RememProt/browseResult/`, csrfToken, postData)
-                        // const jsonData = await fetcher(`https://ciods.in/RememProt/browseResult/`, csrfToken, postData)
-                        setData(jsonData)
+                    const jsonData = await fetcher(`http://ciods.in/RememProt/browseResult/`, postData)
+                    setData(jsonData)
 
-                        setLoading(false)
-                        // console.log(methods)
-                    }
+                    setLoading(false)
+                    // console.log(methods)
+
                 } catch (error) {
                     console.error('Fetch error:', error);
                 }
             }
         }
         getData()
-    }, [species, method, tissueCell, csrfToken])
+    }, [species, method, tissueCell])
 
     interface JsonDataProps {
         final_formatted_data: {
@@ -91,7 +84,6 @@ const BrowseResult = () => {
     };
 
 
-    console.log({ browseData, data })
     return (
         <>
             {loading && (

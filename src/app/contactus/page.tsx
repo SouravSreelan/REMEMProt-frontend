@@ -4,13 +4,11 @@ import React, { useState } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { fetcher } from '@/lib/utils';
-import { getCookie } from 'cookies-next';
 
 const ContactUs = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const csrfToken = getCookie('csrftoken')
     const handleOnClick = async () => {
         const postData = {
             name: name,
@@ -18,7 +16,7 @@ const ContactUs = () => {
             message: message
         }
         try {
-            const response = fetcher(`https://ciods.in/contact/contact/`, csrfToken as string, postData);
+            const response = fetcher(`https://ciods.in/contact/contact/`,  postData);
             console.log(response)
 
         } catch (error) {

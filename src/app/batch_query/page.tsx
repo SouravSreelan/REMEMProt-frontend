@@ -4,19 +4,14 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@radix-ui/react-label'
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import speciesData from '@/constants/data.json';
-import { useRouter } from 'next/navigation'
-import { getCookie } from 'cookies-next'
+
 import Link from 'next/link'
 
 const BatchQuery = () => {
     const [species, setSpecies] = useState('')
     const [sampleText, setSampleText] = useState('');
-    const [htmlContent, setHtmlContent] = useState('')
-    const router = useRouter()
-    const csrfToken = getCookie('csrftoken')
-
     const handleLoadSample = () => {
         const selectedSpeciesData = speciesData.speciesSampleData.find((item) => item.species === species);
 

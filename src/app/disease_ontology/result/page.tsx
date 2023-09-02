@@ -8,9 +8,7 @@ import React, { useEffect, useState } from 'react'
 
 const DiseaseResult = () => {
     const searchParams = useSearchParams();
-    const [data, setData] = useState();
     const doseInput = searchParams.get('doseInput');
-    const csrfToken = getCookie('csrftoken')
     const [final_np, setfinal_np] = useState<string[][]>([]);
     const [n, setn] = useState([]);
     const [genes, setgenes] = useState([]);
@@ -18,7 +16,7 @@ const DiseaseResult = () => {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        if (doseInput && csrfToken) {
+        if (doseInput) {
 
             try {
                 const getData = async () => {
@@ -26,7 +24,7 @@ const DiseaseResult = () => {
                     const postData = {
                         doseInput: doseInput,
                     }
-                    const responseData = await fetcher(`https://ciods.in/RememProt/dose_ontology/`, csrfToken, postData);
+                    const responseData = await fetcher(`https://ciods.in/RememProt/dose_ontology/`,  postData);
                     setfinal_np(responseData.final_np);
                     setgenes(responseData.genes);
                     setn(responseData.n);
@@ -38,7 +36,7 @@ const DiseaseResult = () => {
                 setLoading(false);
             }
         }
-    }, [csrfToken, doseInput]);
+    }, [ doseInput]);
 
     return (
         <>

@@ -15,11 +15,10 @@ const RemprotResult = () => {
   const [loading, setLoading] = useState(true);
 
   const analysisInput = searchQuery.get('analysisInput');
-  const csrfToken = getCookie('csrftoken');
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!analysisInput || !csrfToken) {
+      if (!analysisInput) {
         return;
       }
 
@@ -29,7 +28,7 @@ const RemprotResult = () => {
       };
 
       try {
-        const response = await fetcher(`https://ciods.in/RememProt/enrichment/`, csrfToken, postData);
+        const response = await fetcher(`https://ciods.in/RememProt/enrichment/`,  postData);
         setEnrichmentData(response.enrichment_result);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -39,7 +38,7 @@ const RemprotResult = () => {
     };
 
     fetchData();
-  }, [analysisInput, csrfToken]);
+  }, [analysisInput]);
 
   return (
     <div className='p-10 flex justify-center items-center flex-col'>

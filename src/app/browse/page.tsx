@@ -66,7 +66,7 @@ const Browse = () => {
         try {
             setLoading(true)
 
-            const data = await fetcher(`http://localhost:8000/RememProt/selectedSpecies/`, postData)
+            const data = await fetcher(`http://ciods.in/RememProt/selectedSpecies/`, postData)
             if (data.methods) {
                 setMethods(data.methods)
                 setLoading(false)
@@ -89,7 +89,7 @@ const Browse = () => {
         }
         try {
             setLoading(true)
-            const data = await fetcher(`https://localhost:8000/RememProt/selectedMethod/`, postData)
+            const data = await fetcher(`https://ciods.in/RememProt/selectedMethod/`, postData)
             if (data.cells) {
                 setCells(data.cells)
                 setLoading(false)

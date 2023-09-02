@@ -12,7 +12,6 @@ const BqueryResult = () => {
   const searchParams = useSearchParams();
   const species = searchParams.get('species');
   const bqueryInput = searchParams.get('bqueryInput');
-  const csrfToken = getCookie('csrftoken');
   const [data, setData] = useState<Record<number, ResultItem[]>>({});
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -45,7 +44,7 @@ const BqueryResult = () => {
     };
 
     fetchData(currentPage);
-  }, [species, bqueryInput, currentPage, data, csrfToken]);
+  }, [species, bqueryInput, currentPage, data]);
 
   const goToPage = (page: number) => {
     setCurrentPage(page);
