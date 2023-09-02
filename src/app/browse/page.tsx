@@ -7,11 +7,13 @@ import speciesData from '@/constants/data.json';
 import Link from 'next/link'
 import { getCookie, setCookie } from 'cookies-next'
 import { Doughnut } from 'react-chartjs-2'
+import { serialize } from 'cookie'
 import React, { useEffect, useState } from 'react'
 import Spinner from '@/components/ui/Spinner'
 import { fetcher } from '@/lib/utils'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
 import axios from 'axios';
+import { useCookies } from 'next-client-cookies'
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const data = [
@@ -55,36 +57,52 @@ const Browse = () => {
     const [loading, setLoading] = useState(false);
     const [methods, setMethods] = useState([]);
     const [cells, setCells] = useState([]);
+    const [csrf, setCsrf] = useState('')
+    const cookies = useCookies();
 
-    useEffect(() => {
-        // if (!csrf) {
-        const getCsrfToken = async () => {
-            // setLoading(true)
-            const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`, {
-                credentials: 'include',
-            })
-            // const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
-            const data = await res.json()
-            if (data.csrfToken) {
-                setCookie('csrftoken', data.csrfToken, {
-                    path: '/',
-                    // domain: 'localhost', // Allow subdomains of vercel.app to access the cookie.
-                    domain: '.ciods.in', // Allow subdomains of vercel.app to access the cookie.
-                    secure: true, // Enforce secure (HTTPS) connections for the cookie.
-                    sameSite: 'lax', // Adjust as needed for your use case.
-                });
-                // setLoading(false)
-            }
-        }
+    // useEffect(() => {
+    //     // if (!csrf) {
+    //     const getCsrfToken = async () => {
+    //         setLoading(true)
+    //         const res = await fetch(`http://localhost:8000/RememProt/get_csrf_token/`, {
+    //             credentials: 'include',
+    //         })
+    //         // const res = await fetch(`https://ciods.in/RememProt/get_csrf_token/`)
+    //         const data = await res.json()
+    //         console.log(data)
 
-        getCsrfToken()
-    }, [])
+    //         if (data.csrfToken) {
+    //             setCsrf(data.csrfToken)
+    //             cookies.set('csrftoken', data.csrfToken, {
+    //                 // path: '/browse',
+    //                 // domain: 'localhost', // Allow subdomains of vercel.app to access the cookie.
+    //                 domain: '.vercel.app', // Allow subdomains of vercel.app to access the cookie.)
+    //                 secure: true, // Enforce secure (HTTPS) connections for the cookie.
+    //                 sameSite: 'lax', // Adjust as needed for your use case.
+    //             });
+    //             setLoading(false)
+    //             // setCookie('csrftoken', data.csrfToken, {
+    //             //     path: '/',
+    //             //     // domain: 'localhost', // Allow subdomains of vercel.app to access the cookie.
+    //             //     domain: '.ciods.in', // Allow subdomains of vercel.app to access the cookie.
+    //             //     secure: true, // Enforce secure (HTTPS) connections for the cookie.
+    //             //     sameSite: 'lax', // Adjust as needed for your use case.
+    //             // });
+    //             // setLoading(false)
+    //             // res.setHeader('Set-Cookie', serialize('token', 'token_cookie_value', { path: '/' }));
+
+    //             // }
+    //         }
+    //     }
+
+    //     getCsrfToken()
+    //     console.log(csrf)
+    // }, [])
 
 
 
     const csrfToken = getCookie('csrftoken')
     const handleSelectSpecies = async (e: string) => {
-        console.log(csrfToken)
         setSpecies(e)
 
         const postData = {
@@ -95,7 +113,7 @@ const Browse = () => {
         try {
             setLoading(true)
 
-            const data = await fetcher(`https://ciods.in/RememProt/selectedSpecies/`, csrfToken as string, postData)
+            const data = await fetcher(`http:///RememProt/selectedSpecies/`, csrf as string, postData)
             if (data.methods) {
                 setMethods(data.methods)
                 setLoading(false)

@@ -6,21 +6,19 @@ import axios from "axios"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-export const fetcher = async (url: string, csrfToken: string, postData: Record<string, string | number>) => {
+export const fetcher = async (url: string, postData: Record<string, string | number>) => {
   const formattedPostData = new URLSearchParams();
 
   for (const key in postData) {
     formattedPostData.append(key, postData[key] as string);
 
   }
-  console.log({ csrfToken })
 
   const res = await fetch(url, {
 
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
-      'X-CSRFToken': csrfToken,
     },
     body: formattedPostData.toString(),
     credentials: 'include',
