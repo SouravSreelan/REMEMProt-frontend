@@ -869,6 +869,64 @@
                     "value" : 18
                 }
             ]
+        }, 
+        {
+            "species" : "Mouse",
+            "data" : [
+                {
+                    "name" : "ATP binding cassette subfamily",
+                    "value" : 33
+                },
+                {
+                    "name" : "ATPase family",
+                    "value" : 64
+                },
+                {
+                    "name" : "CD markers",
+                    "value" : 28
+                },
+                {
+                    "name" : "Cadherins",
+                    "value" : 15
+                },
+                {
+                    "name" : "GPCR",
+                    "value" : 18
+                },
+                {
+                    "name" : "Integrins",
+                    "value" : 18
+                },
+                {
+                    "name" : "Ras oncogene family",
+                    "value" : 47
+                },
+                {
+                    "name" : "Solute carrier family",
+                    "value" : 202
+                },
+                {
+                    "name" : "Transmembrane protein family",
+                    "value" : 112
+                }
+            ]
+        },
+        {
+            "species" : "Rat",
+            "data" : [
+                {
+                    "name": "ATPase family",
+                    "value":14
+                },
+                {
+                    "name": "Solute carrier family",
+                    "value":19
+                },
+                {
+                    "name": "Ras oncogene family",
+                    "value":8
+                }
+            ]
         }
     ]
 }

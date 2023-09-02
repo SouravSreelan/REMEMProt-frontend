@@ -12,38 +12,6 @@ import { fetcher } from '@/lib/utils'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const data = [
-    {
-        datasets: [{
-            data: [10, 20, 30]
-        }],
-        labels: [
-            'Red',
-            'Yellow',
-            'Blue'
-        ]
-    },
-    {
-        datasets: [{
-            data: [10, 20, 30]
-        }],
-        labels: [
-            'Red',
-            'Yellow',
-            'Blue'
-        ]
-    },
-    {
-        datasets: [{
-            data: [10, 20, 30]
-        }],
-        labels: [
-            'Red',
-            'Yellow',
-            'Blue'
-        ]
-    }
-]
 // import { cookies } from 'next/headers'
 
 const Browse = () => {
@@ -54,6 +22,29 @@ const Browse = () => {
     const [methods, setMethods] = useState([]);
     const [cells, setCells] = useState([]);
 
+
+    const chartData = speciesData.browseGraph.map((item) => {
+        const labels = item.data.map((dataPoint) => dataPoint.name);
+        const values = item.data.map((dataPoint) => dataPoint.value);
+        const backgroundColors = values.map((_, index) => {
+            const baseHue = index * 187.5;
+            const hue = (baseHue + 30) % 360;
+            const saturation = 50 + (index * 10) % 50;
+            const lightness = 50 + (index * 10) % 50;
+            const opacity = 0.7; // You can adjust opacity as needed
+            return `hsla(${hue}, ${saturation}%, ${lightness}%, ${opacity})`;
+        });
+
+        return {
+            datasets: [
+                {
+                    data: values,
+                    backgroundColor: backgroundColors
+                },
+            ],
+            labels: labels,
+        };
+    });
 
     const handleSelectSpecies = async (e: string) => {
         setSpecies(e)
@@ -104,7 +95,7 @@ const Browse = () => {
 
         plugins: {
             legend: {
-                position: 'bottom'
+                position: 'right'
             },
 
         },
@@ -195,8 +186,8 @@ const Browse = () => {
                 </div >
             </div>
             <div>
-                <div className='grid grid-cols-1  lg:grid-cols-3 gap-4'>
-                    {data.map((item, index) => (
+                <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  xl:grid-cols-3 gap-4'>
+                    {chartData.map((item, index) => (
                         <div className='max-w-5xl mx-auto h-auto w-[30rem]' key={index}>
                             <Doughnut
                                 data={item}

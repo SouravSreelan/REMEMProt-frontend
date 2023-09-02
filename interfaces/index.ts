@@ -41,3 +41,25 @@ interface EnrichmentResult {
 interface BubbleChartProps {
     data: EnrichmentResult[];
 }
+
+
+interface JsonDataProps {
+    organisms: string;
+    data: {
+        analysis: string;
+        context: string;
+        method: string;
+        proteinData: proteinDataProps[];
+        tissue_or_cell_line: string; // Add this property if it exists in your data
+        pubmedId: string; // Add this property if it exists in your data
+    }[];
+}
+interface proteinDataProps {
+    gene: string;
+    transmemStatus: string;
+    cellMarker: {
+        tissueType: string;
+        cancerType: string;
+        cellName: string;
+    }[];
+}[]
