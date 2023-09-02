@@ -66,7 +66,7 @@ const Browse = () => {
         try {
             setLoading(true)
 
-            const data = await fetcher(`http://ciods.in/RememProt/selectedSpecies/`, postData)
+            const data = await fetcher(`https://ciods.in/RememProt/selectedSpecies/`, postData)
             if (data.methods) {
                 setMethods(data.methods)
                 setLoading(false)
