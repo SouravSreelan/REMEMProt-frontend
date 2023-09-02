@@ -63,7 +63,7 @@ const RemprotResult = () => {
                     <TableCell className="text-justify font-normal" >{item.enrichment}</TableCell>
                     <TableCell>{item.percentage}</TableCell>
                     <TableCell>{item.count}</TableCell>
-                    <TableCell className="">{item.log10pval}</TableCell>
+                    <TableCell className="">{item.p_value}</TableCell>
 
                   </TableRow>
                 ))}

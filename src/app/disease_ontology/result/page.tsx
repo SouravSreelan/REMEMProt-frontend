@@ -1,8 +1,6 @@
 "use client"
 import Spinner from '@/components/ui/Spinner';
 import { fetcher } from '@/lib/utils';
-import { getCookie } from 'cookies-next';
-import { url } from '@/constants';
 import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
