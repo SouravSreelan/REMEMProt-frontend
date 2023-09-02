@@ -67,6 +67,8 @@ const Browse = () => {
             const data = await res.json()
             if (data.csrfToken) {
                 setCookie('csrftoken', data.csrfToken, {
+                    path: '/browse',
+                    // domain: 'localhost', // Allow subdomains of vercel.app to access the cookie.
                     domain: '.vercel.app', // Allow subdomains of vercel.app to access the cookie.
                     secure: true, // Enforce secure (HTTPS) connections for the cookie.
                     sameSite: 'lax', // Adjust as needed for your use case.
