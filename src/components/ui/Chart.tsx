@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import { Bubble } from "react-chartjs-2";
 import { Chart as ChartJS, LinearScale, PointElement, Tooltip, Legend, BubbleControllerDatasetOptions, DatasetChartOptions, ChartOptions } from 'chart.js';
 import { getRandomColor } from "@/lib/utils";
@@ -33,7 +34,7 @@ const Chart = ({ data }: any) => {
             console.log(item.log10pval);
             return {
                 x: startX + xOffset,
-                y: item.log10pval,
+                y: item.count,
                 r: item.log10pval + bubbleRadius - 5,
             };
         });
@@ -46,10 +47,11 @@ const Chart = ({ data }: any) => {
         };
     });
 
-    const cData = { datasets };
+    const chartData = { datasets };
 
     const option: ChartOptions<"bubble"> = {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 type: 'linear',
@@ -95,8 +97,8 @@ const Chart = ({ data }: any) => {
     };
 
     return (
-        <div className="w-full max-w-7xl">
-            <Bubble data={cData} options={option} />
+        <div className="w-full  max-w-7xl" style={{ height: '500px' }}>
+            <Bubble data={chartData} options={option} />
         </div>
     );
 };
