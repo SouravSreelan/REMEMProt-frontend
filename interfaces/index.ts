@@ -67,6 +67,7 @@ interface proteinDataProps {
 interface TooltipItemProps {
     x: number;
     y: number;
-    r: number
-    rmid: string
+    r: number;
+    rmid: string;
+    p_value: number;
 }
