@@ -10,6 +10,7 @@ import React, {  useState } from 'react'
 import Spinner from '@/components/ui/Spinner'
 import { fetcher } from '@/lib/utils'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
+import { url } from '@/constants'
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 // import { cookies } from 'next/headers'
@@ -58,7 +59,7 @@ const Browse = () => {
         try {
             setLoading(true)
 
-            const data = await fetcher(`${process.env.BACKEND_API}/RememProt/selectedSpecies/`, postData)
+            const data = await fetcher(`${url}/RememProt/selectedSpecies/`, postData)
             if (data.methods) {
                 setMethods(data.methods)
                 setLoading(false)
@@ -81,7 +82,7 @@ const Browse = () => {
         }
         try {
             setLoading(true)
-            const data = await fetcher(`${process.env.BACKEND_API}/RememProt/selectedMethod/`, postData)
+            const data = await fetcher(`${url}/RememProt/selectedMethod/`, postData)
             if (data.cells) {
                 setCells(data.cells)
                 setLoading(false)

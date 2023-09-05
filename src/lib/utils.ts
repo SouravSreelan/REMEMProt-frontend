@@ -1,7 +1,6 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { setCookie } from "cookies-next"
-import axios from "axios"
+
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -36,3 +35,5 @@ export function getRandomColor(index: number, opacity: number) {
   const lightness = 50 + (index * 10) % 50; // Vary the lightness
   return `hsla(${hue}, ${saturation}%, ${lightness}%, ${opacity})`;
 }
+
+

@@ -67,4 +67,4 @@ export const servicesData = [
     },
 ]
 
-export const url = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : process.env.BACKEND_URL
+export const url = 'https://ciods.in' as string

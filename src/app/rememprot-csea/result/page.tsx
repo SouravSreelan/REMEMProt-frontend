@@ -7,6 +7,7 @@ import Spinner from '@/components/ui/Spinner';
 import Chart from '@/components/ui/Chart';  // Import your Chart component
 import { Table, TableBody, TableCaption, TableHead, TableHeader, TableRow, TableCell, TableFooter } from '@/components/ui/table';
 import Link from 'next/link';
+import { url } from '@/constants';
 
 const RemprotResult = () => {
   const searchQuery = useSearchParams();
@@ -27,7 +28,7 @@ const RemprotResult = () => {
       };
 
       try {
-        const response = await fetcher(`${process.env.BACKEND_API}/RememProt/enrichment/`,  postData);
+        const response = await fetcher(`${url}/RememProt/enrichment/`,  postData);
         setEnrichmentData(response.enrichment_result);
       } catch (error) {
         console.error('Error fetching data:', error);
