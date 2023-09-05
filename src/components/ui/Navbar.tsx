@@ -9,6 +9,8 @@ import Link from "next/link";
 import HamburgerMenu from "./Hamburger";
 import { usePathname, useRouter } from "next/navigation";
 import Spinner from "./Spinner";
+import Image from "next/image";
+import Logo from '@/assets/remem.png'
 
 const Navbar = () => {
     const [active, setActive] = useState("home");
@@ -61,6 +63,7 @@ const Navbar = () => {
             {loading && <Spinner />}
             <nav className="w-full flex py-6 justify-between items-center navbar z-10">
                 {/* <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" /> */}
+                {/* <Image src={Logo}  alt="logo" width={50} height={50} className="w-[150px] h-[150px]" unoptimized={true} /> */}
                 <h1 className="font-bold text-3xl">REMEMProt</h1>
                 <ul className="list-none lg:flex hidden justify-center items-center flex-1">
                     {navLinks.map((nav, index) => (
