@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { useSearchParams } from 'next/navigation';
 import Spinner from '@/components/ui/Spinner';
 import { fetcher } from '@/lib/utils';
+import { url } from '@/constants';
 
 const BrowseResult = () => {
     const [gene, setGene] = useState('');
@@ -30,7 +31,7 @@ const BrowseResult = () => {
                 };
                 try {
                     setLoading(true)
-                    const jsonData = await fetcher(`${process.env.BACKEND_API}/RememProt/browseResult/`, postData)
+                    const jsonData = await fetcher(`${url}/RememProt/browseResult/`, postData)
                     setData(jsonData.final_formatted_data)
                     setLoading(false)
                 } catch (error) {
@@ -51,7 +52,6 @@ const BrowseResult = () => {
     const numItems = data?.data.length || 0;
 
 
-    console.log({ numItems })
     return (
         <>
             {loading && (

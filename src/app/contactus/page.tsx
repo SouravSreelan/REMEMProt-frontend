@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { fetcher } from '@/lib/utils';
+import { url } from '@/constants';
 
 const ContactUs = () => {
     const [name, setName] = useState('');
@@ -16,8 +17,7 @@ const ContactUs = () => {
             message: message
         }
         try {
-            const response = fetcher(`${process.env.BACKEND_API}/contact/contact/`,  postData);
-            console.log(response)
+            const response = fetcher(`${url}/contact/contact/`,  postData);
 
         } catch (error) {
             console.error('Error:', error);

@@ -63,3 +63,10 @@ interface proteinDataProps {
         cellName: string;
     }[];
 }[]
+
+interface TooltipItemProps {
+    x: number;
+    y: number;
+    r: number
+    rmid: string
+}

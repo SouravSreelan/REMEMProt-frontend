@@ -31,11 +31,12 @@ const Chart = ({ data }: any) => {
         const shuffledData = methodData.map((item, i) => {
             const xOffset = (Math.random() - 0.5) * groupSpacing * 0.8;
 
-            console.log(item.log10pval);
             return {
                 x: startX + xOffset,
-                y: item.count,
-                r: item.log10pval + bubbleRadius - 5,
+                y: item.log10pval,
+                r: item.count + 5,
+                rmid: item.count,
+                // r: item.log10pval + bubbleRadius - 5,
             };
         });
         return {
@@ -79,10 +80,11 @@ const Chart = ({ data }: any) => {
             tooltip: {
                 callbacks: {
                     label: (tooltipItem: TooltipItem<"bubble">) => {
-                        const value = tooltipItem.parsed;
+                        const value = tooltipItem.raw as TooltipItemProps
+
 
                         if (value) {
-                            return `X: ${value.x}, Y: ${value.y}`;
+                            return `${value.rmid}`;
                         } else {
                             return "";
                         }

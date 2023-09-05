@@ -10,7 +10,6 @@ const REMEMProtCSEA = () => {
     const [sampleText, setSampleText] = useState('')
     const handleLoadSample = () => {
         const sampleData = speciesData.rememProtData.map((gene) => gene.name);
-        console.log(sampleData)
         setSampleText(sampleData.join('\n'));
     };
     return (

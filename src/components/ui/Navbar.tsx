@@ -16,7 +16,6 @@ const Navbar = () => {
     const [loading, setLoading] = useState(false)
     const router = useRouter();
     const pathname = usePathname();
-    console.log(pathname)
     const menuRef = useRef(null);
     const buttonRef = useRef(null)
 

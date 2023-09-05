@@ -1,6 +1,7 @@
 "use client"
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { url } from '@/constants';
 import { fetcher } from '@/lib/utils';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -14,7 +15,6 @@ const BqueryResult = () => {
   const [data, setData] = useState<Record<number, ResultItem[]>>({});
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [pagination, setPagination] = useState<pagination>();
 
   useEffect(() => {
     const fetchData = async (page: number) => {
@@ -28,15 +28,13 @@ const BqueryResult = () => {
       }
 
       try {
-          const responseData = await fetcher(`${process.env.BACKEND_API}/RememProt/bqueryResult/`, postData)
+          const responseData = await fetcher(`${url}/RememProt/bqueryResult/`, postData)
           // const responseData = await response.json();
           setData(prevData => ({
             ...prevData,
             [page]: responseData.results,
           }));
-          setTotalPages(responseData.pagination.total_pages);
-          setPagination(responseData.pagination);
-        
+          setTotalPages(responseData.pagination.total_pages);        
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -50,7 +48,7 @@ const BqueryResult = () => {
   };
 
   const currentPageData = data[currentPage] || [];
-  console.log({ currentPageData })
+  
   return (
     <>
       {/* Render the data */}
