@@ -30,7 +30,7 @@ const BrowseResult = () => {
                 };
                 try {
                     setLoading(true)
-                    const jsonData = await fetcher(`https://ciods.in/RememProt/browseResult/`, postData)
+                    const jsonData = await fetcher(`${process.env.BACKEND_API}/RememProt/browseResult/`, postData)
                     setData(jsonData.final_formatted_data)
                     setLoading(false)
                 } catch (error) {

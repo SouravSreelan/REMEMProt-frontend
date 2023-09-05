@@ -27,7 +27,7 @@ const RemprotResult = () => {
       };
 
       try {
-        const response = await fetcher(`https://ciods.in/RememProt/enrichment/`,  postData);
+        const response = await fetcher(`${process.env.BACKEND_API}/RememProt/enrichment/`,  postData);
         setEnrichmentData(response.enrichment_result);
       } catch (error) {
         console.error('Error fetching data:', error);

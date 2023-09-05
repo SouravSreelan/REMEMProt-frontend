@@ -16,7 +16,7 @@ const ContactUs = () => {
             message: message
         }
         try {
-            const response = fetcher(`https://ciods.in/contact/contact/`,  postData);
+            const response = fetcher(`${process.env.BACKEND_API}/contact/contact/`,  postData);
             console.log(response)
 
         } catch (error) {

@@ -28,7 +28,7 @@ const BqueryResult = () => {
       }
 
       try {
-          const responseData = await fetcher(`https://ciods.in/RememProt/bqueryResult/`, postData)
+          const responseData = await fetcher(`${process.env.BACKEND_API}/RememProt/bqueryResult/`, postData)
           // const responseData = await response.json();
           setData(prevData => ({
             ...prevData,
