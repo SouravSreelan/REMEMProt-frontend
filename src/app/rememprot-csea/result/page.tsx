@@ -61,7 +61,7 @@ const RemprotResult = () => {
               <TableBody>
                 {enrichmentData.map((item, index) => (
                   <TableRow key={index} className=''>
-                    <TableCell className="text-justify font-normal" >{item.count}</TableCell>
+                    <TableCell className="text-justify font-normal" >{item.term}</TableCell>
                     <TableCell className="text-justify font-normal" >{item.enrichment}</TableCell>
                     <TableCell>{item.percentage}</TableCell>
                     <TableCell>{item.count}</TableCell>

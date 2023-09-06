@@ -16,9 +16,9 @@ interface ResultItem {
     protienExtractMethod: string;
     geneSymbol: string;
     geneID: string;
-    tissuetype: string;
-    cancertype: string;
-    cellname: string;
+    tissueType: string;
+    cancerType: string;
+    cellName: string;
     isTrans: string;
 }
 
@@ -36,6 +36,7 @@ interface EnrichmentResult {
     percentage: string;
     method: string
     log10pval: number;
+    term:string;
 }
 
 interface BubbleChartProps {

@@ -12,7 +12,6 @@ ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
 const Chart = ({ data }: any) => {
     const groupedData: Record<string, EnrichmentResult[]> = {};
     const groupSpacing = 30;
-    const bubbleRadius = 13;
     const spaceBetweenGroups = 0.9;
 
     data.forEach((item: any) => {
@@ -35,7 +34,7 @@ const Chart = ({ data }: any) => {
                 x: startX + xOffset,
                 y: item.log10pval,
                 r: item.count + 5,
-                rmid: item.count,
+                rmid: item.term,
                 // r: item.log10pval + bubbleRadius - 5,
             };
         });

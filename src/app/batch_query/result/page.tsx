@@ -29,6 +29,7 @@ const BqueryResult = () => {
 
       try {
           const responseData = await fetcher(`${url}/RememProt/bqueryResult/`, postData)
+          console.log(responseData)
           // const responseData = await response.json();
           setData(prevData => ({
             ...prevData,
@@ -69,9 +70,9 @@ const BqueryResult = () => {
               <TableHead colSpan={12} className="text-center text-black font-bold">Cell Marker Status</TableHead>
             </TableRow>
             <TableRow>
-              <TableHead colSpan={3} className="text-center font-bold border-r-2 text-black  border-white" >Tissue Type</TableHead>
-              <TableHead colSpan={3} className="text-center border-r-2 border-white text-black font-bold">Cancer Type</TableHead>
-              <TableHead colSpan={3} className="text-center text-black font-bold">Cell Name</TableHead>
+              <TableHead  className="text-center font-bold border-r-2 text-black  border-white" >Tissue Type</TableHead>
+              <TableHead  className="text-center border-r-2 border-white text-black font-bold">Cancer Type</TableHead>
+              <TableHead  className="text-center text-black font-bold">Cell Name</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -81,9 +82,9 @@ const BqueryResult = () => {
                 <TableCell>{item.isTrans}</TableCell>
                 <TableCell>{item.profileOrDifex}</TableCell>
                 <TableCell className="text-justify font-normal ">{item.contxtOfIdent}</TableCell>
-                <TableCell className="text-left">{item.tissuetype}</TableCell>
-                <TableCell className="text-left">{item.cancertype}</TableCell>
-                <TableCell className="text-left">{item.cellname}</TableCell>
+                <TableCell className="text-left">{item.tissueType}</TableCell>
+                <TableCell className="text-left">{item.cancerType}</TableCell>
+                <TableCell className="text-left">{item.cellName}</TableCell>
               </TableRow>
             ))}
           </TableBody>
