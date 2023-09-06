@@ -50,6 +50,7 @@ const Chart = ({ data }: any) => {
     const chartData = { datasets };
 
     const option: ChartOptions<"bubble"> = {
+
         responsive: true,
         maintainAspectRatio: false,
         scales: {
@@ -63,7 +64,7 @@ const Chart = ({ data }: any) => {
                 grid: {
                     display: true,
                 },
-                // display: false, // Hide x-axis labels
+
             },
             y: {
                 type: 'linear',
@@ -71,7 +72,11 @@ const Chart = ({ data }: any) => {
                 ticks: {
                     stepSize: 1,
                 },
-
+                title: {
+                    display: true,
+                    align: 'center',
+                    text: 'Frequency',
+                }
 
             },
         },

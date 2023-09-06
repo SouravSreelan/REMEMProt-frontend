@@ -16,7 +16,7 @@ const REMEMProtCSEA = () => {
         <div className="flex items-center justify-center h-screen/2">
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
                 <div className="max-w-6xl mx-auto text-center mb-10 lg:mb-14">
-                    <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">REMEMProt-CSEA.</h2>
+                    <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">REMEMProt-CSEA</h2>
                     <p className="text-md font-normal max-w-9xl">The enrichment analysis using the REMEMProt-CSEA enables the visualization of a set of query proteins if a priory is identified in a particular experimental/biological context. This also enables the users to cross-refer to enrichment methods, profiling/differential expression, and biological contexts such as disease, organism, and cell line/tissue source for their protein of interest.</p>
                 </div>
                 <Card className="bg-slate-200 max-w-xl mx-auto ">

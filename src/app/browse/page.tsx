@@ -114,16 +114,16 @@ const Browse = () => {
             <div className=' justify-center'>
                 <div className="max-w-[85rem]  px-4 py-10 sm:px-6 lg:px-8  lg:py-14 mx-auto mt-12 lg:mt-0">
                     <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14 ">
-                        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight  dark:text-white">Browse.</h2>
+                        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight  dark:text-white">Browse</h2>
                         {/* <p className='text-md font-normal max-w-9xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio incidunt nam itaque sed eius modi error totam sit illum. Voluptas doloribus asperiores quaerat aperiam. Quidem harum omnis beatae ipsum soluta!</p> */}
                     </div>
                     <div className=''>
                         <Card className='bg-slate-200 '>
                             <CardHeader>
                                 <CardTitle>Select</CardTitle>
-                                <CardDescription>
+                                {/* <CardDescription>
                                     give some text here
-                                </CardDescription>
+                                </CardDescription> */}
                             </CardHeader>
                             <CardContent className="grid gap-6">
                                 <div className="grid grid-cols-2  gap-4">
@@ -147,7 +147,7 @@ const Browse = () => {
                                         <Label htmlFor="species">Choose a method</Label>
                                         <Select onValueChange={(value) => handleSelectMethod(value)}>
                                             <SelectTrigger id="framework">
-                                                <SelectValue placeholder={species ? 'Select' : 'Please Select a species'} />
+                                                <SelectValue placeholder={species ? 'Select' : 'Please Select a method'} />
                                             </SelectTrigger>
                                             <SelectContent className='w-full' position="popper">
                                                 {methods.map((met, index) => (
@@ -162,7 +162,7 @@ const Browse = () => {
                                     <Label htmlFor="subject">Tissue/Cell line</Label>
                                     <Select onValueChange={(value) => setTissue(value)}>
                                         <SelectTrigger id="framework">
-                                            <SelectValue placeholder={method ? 'Select' : 'Please Select a Method'} />
+                                            <SelectValue placeholder={method ? 'Select' : 'Please Select a tissue/cell line'} />
                                         </SelectTrigger>
                                         <SelectContent className='w-full' position="popper">
                                             {cells.map((met, index) => (
@@ -191,7 +191,7 @@ const Browse = () => {
                 <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  xl:grid-cols-3 gap-4'>
                     {chartData.map((item, index) => (
                         <div className='max-w-5xl mx-auto h-auto w-[30rem]' key={index}>
-                            <h1 className='font-bold text-2xl'>{item.species}</h1>
+                            <h1 className='font-bold text-2xl text-center'>{item.species}</h1>
                             <Doughnut
                                 data={item}
                                 options={options}

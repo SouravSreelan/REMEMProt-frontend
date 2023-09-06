@@ -44,25 +44,25 @@ export const servicesData = [
     {
         id: 1,
         title: 'Browse',
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio incidunt nam itaque sed eius modi error totam sit illum. Voluptas doloribus asperiores quaerat aperiam. Quidem harum omnis beatae ipsum soluta!",
+        description: "Search for the proteins based on membrnae protein enrichment method and cell line/tissue source.",
         link: '/browse'
     },
     {
         id: 2,
         title: 'REMEMProt-CSEA',
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio incidunt nam itaque sed eius modi error totam sit illum. Voluptas doloribus asperiores quaerat aperiam. Quidem harum omnis beatae ipsum soluta!",
+        description: "Enrichment analysis of query proteins identified in particular experimental/biological context",
         link: '/rememprot-csea'
     },
     {
         id: 3,
         title: 'Disease Ontology',
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio incidunt nam itaque sed eius modi error totam sit illum. Voluptas doloribus asperiores quaerat aperiam. Quidem harum omnis beatae ipsum soluta!",
+        description: "Analysis of disease associations of query proteins",
         link: '/disease_ontology'
     },
     {
         id: 4,
         title: 'Batch Query',
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio incidunt nam itaque sed eius modi error totam sit illum. Voluptas doloribus asperiores quaerat aperiam. Quidem harum omnis beatae ipsum soluta!",
+        description: "Search to procure information on a group of protein of interest",
         link: '/batch_query'
     },
 ]

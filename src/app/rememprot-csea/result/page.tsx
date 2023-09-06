@@ -8,13 +8,49 @@ import Chart from '@/components/ui/Chart';  // Import your Chart component
 import { Table, TableBody, TableCaption, TableHead, TableHeader, TableRow, TableCell, TableFooter } from '@/components/ui/table';
 import Link from 'next/link';
 import { url } from '@/constants';
-
+import { Button } from '@/components/ui/button';
+import { parse } from 'json2csv';
 const RemprotResult = () => {
   const searchQuery = useSearchParams();
   const [enrichmentData, setEnrichmentData] = useState<EnrichmentResult[] | undefined>();
   const [loading, setLoading] = useState(true);
 
   const analysisInput = searchQuery.get('analysisInput');
+
+  const convertToCSV = () => {
+    const fields = enrichmentData && Object.keys(enrichmentData[0]); // get the headers from the first object in the array
+    const csv = json2csv({ data: enrichmentData, fields }); // convert the JSON to CSV using the json2csv package
+    return csv;
+  }
+
+  const downloadCSV = () => {
+    // const csv = convertToCSV();
+    // const blob = new Blob([csv], { type: 'text/csv' });
+    // const url = window.URL.createObjectURL(blob);
+    // const a = document.createElement('a');
+    // a.href = url;
+    // a.download = 'data.csv';
+    // document.body.appendChild(a);
+    // a.click();
+    // document.body.removeChild(a);
+    const csvData = parse(enrichmentData);
+
+    // Create a Blob containing the CSV data
+    const blob = new Blob([csvData], { type: 'text/csv' });
+
+    // Create a download link
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'data.csv';
+
+    // Trigger the download
+    a.click();
+
+    // Clean up: Revoke the object URL to free resources
+    window.URL.revokeObjectURL(url);
+
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +64,7 @@ const RemprotResult = () => {
       };
 
       try {
-        const response = await fetcher(`${url}/RememProt/enrichment/`,  postData);
+        const response = await fetcher(`${url}/RememProt/enrichment/`, postData);
         setEnrichmentData(response.enrichment_result);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -46,12 +82,13 @@ const RemprotResult = () => {
         <>
           <Chart data={enrichmentData} />
           <div className='w-full mt-10 p-5'>
-
+            <div className='pb-5 flex justify-end'>
+              <Button onClick={downloadCSV}> Download </Button>            </div>
             <Table className='w-full'>
               <TableCaption>For inquires regarding the complete dataset download, kindle <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
               <TableHeader className='bg-slate-300'>
                 <TableRow >
-                  <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Rmid</TableHead>
+                  <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Id</TableHead>
                   <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Disease_Organism_Cell line/tissue name_memb enrich method_Profiling/Differential_Context of Identification</TableHead>
                   <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Percentage</TableHead>
                   <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>Count</TableHead>

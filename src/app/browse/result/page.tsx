@@ -32,6 +32,7 @@ const BrowseResult = () => {
                 try {
                     setLoading(true)
                     const jsonData = await fetcher(`${url}/RememProt/browseResult/`, postData)
+                    console.log(jsonData)
                     setData(jsonData.final_formatted_data)
                     setLoading(false)
                 } catch (error) {
@@ -59,7 +60,7 @@ const BrowseResult = () => {
             )}
             <div className="w-full px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto mt-12 lg:mt-0">
                 <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14 ">
-                    <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Browse Results.</h2>
+                    <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Browse Results</h2>
                 </div>
 
                 <div className="w-full mx-auto">
@@ -80,17 +81,16 @@ const BrowseResult = () => {
                                         <Separator className='flex justify-center mt-5' />
                                         <h2 className='text-lg font-semibold'>PubMed ID: <span className='font-normal'>{dataItem.pubmedId}</span></h2>
                                         <Separator className='flex justify-center mt-5' />
-                                        <CardTitle className='mt-5 '>Select Protein</CardTitle>
                                         <CardContent>
-                                            <div className={`w-full mt-5 mx-auto grid grid-cols-2 gap-4 ${numItems === 1 ? 'lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12' : 'lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6'}`}>
+                                            <div className={`w-full mt-5 mx-auto grid grid-cols-2 gap-4 ${numItems === 1 ? 'lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12' : 'lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6'}`}>
                                                 {dataItem.proteinData.map((protein, index) => (
                                                     <DialogTrigger key={index} asChild>
                                                         <div
                                                             onClick={() => handleProteinClick(protein)}
-                                                            className="cursor-pointer group hover:scale-105 transform transition-transform duration-300 rounded-3xl border-[.5px] drop-shadow-sm bg-white border-gray-400 bg-opacity-50 shadow-2xl shadow-gray-600/10"
+                                                            className={`cursor-pointer group hover:scale-105 transform transition-transform duration-300 rounded-3xl border-[.5px] drop-shadow-sm bg-white ${protein.transmemStatus === 'YES' ? 'border-green-500' : 'border-red-500'} bg-opacity-50 shadow-2xl shadow-gray-600/10`}
                                                             style={{ overflow: 'hidden' }}
                                                         >
-                                                            <div className='p-6 sm:p-8' style={{ maxWidth: '100%', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                                            <div className='p-4 sm:p-8' style={{ maxWidth: '100%', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                                                                 <h3 className="text-lg  lg:text-xl/2 xl:text-base 2xl:text-xl text-center font-semibold text-gray-800 dark:text-white">
                                                                     {protein.gene}
                                                                 </h3>

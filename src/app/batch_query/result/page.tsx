@@ -55,9 +55,11 @@ const BqueryResult = () => {
       {/* Render the data */}
       {/* {currentPageData.map((item, index) => ( */}
       <div className='p-10'>
+        <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14 ">
+          <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Batch Query Results</h2>
+        </div>
         <div className='flex justify-between p-5'>
           <h1 className='font-bold text-xl'>Organim : <span className='font-semibold text-xl'>{species}</span> </h1>
-          <p></p>
         </div>
         <Table >
           <TableCaption>For inquires regarding the complete dataset download, kindle <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
