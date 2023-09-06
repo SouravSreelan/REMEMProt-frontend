@@ -10,7 +10,7 @@ import speciesData from '@/constants/data.json';
 import Link from 'next/link'
 
 const BatchQuery = () => {
-    const [species, setSpecies] = useState('')
+    const [species, setSpecies] = useState('Homo Sapiens')
     const [sampleText, setSampleText] = useState('');
     const handleLoadSample = () => {
         const selectedSpeciesData = speciesData.speciesSampleData.find((item) => item.species === species);
@@ -39,7 +39,7 @@ const BatchQuery = () => {
                         <div className="flex flex-col w-full gap-2 max-w-xl mx-auto">
                             <div className='mb-5'>
                                 <Label htmlFor="species">Species</Label>
-                                <Select onValueChange={(value) => setSpecies(value)}>
+                                <Select onValueChange={(value) => setSpecies(value)} defaultValue='Homo Sapiens'>
                                     <SelectTrigger id="framework">
                                         <SelectValue placeholder="Select" />
                                     </SelectTrigger>

@@ -28,14 +28,14 @@ const BqueryResult = () => {
       }
 
       try {
-          const responseData = await fetcher(`${url}/RememProt/bqueryResult/`, postData)
-          console.log(responseData)
-          // const responseData = await response.json();
-          setData(prevData => ({
-            ...prevData,
-            [page]: responseData.results,
-          }));
-          setTotalPages(responseData.pagination.total_pages);        
+        const responseData = await fetcher(`${url}/RememProt/bqueryResult/`, postData)
+        console.log(responseData)
+        // const responseData = await response.json();
+        setData(prevData => ({
+          ...prevData,
+          [page]: responseData.results,
+        }));
+        setTotalPages(responseData.pagination.total_pages);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -49,7 +49,7 @@ const BqueryResult = () => {
   };
 
   const currentPageData = data[currentPage] || [];
-  
+
   return (
     <>
       {/* Render the data */}
@@ -67,24 +67,34 @@ const BqueryResult = () => {
               <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Transmembrane</TableHead>
               <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>Profile and/or differential expression</TableHead>
               <TableHead rowSpan={2} className="text-center border-r-2 text-black font-bold border-white">Context of identification</TableHead>
-              <TableHead colSpan={12} className="text-center text-black font-bold">Cell Marker Status</TableHead>
+              {species !== 'Rattus norvegicus' && (
+                <TableHead colSpan={12} className="text-center text-black font-bold">Cell Marker Status</TableHead>
+              )}
             </TableRow>
-            <TableRow>
-              <TableHead  className="text-center font-bold border-r-2 text-black  border-white" >Tissue Type</TableHead>
-              <TableHead  className="text-center border-r-2 border-white text-black font-bold">Cancer Type</TableHead>
-              <TableHead  className="text-center text-black font-bold">Cell Name</TableHead>
-            </TableRow>
+            {species !== 'Rattus norvegicus' && (
+              <TableRow>
+                <TableHead className="text-center font-bold border-r-2 text-black  border-white" >Tissue Type</TableHead>
+                <TableHead className="text-center border-r-2 border-white text-black font-bold">Cancer Type</TableHead>
+                <TableHead className="text-center text-black font-bold">Cell Name</TableHead>
+              </TableRow>
+            )}
           </TableHeader>
           <TableBody>
             {currentPageData.map((item) => (
               <TableRow key={item.id} className=''>
-                <TableCell className="font-semibold" >{item.geneSymbol}</TableCell>
-                <TableCell>{item.isTrans}</TableCell>
-                <TableCell>{item.profileOrDifex}</TableCell>
-                <TableCell className="text-justify font-normal ">{item.contxtOfIdent}</TableCell>
-                <TableCell className="text-left">{item.tissueType}</TableCell>
-                <TableCell className="text-left">{item.cancerType}</TableCell>
-                <TableCell className="text-left">{item.cellName}</TableCell>
+                <>
+                  <TableCell className="font-semibold" >{item.geneSymbol}</TableCell>
+                  <TableCell>{item.isTrans}</TableCell>
+                  <TableCell>{item.profileOrDifex}</TableCell>
+                  <TableCell className="text-justify font-normal ">{item.contxtOfIdent}</TableCell>
+                  {species !== 'Rattus norvegicus' && (
+                    <>
+                      <TableCell className="text-left">{item.tissueType}</TableCell>
+                      <TableCell className="text-left">{item.cancerType}</TableCell>
+                      <TableCell className="text-left">{item.cellName}</TableCell>
+                    </>
+                  )}
+                </>
               </TableRow>
             ))}
           </TableBody>
@@ -95,7 +105,7 @@ const BqueryResult = () => {
         <Button onClick={() => goToPage(currentPage - 1)} className='mr-5' disabled={currentPage === 1}>
           Previous
         </Button >
-        <Button onClick={() => goToPage(currentPage + 1)} className='mr-5' disabled={currentPage === totalPages }>
+        <Button onClick={() => goToPage(currentPage + 1)} className='mr-5' disabled={currentPage === totalPages}>
           Next
         </Button>
       </div>
