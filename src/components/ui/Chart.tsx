@@ -75,7 +75,7 @@ const Chart = ({ data }: any) => {
                 title: {
                     display: true,
                     align: 'center',
-                    text: 'Frequency',
+                    text: 'Adjusted p-value',
                 }
 
             },
