@@ -630,6 +630,28 @@
             "answer": "The REMEMProt provides information on the organism, cellular source, disease, profiling/ differential expression, method of enrichment and biological context of identification of proteins. Currently, the REMEMProt is also enabled to batch query and enrich for a set of user query proteins based on the data in REMEMProt for the disease ontology, biological features of proteins, Gene Ontology and markers from the CellMarker database."
         }
     ],
+    "box": [
+        {
+            "id": 1,
+            "question": " Organism",
+            "answer": "H : Human\nM : Mouse\nR : Rat\n\t"
+        },
+        {
+            "id": 2,
+            "question": "Analysis",
+            "answer": "P : Profile\nDEX : Differential Expression\n \t    "
+        },
+        {
+            "id": 3,
+            "question": "Membrane protein enrichment methods",
+            "answer": "UC : Ultracentrifuge\nAT : Aqueous two-phase system\nBT : Biotynylation\nKB : Kit-based\nUC and CSC : Ultracentrifuge and Cell surface capture system\nSC : Sucrose gradient centrifugation\nC : Centrifugation "
+        },
+        {
+            "id": 4,
+            "question": "Diseases", 
+            "answer": "BT : Brain tumor\nBTC : Breast cancer\nSCLC : Squamous cell lung carcinoma\nC : Cancer\nOS : Osteosarcoma\nEC : Endometrial cancer\nMM : Multiple myeloma\nRCC : Renal cell carcinoma\nRB : Retinoblastoma\nHNSCC : Head and neck squamous cell carcinoma\nMCL : Mantle Cell Lymphoma\nAM : Astrocytoma\nPOAG : Primary Open-Angle Glaucoma\nLC : Lung cancer\nD : Type 2 diabetes\nHP : Hepatotoxicity     "
+        }
+    ],
     "contributors": [
         {
             "id": 1,
@@ -849,7 +871,7 @@
                     "value":260
                 },
                 {
-                    "name": "S100 family proteins ",
+                    "name": "S100 family proteins",
                     "value":17
                 },
                 {

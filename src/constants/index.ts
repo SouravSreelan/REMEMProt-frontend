@@ -44,7 +44,7 @@ export const servicesData = [
     {
         id: 1,
         title: 'Browse',
-        description: "Search for the proteins based on membrnae protein enrichment method and cell line/tissue source.",
+        description: "Search for the proteins based on membrane protein enrichment method and cell line/tissue source.",
         link: '/browse'
     },
     {

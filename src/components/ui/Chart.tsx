@@ -88,7 +88,7 @@ const Chart = ({ data }: any) => {
 
 
                         if (value) {
-                            return `${value.rmid}`;
+                            return `${value.rmid}  [${value.r}]`;
                         } else {
                             return "";
                         }

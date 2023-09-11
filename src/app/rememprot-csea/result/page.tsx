@@ -9,6 +9,13 @@ import { Table, TableBody, TableCaption, TableHead, TableHeader, TableRow, Table
 import Link from 'next/link';
 import { url } from '@/constants';
 import { Button } from '@/components/ui/button';
+import data from '@/constants/data.json'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { parse } from 'json2csv';
 const RemprotResult = () => {
   const searchQuery = useSearchParams();
@@ -81,10 +88,13 @@ const RemprotResult = () => {
       {enrichmentData &&
         <>
           <Chart data={enrichmentData} />
-          <div className='w-full mt-10 p-5'>
+          <div className='w-full mt-10 p-5' style={{overflow: 'hidden'}}>
             <div className='pb-5 flex justify-end'>
               <Button onClick={downloadCSV}> Download </Button>            </div>
-            <Table className='w-full'>
+              <div className="flex">
+
+
+            <Table className='w-5/6'>
               <TableCaption>For inquires regarding the complete dataset download, kindle <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
               <TableHeader className='bg-slate-300'>
                 <TableRow >
@@ -105,12 +115,28 @@ const RemprotResult = () => {
                     <TableCell className="">{item.p_value}</TableCell>
 
                   </TableRow>
+                  
                 ))}
               </TableBody>
               <TableFooter>
               </TableFooter>
+              
             </Table>
-          </div>
+
+            <section className="bg-white dark:bg-gray-900 w-1/6">
+  <Accordion type="single" collapsible className="" defaultValue="item-0">
+    
+  {data.box.map((item, index) => (
+    <AccordionItem key={index} value={`item-${index}`} >
+      <AccordionTrigger className='text-2xl text-left'>{item.question}</AccordionTrigger>
+      <AccordionContent className='text-xl whitespace-pre'>{item.answer}</AccordionContent>
+    </AccordionItem>
+  ))}
+</Accordion>
+</section>
+
+
+          </div></div>
         </>
       } {/* Render the D3chart component */}
       {loading && <Spinner />}

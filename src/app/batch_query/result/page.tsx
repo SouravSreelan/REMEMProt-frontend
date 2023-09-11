@@ -91,9 +91,9 @@ const BqueryResult = () => {
                   <TableCell className="text-justify font-normal ">{item.contxtOfIdent}</TableCell>
                   {species !== 'Rattus norvegicus' && (
                     <>
-                      <TableCell className="text-left">{item.tissueType}</TableCell>
-                      <TableCell className="text-left">{item.cancerType}</TableCell>
-                      <TableCell className="text-left">{item.cellName}</TableCell>
+                      <TableCell className="text-left">{item.tissueType || 'NA'}</TableCell>
+                      <TableCell className="text-left">{item.cancerType || 'NA'}</TableCell>
+                      <TableCell className="text-left">{item.cellName || 'NA'}</TableCell>
                     </>
                   )}
                 </>
