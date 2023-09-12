@@ -119,7 +119,7 @@ const BrowseResult = () => {
                                                 <Separator />
                                                 <div className="grid grid-cols-3 items-center gap-4">
                                                     <Label htmlFor="name" className="text-left text-lg">
-                                                        Transmembrane status:
+                                                        Transmembrane Domain status:
                                                     </Label>
                                                     <h3 className='font-normal text-lg '>{transmemStatus}</h3>
                                                 </div>
@@ -131,23 +131,24 @@ const BrowseResult = () => {
                                                 </div>
                                                 {cellMarker.map((cell: any, index: any) => (
                                                     <React.Fragment key={index}>
-                                                        <div className="grid grid-cols-4 justify-center items-center text-center gap-4">
+                                                        <div className="grid grid-cols-3 items-left gap-2">
                                                             <Label htmlFor="name" className="text-center text-lg">
                                                                 Cell Name:
                                                             </Label>
-                                                            <h3 className='font-normal text-left text-lg '>{cell.cellName}</h3>
+                                                            <h3 className='font-normal text-left text-lg '>{cell.cellName || 'NA'}</h3>
                                                         </div>
-                                                        <div className="grid grid-cols-4 justify-center items-center text-center gap-4">
+                                                        <div className="grid grid-cols-3 items-left gap-4">
                                                             <Label htmlFor="name" className="text-center text-lg">
                                                                 Tissue Type:
                                                             </Label>
-                                                            <h3 className='font-normal text-lg text-left'>{cell.tissueType}</h3>
+                                                            <h3 className='font-normal text-lg text-left'>{cell.tissueType || 'NA'}</h3>
                                                         </div>
-                                                        <div className="grid grid-cols-4 justify-center items-center text-center gap-4">
+                                                        <div className="grid grid-cols-3 items-left gap-4">
                                                             <Label htmlFor="name" className="text-center text-lg">
                                                                 Cancer Type:
                                                             </Label>
-                                                            <h3 className='font-normal text-lg text-left'>{cell.cancerType}</h3>
+                                                            
+                                                            <h3 className='font-normal text-lg text-left'>{cell.cancerType || 'NA'}</h3>
                                                         </div>
                                                     </React.Fragment>
                                                 ))}

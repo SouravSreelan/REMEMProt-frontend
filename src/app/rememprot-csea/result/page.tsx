@@ -89,7 +89,7 @@ const RemprotResult = () => {
         <>
           <Chart data={enrichmentData} />
           <div className='w-full mt-10 p-5' style={{overflow: 'hidden'}}>
-            <div className='pb-5 flex justify-end'>
+            <div className='w-4/6 lg:ms-10 pb-5 flex justify-end'>
               <Button onClick={downloadCSV}> Download </Button>            </div>
               <div className="flex">
 
@@ -99,7 +99,7 @@ const RemprotResult = () => {
               <TableHeader className='bg-slate-300'>
                 <TableRow >
                   <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Id</TableHead>
-                  <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Disease_Organism_Cell line/tissue name_memb enrich method_Profiling/Differential_Context of Identification</TableHead>
+                  <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Disease_Organism_Cell line/tissue name_membrane protein enrichment methods_Profiling/Differential_Context of Identification</TableHead>
                   <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Percentage</TableHead>
                   <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>Count</TableHead>
                   <TableHead rowSpan={2} className="text-center border-r-2 text-black font-bold border-white">p_value</TableHead>

@@ -26,21 +26,21 @@ const Footer = () => {
                             {`REMEMProt is a joint project between the `}
                             <a
                                 className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400"
-                                href="http://csbmm.yenepoya.res.in/"
+                                href="https://www.ciods.in"
                             >
                                 Centre for Integrative Omics Data Science (CIODS)
                             </a>{' '}
                             {`, `}
                             <a
                                 className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400"
-                                href="https://www.ciods.in"
+                                href="http://csbmm.yenepoya.res.in/"
                             >
                                 Center for Systems Biology and Molecular Medicine (CSBMM)
                             </a>
                             {` and OMICS ANALYTICS Pvt.Ltd. supported by`}
                             <a
                                 className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400"
-                                href="https://www.yenepoya.res.in/"
+                                href="https://yenepoya.edu.in/"
                             >
                                 Yenepoya (Deemed to be University)
                             </a>

@@ -26,7 +26,7 @@ const ServicesCard = (props: ServicesCardProps) => {
                 <Link href={{
                     pathname: props.link
                 }} className="w-full py-3 px-4   rounded-bl-3xl rounded-br-3xl flex justify-center items-center  font-medium  text-gray-700 transition-colors text-sm sm:p-4  hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-300" >
-                    <span>Read more</span>
+                    <span>Explore</span>
                 </Link>
             </div>
         </div>

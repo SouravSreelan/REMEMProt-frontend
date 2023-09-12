@@ -144,7 +144,7 @@ const Browse = () => {
                                         </>
                                     </div>
                                     <div className="grid gap-2">
-                                        <Label htmlFor="species">Choose a method</Label>
+                                        <Label htmlFor="species">Choose an enrichment method</Label>
                                         <Select onValueChange={(value) => handleSelectMethod(value)}>
                                             <SelectTrigger id="framework">
                                                 <SelectValue placeholder={species ? 'Select' : 'Please Select a method'} />

@@ -64,12 +64,12 @@ const Navbar = () => {
             <nav className="w-full flex py-6 justify-between items-center navbar z-10">
                 {/* <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" /> */}
                 {/* <Image src={Logo}  alt="logo" width={50} height={50} className="w-[150px] h-[150px]" unoptimized={true} /> */}
-                <h1 className="font-bold text-3xl">REMEMProt</h1>
+                <h1 className="font-bold text-4xl">REMEMProt</h1>
                 <ul className="list-none lg:flex hidden justify-center items-center flex-1">
                     {navLinks.map((nav, index) => (
                         <li
                             key={nav.id}
-                            className={`font-poppins font-normal text-md cursor-pointer text-[16px] ${active === nav.id ? "text-blue-400" : "text-dimWhite"
+                            className={`font-poppins font-normal text-md cursor-pointer text-[18px] ${active === nav.id ? "text-blue-400" : "text-dimWhite"
                                 } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
                             onClick={() => handleNavigation(nav.link)}
                         >
@@ -100,7 +100,7 @@ const Navbar = () => {
                             {navLinks.map((nav, index) => (
                                 <li
                                     key={nav.id}
-                                    className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? "text-white" : "text-dimWhite"
+                                    className={`font-poppins font-medium cursor-pointer text-[18px] ${active === nav.title ? "text-white" : "text-dimWhite"
                                         } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                                     onClick={() => handleNavigation(nav.link)}
                                 >

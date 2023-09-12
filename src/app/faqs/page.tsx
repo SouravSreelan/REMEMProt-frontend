@@ -19,10 +19,11 @@ const Faqs = () => {
           {data.faq.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`} >
               <AccordionTrigger className='text-2xl text-left'>{item.question}</AccordionTrigger>
-              <AccordionContent className='text-xl'>{item.answer}</AccordionContent>
+              <AccordionContent className='text-xl text-justify'>{item.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
+        
       </section>
     </div>
   )

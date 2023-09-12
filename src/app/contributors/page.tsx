@@ -10,9 +10,10 @@ const Contributors = () => {
             </div>
             <div className="space-y-8">
                 <div className="items-center">
+                <p className="text-xl md:text-3xl md:leading-tight text-center lg:mb-5 dark:text-white"><i> We acknowledge the following contributers</i></p>
                     {data.contributors.map((item, index) => (
                         <div key={index} className="ml-4 p-5 border-b">
-                            <h1 className="text-xl font-bold ">{index + 1}. <span className='font-normal text-justify leading-3'> {item.details}</span></h1>
+                            <h1 className="text-xl font-bold text-justify">{index + 1}. <span className='font-normal text-justify leading-3'> {item.details}</span></h1>
                         </div>
                     ))}
                 </div>

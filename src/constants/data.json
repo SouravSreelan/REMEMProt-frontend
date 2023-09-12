@@ -633,13 +633,16 @@
     "box": [
         {
             "id": 1,
-            "question": " Organism",
-            "answer": "H : Human\nM : Mouse\nR : Rat\n\t"
+            "question": "Diseases", 
+            "answer": "BT : Brain tumor\nBTC : Breast cancer\nSCLC : Squamous cell lung carcinoma\nC : Cancer\nOS : Osteosarcoma\nEC : Endometrial cancer\nMM : Multiple myeloma\nRCC : Renal cell carcinoma\nRB : Retinoblastoma\nHNSCC : Head and neck squamous cell carcinoma\nMCL : Mantle Cell Lymphoma\nAM : Astrocytoma\nPOAG : Primary Open-Angle Glaucoma\nLC : Lung cancer\nD : Type 2 diabetes\nHP : Hepatotoxicity     "
+      
+
         },
         {
             "id": 2,
-            "question": "Analysis",
-            "answer": "P : Profile\nDEX : Differential Expression\n \t    "
+            "question": " Organism",
+            "answer": "H : Human\nM : Mouse\nR : Rat\n\t"
+
         },
         {
             "id": 3,
@@ -648,9 +651,9 @@
         },
         {
             "id": 4,
-            "question": "Diseases", 
-            "answer": "BT : Brain tumor\nBTC : Breast cancer\nSCLC : Squamous cell lung carcinoma\nC : Cancer\nOS : Osteosarcoma\nEC : Endometrial cancer\nMM : Multiple myeloma\nRCC : Renal cell carcinoma\nRB : Retinoblastoma\nHNSCC : Head and neck squamous cell carcinoma\nMCL : Mantle Cell Lymphoma\nAM : Astrocytoma\nPOAG : Primary Open-Angle Glaucoma\nLC : Lung cancer\nD : Type 2 diabetes\nHP : Hepatotoxicity     "
-        }
+            "question": "Analysis",
+            "answer": "P : Profile\nDEX : Differential Expression\n \t    "
+             }
     ],
     "contributors": [
         {

@@ -66,7 +66,7 @@ const BqueryResult = () => {
           <TableHeader className='bg-slate-300'>
             <TableRow >
               <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Gene Symbol</TableHead>
-              <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Transmembrane</TableHead>
+              <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Transmembrane Domain status </TableHead>
               <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>Profile and/or differential expression</TableHead>
               <TableHead rowSpan={2} className="text-center border-r-2 text-black font-bold border-white">Context of identification</TableHead>
               {species !== 'Rattus norvegicus' && (
