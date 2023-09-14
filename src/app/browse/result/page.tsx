@@ -65,6 +65,14 @@ const BrowseResult = () => {
 
                 <div className="w-full mx-auto">
                     <h3 className='font-semibold text-xl'>Organism: {`${species}`}</h3> <br />
+                    <div className="row justify-end mr-20" style={{ display: 'flex', alignItems: 'center' }}>
+                    <div className="items-right justify-right border w-7 h-5 border-green-500 rounded-md"></div>
+                        <span style={{ marginLeft: '5px' }}>Transmembrane Domain Exist</span>
+            </div>      <div className="row justify-end mr-4 mb-3" style={{ display: 'flex', alignItems: 'center' }}>
+                        <div className="items-right justify-right border w-7 h-5 border-red-500 rounded-md"></div>
+                     <span style={{ marginLeft: '5px' }}>Transmembrane Domain Doesnot Exist</span>
+            </div>
+
 
                     <div className={`w-full mx-auto grid grid-cols-1 ${numItems === 2 ? 'md:grid-cols-2' : null} gap-4`}>
                         {data && data.data?.map((dataItem, dataIndex) => (
@@ -121,36 +129,41 @@ const BrowseResult = () => {
                                                     <Label htmlFor="name" className="text-left text-lg">
                                                         Transmembrane Domain status:
                                                     </Label>
-                                                    <h3 className='font-normal text-lg '>{transmemStatus}</h3>
+                                                    <h3 className='font-normal text-lg '>{transmemStatus}</h3> 
+                                                  <br />  <p> Source : <a href="https://services.healthtech.dtu.dk/services/TMHMM-2.0/">TMHMM - 2.0</a> </p>
                                                 </div>
                                                 <Separator />
-                                                <div className="grid items-center gap-4">
+                                                
+                                                {cellMarker.map((cell: any, index: any) => (
+                                                        (cell.cellName !== '-' || cell.tissueType !== '-' || cell.cancerType !== '-') && (
+
+                                                    <React.Fragment key={index}>
+                                                        <div className="grid items-center gap-4">
                                                     <Label htmlFor="name" className="text-left text-lg">
                                                         Cell Marker Status: -
                                                     </Label>
                                                 </div>
-                                                {cellMarker.map((cell: any, index: any) => (
-                                                    <React.Fragment key={index}>
                                                         <div className="grid grid-cols-3 items-left gap-2">
                                                             <Label htmlFor="name" className="text-center text-lg">
                                                                 Cell Name:
                                                             </Label>
-                                                            <h3 className='font-normal text-left text-lg '>{cell.cellName || 'NA'}</h3>
+                                                            <h3 className='font-normal text-left text-lg '>{cell.cellName === '-' ? 'NA' : cell.cellName}</h3>
                                                         </div>
                                                         <div className="grid grid-cols-3 items-left gap-4">
                                                             <Label htmlFor="name" className="text-center text-lg">
                                                                 Tissue Type:
                                                             </Label>
-                                                            <h3 className='font-normal text-lg text-left'>{cell.tissueType || 'NA'}</h3>
+                                                            <h3 className='font-normal text-lg text-left'>{cell.tissueType === '-' ? 'NA' : cell.tissueType}</h3>
                                                         </div>
                                                         <div className="grid grid-cols-3 items-left gap-4">
                                                             <Label htmlFor="name" className="text-center text-lg">
                                                                 Cancer Type:
                                                             </Label>
                                                             
-                                                            <h3 className='font-normal text-lg text-left'>{cell.cancerType || 'NA'}</h3>
+                                                            <h3 className='font-normal text-lg text-left'>{cell.cancerType === '-' ? 'NA' : cell.cancerType}</h3>
                                                         </div>
                                                     </React.Fragment>
+                                                        )
                                                 ))}
                                             </div>
                                         </DialogContent>

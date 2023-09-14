@@ -43,18 +43,14 @@
                 },
                 {
                     "id": 7,
-                    "name": "CD14"
-                },
-                {
-                    "id": 8,
                     "name": "ITGB2"
                 },
                 {
-                    "id": 9,
+                    "id": 8,
                     "name": "FCGR2A"
                 },
                 {
-                    "id": 10,
+                    "id": 9,
                     "name": "FCGR2B"
                 }
             ]

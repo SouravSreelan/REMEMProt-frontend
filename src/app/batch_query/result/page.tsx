@@ -66,7 +66,7 @@ const BqueryResult = () => {
           <TableHeader className='bg-slate-300'>
             <TableRow >
               <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Gene Symbol</TableHead>
-              <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Transmembrane Domain status </TableHead>
+              <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Transmembrane Domain status     <br />  <p> Source : <a href="https://services.healthtech.dtu.dk/services/TMHMM-2.0/">TMHMM - 2.0</a> </p> </TableHead>
               <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>Profile and/or differential expression</TableHead>
               <TableHead rowSpan={2} className="text-center border-r-2 text-black font-bold border-white">Context of identification</TableHead>
               {species !== 'Rattus norvegicus' && (
@@ -102,15 +102,41 @@ const BqueryResult = () => {
           </TableBody>
         </Table>
       </div>
-      <div className='p-5 flex justify-end '>
-        {/* Pagination buttons */}
-        <Button onClick={() => goToPage(currentPage - 1)} className='mr-5' disabled={currentPage === 1}>
-          Previous
-        </Button >
-        <Button onClick={() => goToPage(currentPage + 1)} className='mr-5' disabled={currentPage === totalPages}>
-          Next
-        </Button>
-      </div>
+      <div className='p-5 flex justify-end'>
+  {/* Previous Button */}
+  <Button
+    onClick={() => goToPage(currentPage - 1)}
+    className='mr-5'
+    disabled={currentPage === 1}
+  >
+    Previous
+  </Button>
+
+  {/* Dynamic Page Buttons */}
+  {Array.from({ length: Math.min(totalPages, 5) }, (_, index) => {
+    const page = currentPage - 2 + index; // Calculate nearby page number
+    return page > 0 && page <= totalPages ? (
+      <Button
+        key={page}
+        onClick={() => goToPage(page)}
+        className='mr-5'
+        disabled={currentPage === page}
+      >
+        {page}
+      </Button>
+    ) : null;
+  })}
+
+  {/* Next Button */}
+  <Button
+    onClick={() => goToPage(currentPage + 1)}
+    className='mr-5'
+    disabled={currentPage === totalPages}
+  >
+    Next
+  </Button>
+</div>
+
     </>
   );
 };

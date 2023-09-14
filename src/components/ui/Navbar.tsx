@@ -69,7 +69,7 @@ const Navbar = () => {
                     {navLinks.map((nav, index) => (
                         <li
                             key={nav.id}
-                            className={`font-poppins font-normal text-md cursor-pointer text-[18px] ${active === nav.id ? "text-blue-400" : "text-dimWhite"
+                            className={`font-poppins font-normal text-md cursor-pointer text-[17px] ${active === nav.id ? "text-blue-400" : "text-dimWhite"
                                 } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
                             onClick={() => handleNavigation(nav.link)}
                         >
@@ -100,7 +100,7 @@ const Navbar = () => {
                             {navLinks.map((nav, index) => (
                                 <li
                                     key={nav.id}
-                                    className={`font-poppins font-medium cursor-pointer text-[18px] ${active === nav.title ? "text-white" : "text-dimWhite"
+                                    className={`font-poppins font-medium cursor-pointer text-[17px] ${active === nav.title ? "text-white" : "text-dimWhite"
                                         } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                                     onClick={() => handleNavigation(nav.link)}
                                 >
