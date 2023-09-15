@@ -40,6 +40,13 @@ const DiseaseResult = () => {
     return (
         <>
             {loading && <Spinner />}
+            <div className="row justify-end mr-60 mb-1" style={{ display: 'flex', alignItems: 'center' }}>
+                    <div className="items-right justify-right border w-5 h-4 bg-blue-300 border-red-100 rounded-sm"></div>
+                        <span style={{ marginLeft: '5px' }}>Present</span>
+           
+                        <div className="ms-3 items-right justify-right border w-5 h-4 bg-white border-red-100 rounded-sm"></div>
+                     <span style={{ marginLeft: '5px' }}>Not Present</span>
+            </div>
             <div className="flex justify-center">
                 <div className="w-11/12">
                     <div className="relative overflow-x-auto">

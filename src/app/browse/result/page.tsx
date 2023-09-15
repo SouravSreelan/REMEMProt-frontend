@@ -65,12 +65,12 @@ const BrowseResult = () => {
 
                 <div className="w-full mx-auto">
                     <h3 className='font-semibold text-xl'>Organism: {`${species}`}</h3> <br />
-                    <div className="row justify-end mr-20" style={{ display: 'flex', alignItems: 'center' }}>
+                    <div className="row justify-end mr-10 mb-1" style={{ display: 'flex', alignItems: 'center' }}>
                     <div className="items-right justify-right border w-7 h-5 border-green-500 rounded-md"></div>
-                        <span style={{ marginLeft: '5px' }}>Transmembrane Domain Exist</span>
+                        <span style={{ marginLeft: '5px' }}>Transmembrane domain</span>
             </div>      <div className="row justify-end mr-4 mb-3" style={{ display: 'flex', alignItems: 'center' }}>
                         <div className="items-right justify-right border w-7 h-5 border-red-500 rounded-md"></div>
-                     <span style={{ marginLeft: '5px' }}>Transmembrane Domain Doesnot Exist</span>
+                     <span style={{ marginLeft: '5px' }}>No transmembrane domain</span>
             </div>
 
 
@@ -90,7 +90,7 @@ const BrowseResult = () => {
                                         <h2 className='text-lg font-semibold'>PubMed ID: <span className='font-normal'>{dataItem.pubmedId}</span></h2>
                                         <Separator className='flex justify-center mt-5' />
                                         <CardContent>
-                                            <div className={`w-full mt-5 mx-auto grid grid-cols-2 gap-4 ${numItems === 1 ? 'lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12' : 'lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6'}`}>
+                                            <div className={`w-full mt-5 mx-auto grid grid-cols-2 text-center gap-4 ${numItems === 1 ? 'lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12' : 'lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6'}`}>
                                                 {dataItem.proteinData.map((protein, index) => (
                                                     <DialogTrigger key={index} asChild>
                                                         <div
@@ -99,7 +99,7 @@ const BrowseResult = () => {
                                                             style={{ overflow: 'hidden' }}
                                                         >
                                                             <div className='p-4 sm:p-8' style={{ maxWidth: '100%', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                                                <h3 className="text-lg  lg:text-xl/2 xl:text-base 2xl:text-xl text-center font-semibold text-gray-800 dark:text-white">
+                                                                <h3 className="text-lg lg:text-xl/3 xl:text-base xl:text-xl text-center font-semibold text-gray-800 dark:text-white">
                                                                     {protein.gene}
                                                                 </h3>
                                                             </div>
