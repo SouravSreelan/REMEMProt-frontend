@@ -3,22 +3,35 @@
 import React, { useState } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { fetcher } from '@/lib/utils';
 import { url } from '@/constants';
 
 const ContactUs = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+
     const handleOnClick = async () => {
         const postData = {
             name: name,
             email: email,
             message: message
-        }
-        try {
-            const response = fetcher(`${url}/contact/contact/`,  postData);
+        };
 
+        try {
+            const response = await fetch(`${url}/ciods/contact`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(postData),
+            });
+
+            console.log('Response:', response);
+
+            // Clear the form fields after successful submission
+            setName('');
+            setEmail('');
+            setMessage('');
         } catch (error) {
             console.error('Error:', error);
         }
