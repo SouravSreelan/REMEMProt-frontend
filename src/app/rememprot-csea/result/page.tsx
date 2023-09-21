@@ -98,7 +98,7 @@ const RemprotResult = () => {
               <TableCaption>For inquires regarding the complete dataset download, kindle <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
               <TableHeader className='bg-slate-300'>
                 <TableRow >
-                  <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Id</TableHead>
+                  <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">ID</TableHead>
                   <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Disease_Organism_Cell line/tissue name_membrane protein enrichment methods_Profiling/Differential_Context of Identification</TableHead>
                   <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Percentage</TableHead>
                   <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>Count</TableHead>
@@ -112,7 +112,8 @@ const RemprotResult = () => {
                     <TableCell className="text-justify font-normal" >{item.enrichment}</TableCell>
                     <TableCell>{item.percentage}</TableCell>
                     <TableCell>{item.count}</TableCell>
-                    <TableCell className="">{item.p_value}</TableCell>
+                    <TableCell className="">{item.p_value.toExponential(4)}</TableCell>
+                    
 
                   </TableRow>
                   

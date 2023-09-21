@@ -10,9 +10,10 @@ import { TooltipItem } from 'chart.js';
 ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
 
 const Chart = ({ data }: any) => {
+    
     const groupedData: Record<string, EnrichmentResult[]> = {};
     const groupSpacing = 30;
-    const spaceBetweenGroups = 0.9;
+    const spaceBetweenGroups = 0.9; //0.9
 
     data.forEach((item: any) => {
         const method = item.method;
@@ -62,8 +63,10 @@ const Chart = ({ data }: any) => {
                     display: false,
                 },
                 grid: {
-                    display: true,
+                  
+                    
                 },
+                display: false,
 
             },
             y: {
@@ -76,11 +79,17 @@ const Chart = ({ data }: any) => {
                     display: true,
                     align: 'center',
                     text: 'Adjusted p-value',
-                }
+                    padding: 4,
+                },
+                grid: {
+                    display: true,
+                    color: "rgba(0, 0, 0, 0)",
+                },
 
             },
         },
         plugins: {
+            
             tooltip: {
                 callbacks: {
                     label: (tooltipItem: TooltipItem<"bubble">) => {
@@ -88,7 +97,7 @@ const Chart = ({ data }: any) => {
 
 
                         if (value) {
-                            return `${value.rmid}  [${value.r}]`;
+                            return `${value.rmid}  [Count : ${value.r-5}]`;
                         } else {
                             return "";
                         }
@@ -97,6 +106,7 @@ const Chart = ({ data }: any) => {
             },
             legend: {
                 position: 'bottom',
+                title: { display: true, padding: 3 },
             },
 
         },

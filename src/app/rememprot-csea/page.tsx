@@ -8,10 +8,27 @@ import Link from 'next/link'
 
 const REMEMProtCSEA = () => {
     const [sampleText, setSampleText] = useState('')
+    const [errorMessage, setErrorMessage] = useState('')
+
     const handleLoadSample = () => {
         const sampleData = speciesData.rememProtData.map((gene) => gene.name);
         setSampleText(sampleData.join('\n'));
     };
+
+    const handleSubmit = () => {
+        const userInputGenes = sampleText.trim().split('\n');
+    
+        const foundGenes = userInputGenes.filter((userGene) =>
+            speciesData.rememProtData.some((gene) => gene.name === userGene)
+        );
+    
+        if (foundGenes.length > 0) {
+            window.location.href = `/rememprot-csea/result?analysisInput=${encodeURIComponent(sampleText)}`;
+        } else {
+            setErrorMessage('Gene(s) not found in the data');
+        }
+    };
+
     return (
         <div className="flex items-center justify-center h-screen/2">
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
@@ -27,26 +44,22 @@ const REMEMProtCSEA = () => {
                         <div className="flex flex-col w-full gap-2 max-w-xl mx-auto">
                             <Textarea placeholder="Enter Genes here." className="min-h-[20rem] rounded-xl"
                                 value={sampleText}
-                                onChange={(e) => setSampleText(e.target.value)}
+                                onChange={(e) => {
+                                    setSampleText(e.target.value);
+                                    setErrorMessage(''); 
+                                }}
                             />
+                            {errorMessage && <p className="text-red-600">{errorMessage}</p>}
                             <div className="flex justify-end  gap-2 mt-5">
                                 <Button onClick={handleLoadSample}>Load Sample</Button>
-                                <Link href={{
-                                    pathname: '/rememprot-csea/result',
-                                    query: {
-                                        analysisInput: sampleText
-                                    }
-                                }}>
-                                    <Button disabled={!sampleText} >Submit Data</Button>
-                                </Link>
+                                <Button onClick={handleSubmit} disabled={!sampleText}>Submit Data</Button>
                             </div>
                         </div>
                     </CardContent>
                 </Card>
             </div>
         </div>
-
     )
 }
 
-export default REMEMProtCSEA
+export default REMEMProtCSEA;

@@ -18,7 +18,7 @@ const ContactUs = () => {
         };
 
         try {
-            const response = await fetch(`${url}/ciods/contact`, {
+            const response = await fetch(`${url}/contact/contact`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -28,7 +28,6 @@ const ContactUs = () => {
 
             console.log('Response:', response);
 
-            // Clear the form fields after successful submission
             setName('');
             setEmail('');
             setMessage('');
