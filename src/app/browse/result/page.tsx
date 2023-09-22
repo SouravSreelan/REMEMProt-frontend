@@ -122,7 +122,9 @@ const BrowseResult = () => {
                                                     <Label htmlFor="name" className="text-left text-lg">
                                                         Protein:
                                                     </Label>
-                                                    <h3 className='font-normal text-lg '>{gene}</h3>
+                                                    <a className='hover:underline decoration-sky-500/[.93] underline-offset-4' href={`https://www.ncbi.nlm.nih.gov/gene/?term=${gene}`} target='_blank'>
+                                                <h3 className='font-normal text-lg'>{gene}</h3>
+                                                </a>
                                                 </div>
                                                 <Separator />
                                                 <div className="grid grid-cols-3 items-center gap-4">

@@ -59,7 +59,7 @@ const Chart = ({ data }: any) => {
                 type: 'linear',
                 position: 'bottom',
                 ticks: {
-                    stepSize: 10,
+                    stepSize: 40,
                     display: false,
                 },
                 grid: {
