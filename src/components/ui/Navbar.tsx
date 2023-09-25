@@ -10,7 +10,7 @@ import HamburgerMenu from "./Hamburger";
 import { usePathname, useRouter } from "next/navigation";
 import Spinner from "./Spinner";
 import Image from "next/image";
-import Logo from '@/assets/remem.png'
+// import Logo from '@/assets/remem.png'
 
 const Navbar = () => {
     const [active, setActive] = useState("home");

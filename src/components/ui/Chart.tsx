@@ -50,6 +50,13 @@ const Chart = ({ data }: any) => {
 
     const chartData = { datasets };
 
+    let maxLog10pval = 0; 
+    data.forEach((item: any) => {
+        maxLog10pval = Math.max(maxLog10pval, item.log10pval);
+    });
+
+    const maxYAxisValue = Math.ceil(maxLog10pval) + 4;
+
     const option: ChartOptions<"bubble"> = {
 
         responsive: true,
@@ -72,8 +79,10 @@ const Chart = ({ data }: any) => {
             y: {
                 type: 'linear',
                 position: 'left',
+                suggestedMin: 0, 
+                suggestedMax: maxYAxisValue, 
                 ticks: {
-                    stepSize: 1,
+                    stepSize: 4,
                 },
                 title: {
                     display: true,

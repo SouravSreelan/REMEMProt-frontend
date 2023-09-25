@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from "next/image";
+import Logo from '@/assets/remprot.png'
 
 const About = () => {
     return (
@@ -10,7 +12,9 @@ const About = () => {
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-32">
                     <div>
-                        <img className="rounded-xl" src="https://www.ciods.in/static/rememb_prot/home%20page%20fig.png" alt="Image Description" />
+                        {/* <img className="rounded-xl" src={logo} alt="Image Description" /> */}
+                        <Image className="rounded-xl" src={Logo}  alt="logo" unoptimized={true} />
+
                     </div>
                     <div className="mt-5 sm:mt-10 lg:mt-0">
                         <div className="space-y-6 sm:space-y-8">
