@@ -20,7 +20,7 @@ const DiseaseOntology = () => {
     const userInputGenes = sampleText.trim().split('\n');
 
     const foundGenes = userInputGenes.filter((userGene) =>
-        speciesData.disease_ontology.some((gene) => gene.name === userGene)
+        speciesData.csea_new.some((gene) => gene.genesymbol === userGene)
     );
 
     if (foundGenes.length > 0) {

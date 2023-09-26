@@ -26,7 +26,7 @@ const RemprotResult = () => {
 
   const convertToCSV = () => {
     const fields = enrichmentData && Object.keys(enrichmentData[0]); // get the headers from the first object in the array
-    const csv = json2csv({ data: enrichmentData, fields }); // convert the JSON to CSV using the json2csv package
+    const csv = json2csv({ data: enrichmentData, fields });
     return csv;
   }
 

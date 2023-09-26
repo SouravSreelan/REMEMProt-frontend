@@ -19,7 +19,7 @@ const REMEMProtCSEA = () => {
         const userInputGenes = sampleText.trim().split('\n');
     
         const foundGenes = userInputGenes.filter((userGene) =>
-            speciesData.rememProtData.some((gene) => gene.name === userGene)
+            speciesData.csea_new.some((gene) => gene.genesymbol === userGene)
         );
     
         if (foundGenes.length > 0) {
