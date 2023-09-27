@@ -59,7 +59,7 @@ const BqueryResult = () => {
           <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Batch Query Results</h2>
         </div>
         <div className='flex justify-between p-5'>
-          <h1 className='font-bold text-xl'>Organim : <span className='font-semibold text-xl'>{species}</span> </h1>
+          <h1 className='font-bold text-xl'>Organism : <span className='font-semibold text-xl'>{species}</span> </h1>
         </div>
         <Table >
           <TableCaption>For inquires regarding the complete dataset download, kindle <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
