@@ -142,8 +142,8 @@ const RemprotResult = () => {
           </div></div>
         </>
          ) : (
-          <div className="error-message">
-            <p className='text-red font-bold'>No data available. Please check your search parameters and try again .</p>
+          <div className="error-message 2xl:mt-56 2xl:mb-96 xl:mt-28 xl:mb-64 lg:mt-28 lg:mb-28 sm:mt-28 sm:mb-28">
+            <p className='text-red-800 font-bold text-2xl'>No data available. Gene not found.</p>
           </div>
         )
       } {/* Render the D3chart component */}
