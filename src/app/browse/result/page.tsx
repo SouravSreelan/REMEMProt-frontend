@@ -132,7 +132,7 @@ const BrowseResult = () => {
                                                         Transmembrane Domain status:
                                                     </Label>
                                                     <h3 className='font-normal text-lg '>{transmemStatus}</h3> 
-                                                  <br />  <p> Source : <a href="https://services.healthtech.dtu.dk/services/TMHMM-2.0/">TMHMM - 2.0</a> </p>
+                                                  <br />  <p> Source : <a href="https://services.healthtech.dtu.dk/services/TMHMM-2.0/" target='_blank'>TMHMM - 2.0</a> </p>
                                                 </div>
                                                 <Separator />
                                                 

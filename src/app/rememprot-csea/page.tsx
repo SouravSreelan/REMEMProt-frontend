@@ -22,26 +22,8 @@ const REMEMProtCSEA = () => {
             // Handle the case when selectedSpeciesData is not found
             console.error('Selected species data not found');
         }
+      
     };
-    // const handleLoadSample = () => {
-    //     const sampleData = speciesData.rememProtData.map((gene) => gene.name);
-    //     setSampleText(sampleData.join('\n'));
-    // };
-
-    // const handleSubmit = () => {
-    //     const userInputGenes = sampleText.trim().split('\n');
-    
-    //     const foundGenes = userInputGenes.filter((userGene) =>
-    //         speciesData.csea_new.some((gene) => gene.genesymbol === userGene)
-    //     );
-    
-    //     if (foundGenes.length > 0) {
-    //         window.location.href = `/rememprot-csea/result?analysisInput=${encodeURIComponent(sampleText)}`;
-    //         console.log(sampleText)
-    //     } else {
-    //         setErrorMessage('Gene(s) not found in the data');
-    //     }
-    // };
 
     return (
         <div className='flex justify-center'>
@@ -78,7 +60,7 @@ const REMEMProtCSEA = () => {
                                     pathname: '/rememprot-csea/result',
                                     query: { species, analysisInput: sampleText }
                                 }}>
-                                    <Button disabled={!species} >Submit Data</Button>
+                                    <Button disabled={!sampleText} >Submit Data</Button>
                                 </Link>
                             </div>
                         </div>

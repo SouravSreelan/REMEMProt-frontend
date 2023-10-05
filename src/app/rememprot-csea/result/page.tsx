@@ -87,7 +87,7 @@ const RemprotResult = () => {
 
   return (
     <div className='p-10 flex justify-center items-center flex-col'>
-      {enrichmentData &&
+      {enrichmentData && enrichmentData.length > 0 ? (
         <>
           <Chart data={enrichmentData} />
           <div className='w-full mt-10 p-5' style={{overflow: 'hidden'}}>
@@ -141,6 +141,11 @@ const RemprotResult = () => {
 
           </div></div>
         </>
+         ) : (
+          <div className="error-message">
+            <p className='text-red font-bold'>No data available. Please check your search parameters and try again .</p>
+          </div>
+        )
       } {/* Render the D3chart component */}
       {loading && <Spinner />}
 
