@@ -138,8 +138,12 @@
             ]
         }
     ],
+    
     "rememProtData": [
-        {
+      {
+        "species": "Homo Sapiens",
+        "genes": [
+          {
             "id": 1,
             "name": "RUSF1"
         },
@@ -263,6 +267,118 @@
             "id": 31,
             "name": "SLC12A4"
         }
+        ]
+    },
+    {
+      "species": "Mus musculus",
+      "genes": [
+        {
+          "id": 1,
+          "name": "A1cf"
+      },
+      {
+          "id": 2,
+          "name": "Aaas"
+      },
+      {
+          "id": 3,
+          "name": "Aadac"
+      },
+      {
+          "id": 4,
+          "name": "Aak1"
+      },
+      {
+          "id": 5,
+          "name": "Aars1"
+      },
+      {
+          "id": 6,
+          "name": "Aatk"
+      },
+      {
+          "id": 7,
+          "name": "Abca1"
+      },
+      {
+          "id": 8,
+          "name": "Abca13"
+      },
+      {
+          "id": 9,
+          "name": "Abca2"
+      },
+      {
+          "id": 10,
+          "name": "Abca3"
+      },
+      {
+          "id": 11,
+          "name": "Abca5"
+      },
+      {
+          "id": 12,
+          "name": "Abca6"
+      }
+     
+      ]
+  },
+  {
+    "species": "Rattus norvegicus",
+    "genes": [
+      {
+        "id": 1,
+        "name": "Aadac"
+    },
+    {
+        "id": 2,
+        "name": "Abcb11"
+    },
+    {
+        "id": 3,
+        "name": "Abcc2"
+    },
+    {
+        "id": 4,
+        "name": "Abcc6"
+    },
+    {
+        "id": 5,
+        "name": "Acox1"
+    },
+    {
+        "id": 6,
+        "name": "Acox2"
+    },
+    {
+        "id": 7,
+        "name": "Acsl1"
+    },
+    {
+        "id": 8,
+        "name": "Acsl5"
+    },
+    {
+        "id": 9,
+        "name": "Acsl6"
+    },
+    {
+        "id": 10,
+        "name": "Acta2"
+    },
+    {
+        "id": 11,
+        "name": "Actc1"
+    },
+    {
+        "id": 12,
+        "name": "Aldob"
+    }
+   
+    ]
+}
+
+        
     ],
     "disease_ontology": [
         {

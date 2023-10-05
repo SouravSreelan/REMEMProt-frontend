@@ -19,6 +19,7 @@ import {
 import { parse } from 'json2csv';
 const RemprotResult = () => {
   const searchQuery = useSearchParams();
+  const species = searchQuery.get('species');
   const [enrichmentData, setEnrichmentData] = useState<EnrichmentResult[] | undefined>();
   const [loading, setLoading] = useState(true);
 
@@ -61,12 +62,13 @@ const RemprotResult = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!analysisInput) {
+      if (!species || !analysisInput) {
         return;
       }
 
       setLoading(true);
       const postData = {
+        species: species,
         analysisInput: analysisInput,
       };
 
@@ -81,7 +83,7 @@ const RemprotResult = () => {
     };
 
     fetchData();
-  }, [analysisInput]);
+  }, [species, analysisInput]);
 
   return (
     <div className='p-10 flex justify-center items-center flex-col'>
