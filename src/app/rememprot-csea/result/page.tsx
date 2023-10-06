@@ -91,12 +91,12 @@ const RemprotResult = () => {
         <>
           <Chart data={enrichmentData} />
           <div className='w-full mt-10 p-5' style={{overflow: 'hidden'}}>
-            <div className='w-4/6 lg:ms-10 pb-5 flex justify-end'>
+            <div className='w-4/6 mx-10 lg:ms-10 pb-5 flex justify-end'>
               <Button onClick={downloadCSV}> Download </Button>            </div>
               <div className="flex">
 
 
-            <Table className='w-5/6'>
+            <Table className='w-5/6 pe-10'>
               <TableCaption>For inquires regarding the complete dataset download, kindly <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
               <TableHeader className='bg-slate-300'>
                 <TableRow >
@@ -126,7 +126,7 @@ const RemprotResult = () => {
               
             </Table>
 
-            <section className="bg-white dark:bg-gray-900 w-1/6">
+            <section className="bg-white dark:bg-gray-900 w-1/6" style={{overflowX: 'hidden'}}>
   <Accordion type="single" collapsible className="" defaultValue="item-0">
     
   {data.box.map((item, index) => (

@@ -45241,7 +45241,7 @@
         {
             "id": 1,
             "question": "Diseases", 
-            "answer": "BT : Brain tumor\nBTC : Breast cancer\nSCLC : Squamous cell lung carcinoma\nC : Cancer\nOS : Osteosarcoma\nEC : Endometrial cancer\nMM : Multiple myeloma\nRCC : Renal cell carcinoma\nRB : Retinoblastoma\nHNSCC : Head and neck squamous cell carcinoma\nMCL : Mantle Cell Lymphoma\nAM : Astrocytoma\nPOAG : Primary Open-Angle Glaucoma\nLC : Lung cancer\nD : Type 2 diabetes\nHP : Hepatotoxicity     "
+            "answer": "BT : Brain tumor\nBTC : Breast cancer\nSCLC : Squamous cell \nlung carcinoma\nC : Cancer\nOS : Osteosarcoma\nEC : Endometrial cancer\nMM : Multiple myeloma\nRCC : Renal cell carcinoma\nRB : Retinoblastoma\nHNSCC : Head and neck \nsquamous cell carcinoma\nMCL : Mantle Cell Lymphoma\nAM : Astrocytoma\nPOAG : Primary Open-Angle \nGlaucoma\nLC : Lung cancer\nD : Type 2 diabetes\nHP : Hepatotoxicity\nNA: Not available     "
       
 
         },
@@ -45253,8 +45253,8 @@
         },
         {
             "id": 3,
-            "question": "Membrane protein enrichment methods",
-            "answer": "UC : Ultracentrifuge\nAT : Aqueous two-phase system\nBT : Biotynylation\nKB : Kit-based\nUC and CSC : Ultracentrifuge and Cell surface capture system\nSC : Sucrose gradient centrifugation\nC : Centrifugation "
+            "question": "Membrane protein enrichment method",
+            "answer": "UC : Ultracentrifugation\nAT : Aqueous two-phase system\nBT : Biotynylation\nKB : Kit-based\nUC and CSC : Ultracentrifugation \nand Cell surface\ncapturing method\nSC : Sucrose gradient centrifugation\nC : Centrifugation\nNA: Not available\nhpTC, SDC-Trypsin,\nSPEG- Detergent and trypsin "
         },
         {
             "id": 4,
