@@ -97,7 +97,7 @@ const RemprotResult = () => {
 
 
             <Table className='w-5/6'>
-              <TableCaption>For inquires regarding the complete dataset download, kindle <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
+              <TableCaption>For inquires regarding the complete dataset download, kindly <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
               <TableHeader className='bg-slate-300'>
                 <TableRow >
                   <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">ID</TableHead>
@@ -141,9 +141,10 @@ const RemprotResult = () => {
 
           </div></div>
         </>
+        
          ) : (
-          <div className="error-message 2xl:mt-56 2xl:mb-96 xl:mt-28 xl:mb-64 lg:mt-28 lg:mb-28 sm:mt-28 sm:mb-28">
-            <p className='text-red-800 font-bold text-2xl'>No data available. Gene not found.</p>
+          <div className="2xl:mt-56 2xl:mb-96 xl:mt-28 xl:mb-64 lg:mt-28 lg:mb-28 sm:mt-28 sm:mb-28">
+            <p className='text-red-800 text-lG'>No data available. Gene not found.</p>
           </div>
         )
       } {/* Render the D3chart component */}

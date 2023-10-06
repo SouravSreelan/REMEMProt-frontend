@@ -62,7 +62,7 @@ const BqueryResult = () => {
           <h1 className='font-bold text-xl'>Organism : <span className='font-semibold text-xl'>{species}</span> </h1>
         </div>
         <Table >
-          <TableCaption>For inquires regarding the complete dataset download, kindle <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
+          <TableCaption>For inquires regarding the complete dataset download, kindly <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
           <TableHeader className='bg-slate-300'>
             <TableRow >
               <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Gene Symbol</TableHead>

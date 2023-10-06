@@ -29,8 +29,8 @@ const REMEMProtCSEA = () => {
         <div className='flex justify-center'>
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8  lg:py-14 mx-auto mt-12 lg:mt-0">
                 <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14 ">
-                    <h2 className="text-2xl font-bold md:text-4xl md:leading-tight lg:mb-10 dark:text-white">Batch Query</h2>
-                    <p className='text-md font-normal text-justify max-w-9xl'>The batch query option enables the users to conduct a collective search for multiple proteins in a single query allowing the retrieval of comprehensive information on all query proteins simultaneously.</p>
+                    <h2 className="text-2xl font-bold md:text-4xl md:leading-tight lg:mb-10 dark:text-white">REMEMProt-CSEA</h2>
+                    <p className='text-md font-normal text-justify max-w-9xl'> The enrichment analysis using the REMEMProt-CSEA enables the visualization of a set of query proteins if <i> a priori </i> is identified in a particular experimental/biological context. This also enables the users to cross-refer to enrichment methods, profiling/differential expression, and biological contexts such as disease, organism, and cell line/tissue source for their protein of interest.</p>
                 </div>
                 <Card className="bg-slate-200 max-w-xl mx-auto ">
                     <CardHeader>
