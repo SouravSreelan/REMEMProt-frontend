@@ -2,20 +2,16 @@
     "species": [
         {
             "id": 1,
-            "name": "Homo Sapiens"
+            "name": "Homo sapiens"
         },
         {
             "id": 2,
             "name": "Mus musculus"
-        },
-        {
-            "id": 3,
-            "name": "Rattus norvegicus"
         }
     ],
     "speciesSampleData": [
         {
-            "species": "Homo Sapiens",
+            "species": "Homo sapiens",
             "genes": [
                 {
                     "id": 1,
@@ -99,49 +95,12 @@
                     "name": "Abca3"
                 }
             ]
-        },
-        {
-            "species": "Rattus norvegicus",
-            "genes": [
-                {
-                    "id": 1,
-                    "name": "Aadac"
-                },
-                {
-                    "id": 2,
-                    "name": "Aldob"
-                },
-                {
-                    "id": 3,
-                    "name": "Atp5f1d"
-                },
-                {
-                    "id": 4,
-                    "name": "Atp2a2"
-                },
-                {
-                    "id": 5,
-                    "name": "Calr"
-                },
-                {
-                    "id": 6,
-                    "name": "Cltc"
-                },
-                {
-                    "id": 7,
-                    "name": "Cpt1a"
-                },
-                {
-                    "id": 8,
-                    "name": "Cyp2a1"
-                }
-            ]
         }
     ],
     
     "rememProtData": [
       {
-        "species": "Homo Sapiens",
+        "species": "Homo sapiens",
         "genes": [
           {
             "id": 1,
@@ -45214,7 +45173,7 @@
         {
             "id": 1,
             "question": " What is REMEMProt?",
-            "answer": "REMEMProt is a resource of proteins that are identified from distinct membrane-enriched fractions in diverse biological/experimental contexts using mass spectrometry in Homo sapiens, Mus musculus, and Rattus norvegicus systems."
+            "answer": "REMEMProt is a resource of proteins that are identified from distinct membrane-enriched fractions in diverse biological/experimental contexts using mass spectrometry in Homo sapiens and  Mus musculus systems."
         },
         {
             "id": 2,
@@ -45389,51 +45348,39 @@
         },
         {
             "id": 32,
-            "details": "Ye X, Chan KC, Waters AM, Bess M, Harned A, Wei BR, Loncarek J, Luke BT, Orsburn BC, Hollinger BD, Stephens RM, Bagni R, Martinko A, Wells JA, Nissley DV, McCormick F, Whiteley G, Blonder J. Comparative proteomics of a model MCF10A-KRasG12V cell line reveals a distinct molecular signature of the KRasG12V cell surface. Oncotarget. 2016 Dec 27;7(52):86948-86971. doi: 10.18632/oncotarget.13566. PMID: 27894102; PMCID: PMC5341332."
-        },
-        {
-            "id": 33,
             "details": "Peng L, Kapp EA, Fenyö D, Kwon MS, Jiang P, Wu S, Jiang Y, Aguilar MI, Ahmed N, Baker MS, Cai Z, Chen YJ, Van Chi P, Chung MC, He F, Len AC, Liao PC, Nakamura K, Ngai SM, Paik YK, Pan TL, Poon TC, Salekdeh GH, Simpson RJ, Sirdeshmukh R, Srisomsap C, Svasti J, Tyan YC, Dreyer FS, McLauchlan D, Rawson P, Jordan TW. The Asia Oceania Human Proteome Organisation Membrane Proteomics Initiative. Preparation and characterisation of the carbonate-washed membrane standard. Proteomics. 2010 Nov;10(22):4142-8. doi: 10.1002/pmic.201000126. PMID: 20486120; PMCID: PMC3891941."
         },
         {
-            "id": 34,
+            "id": 33,
             "details": "Smolders K, Lombaert N, Valkenborg D, Baggerman G, Arckens L. An effective plasma membrane proteomics approach for small tissue samples. Sci Rep. 2015 Jun 5;5:10917. doi: 10.1038/srep10917. PMID: 26047021; PMCID: PMC4456939."
         },
         {
-            "id": 35,
+            "id": 34,
             "details": "Wiśniewski JR, Zougman A, Mann M. Combination of FASP and StageTip-based fractionation allows in-depth analysis of the hippocampal membrane proteome. J Proteome Res. 2009 Dec;8(12):5674-8. doi: 10.1021/pr900748n. PMID: 19848406."
         },
         {
-            "id": 36,
+            "id": 35,
             "details": "Hung CL, Pan SH, Han CL, Chang CW, Hsu YL, Su CH, Shih SC, Lai YJ, Chiang Chiau JS, Yeh HI, Liu CY, Lee HC, Lam CSP. Membrane Proteomics of Impaired Energetics and Cytoskeletal Disorganization in Elderly Diet-Induced Diabetic Mice. J Proteome Res. 2017 Oct 6;16(10):3504-3513. doi: 10.1021/acs.jproteome.7b00148. Epub 2017 Sep 13. PMID: 28823169."
         },
         {
-            "id": 37,
+            "id": 36,
             "details": "Shui W, Sheu L, Liu J, Smart B, Petzold CJ, Hsieh TY, Pitcher A, Keasling JD, Bertozzi CR. Membrane proteomics of phagosomes suggests a connection to autophagy. Proc Natl Acad Sci U S A. 2008 Nov 4;105(44):16952-7. doi: 10.1073/pnas.0809218105. Epub 2008 Oct 29. PMID: 18971338; PMCID: PMC2579359."
         },
         {
-            "id": 38,
+            "id": 37,
             "details": "Peng L, Kapp EA, McLauchlan D, Jordan TW. Characterization of the Asia Oceania Human Proteome Organisation Membrane Proteomics Initiative Standard using SDS-PAGE shotgun proteomics. Proteomics. 2011 Nov;11(22):4376-84. doi: 10.1002/pmic.201100169. Epub 2011 Oct 4. PMID: 21887821."
         },
         {
-            "id": 39,
+            "id": 38,
             "details": "Seyfried NT, Huysentruyt LC, Atwood JA 3rd, Xia Q, Seyfried TN, Orlando R. Up-regulation of NG2 proteoglycan and interferon-induced transmembrane proteins 1 and 3 in mouse astrocytoma: a membrane proteomics approach. Cancer Lett. 2008 May 18;263(2):243-52. doi: 10.1016/j.canlet.2008.01.007. Epub 2008 Feb 20. PMID: 18281150; PMCID: PMC2726046."
         },
         {
-            "id": 40,
+            "id": 39,
             "details": "Loo CS, Chen CW, Wang PJ, Chen PY, Lin SY, Khoo KH, Fenton RA, Knepper MA, Yu MJ. Quantitative apical membrane proteomics reveals vasopressin-induced actin dynamics in collecting duct cells. Proc Natl Acad Sci U S A. 2013 Oct 15;110(42):17119-24. doi: 10.1073/pnas.1309219110. Epub 2013 Oct 1. PMID: 24085853; PMCID: PMC3800992."
         },
         {
-            "id": 41,
+            "id": 40,
             "details": "Shi P, Liao M, Chuang BC, Griffin R, Shi J, Hyer M, Fallon JK, Smith PC, Li C, Xia CQ. Efflux transporter breast cancer resistance protein dominantly expresses on the membrane of red blood cells, hinders partitioning of its substrates into the cells, and alters drug-drug interaction profiles. Xenobiotica. 2018 Nov;48(11):1173-1183. doi: 10.1080/00498254.2017.1397812. Epub 2017 Nov 16. PMID: 29098941."
-        },
-        {
-            "id": 42,
-            "details": "Lin Y, Huo L, Liu Z, Li J, Liu Y, He Q, Wang X, Liang S. Sodium laurate, a novel protease- and mass spectrometry-compatible detergent for mass spectrometry-based membrane proteomics. PLoS One. 2013;8(3):e59779. doi: 10.1371/journal.pone.0059779. Epub 2013 Mar 28. PMID: 23555778; PMCID: PMC3610932."
-        },
-        {
-            "id": 43,
-            "details": "Lin Y, Wang K, Yan Y, Lin H, Peng B, Liu Z. Evaluation of the combinative application of SDS and sodium deoxycholate to the LC-MS-based shotgun analysis of membrane proteomes. J Sep Sci. 2013 Sep;36(18):3026-34. doi: 10.1002/jssc.201300413. Epub 2013 Aug 2. PMID: 23832743."
         }
     ],
     "browseGraph": [
@@ -45540,23 +45487,6 @@
                 {
                     "name" : "Transmembrane protein family",
                     "value" : 112
-                }
-            ]
-        },
-        {
-            "species" : "Rat",
-            "data" : [
-                {
-                    "name": "ATPase family",
-                    "value":14
-                },
-                {
-                    "name": "Solute carrier family",
-                    "value":19
-                },
-                {
-                    "name": "Ras oncogene family",
-                    "value":8
                 }
             ]
         }

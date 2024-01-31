@@ -4,6 +4,8 @@ import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, Tabl
 import { url } from '@/constants';
 import { fetcher } from '@/lib/utils';
 import Link from 'next/link';
+import Spinner from '@/components/ui/Spinner';
+
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
@@ -15,12 +17,15 @@ const BqueryResult = () => {
   const [data, setData] = useState<Record<number, ResultItem[]>>({});
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     const fetchData = async (page: number) => {
       if (!species || !bqueryInput || data[page]) {
         return; // Data already cached for this page
       }
+      setLoading(true); 
       const postData = {
         species: species,
         bqueryInput: bqueryInput,
@@ -38,7 +43,10 @@ const BqueryResult = () => {
         setTotalPages(responseData.pagination.total_pages);
       } catch (error) {
         console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
       }
+      
     };
 
     fetchData(currentPage);
@@ -61,6 +69,11 @@ const BqueryResult = () => {
         <div className='flex justify-between p-5'>
           <h1 className='font-bold text-xl'>Organism : <span className='font-semibold text-xl'>{species}</span> </h1>
         </div>
+        {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          {currentPageData && currentPageData.length > 0 ? (
         <Table >
           <TableCaption>For inquires regarding the complete dataset download, kindly <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
           <TableHeader className='bg-slate-300'>
@@ -91,7 +104,7 @@ const BqueryResult = () => {
                   <TableCell className="text-justify font-normal ">{item.contxtOfIdent}</TableCell>
                   {species !== 'Rattus norvegicus' && (
                     <>
-                      <TableCell className="text-left">{item.tissueType || 'NA'}</TableCell>
+                      <TableCell className="text-left">{item.tissueType || 'NA '}</TableCell>
                       <TableCell className="text-left">{item.cancerType || 'NA'}</TableCell>
                       <TableCell className="text-left">{item.cellName || 'NA'}</TableCell>
                     </>
@@ -101,6 +114,13 @@ const BqueryResult = () => {
             ))}
           </TableBody>
         </Table>
+         ) : (
+          <div className="2xl:mt-56 2xl:mb-96 xl:mt-28 xl:mb-64 lg:mt-28 lg:mb-28 sm:mt-28 sm:mb-28">
+          <p className='text-red-800 text-lG'>No data available. Gene not found.</p>
+        </div>
+        )}
+      </>
+    )}
       </div>
       <div className='p-5 flex justify-end'>
   {/* Previous Button */}

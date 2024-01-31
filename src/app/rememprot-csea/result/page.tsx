@@ -87,71 +87,67 @@ const RemprotResult = () => {
 
   return (
     <div className='p-10 flex justify-center items-center flex-col'>
-      {enrichmentData && enrichmentData.length > 0 ? (
+      {loading ? (
+        <Spinner />
+      ) : (
         <>
-          <Chart data={enrichmentData} />
-          <div className='w-full mt-10 p-5' style={{overflow: 'hidden'}}>
-            <div className='w-4/6 mx-10 lg:ms-10 pb-5 flex justify-end'>
-              <Button onClick={downloadCSV}> Download </Button>            </div>
-              <div className="flex">
-
-
-            <Table className='w-5/6 pe-10'>
-              <TableCaption>For inquires regarding the complete dataset download, kindly <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
-              <TableHeader className='bg-slate-300'>
-                <TableRow >
-                  <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">ID</TableHead>
-                  <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Disease_Organism_Cell line/tissue name_membrane protein enrichment methods_Profiling/Differential_Context of Identification</TableHead>
-                  <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Percentage</TableHead>
-                  <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>Count</TableHead>
-                  <TableHead rowSpan={2} className="text-center border-r-2 text-black font-bold border-white">p_value</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {enrichmentData.map((item, index) => (
-                  <TableRow key={index} className=''>
-                    <TableCell className="text-justify font-normal" >{item.term}</TableCell>
-                    <TableCell className="text-justify font-normal" >{item.enrichment}</TableCell>
-                    <TableCell>{item.percentage}</TableCell>
-                    <TableCell>{item.count}</TableCell>
-                    <TableCell className="">{item.p_value.toExponential(4)}</TableCell>
-                    
-
-                  </TableRow>
-                  
-                ))}
-              </TableBody>
-              <TableFooter>
-              </TableFooter>
-              
-            </Table>
-
-            <section className="bg-white dark:bg-gray-900 w-1/6" style={{overflowX: 'hidden'}}>
-  <Accordion type="single" collapsible className="" defaultValue="item-0">
-    
-  {data.box.map((item, index) => (
-    <AccordionItem key={index} value={`item-${index}`} >
-      <AccordionTrigger className='text-2xl text-left'>{item.question}</AccordionTrigger>
-      <AccordionContent className='text-xl whitespace-pre'>{item.answer}</AccordionContent>
-    </AccordionItem>
-  ))}
-</Accordion>
-</section>
-
-
-          </div></div>
+          {enrichmentData && enrichmentData.length > 0 ? (
+            <>
+              <Chart data={enrichmentData} />
+              <div className='w-full mt-10 p-5' style={{ overflow: 'hidden' }}>
+                <div className='w-4/6 mx-10 lg:ms-10 pb-5 flex justify-end'>
+                  <Button onClick={downloadCSV}> Download </Button>
+                </div>
+                <div className="flex">
+                  <Table className='w-5/6 pe-10'>
+                    <TableCaption>For inquiries regarding the complete dataset download, kindly <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
+                    <TableHeader className='bg-slate-300'>
+                      <TableRow>
+                        <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">ID</TableHead>
+                        <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Disease_Organism_Cell line/tissue name_membrane protein enrichment methods_Profiling/Differential_Context of Identification</TableHead>
+                        <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Percentage</TableHead>
+                        <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>Count</TableHead>
+                        <TableHead rowSpan={2} className="text-center border-r-2 text-black font-bold border-white">p_value</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {enrichmentData.map((item, index) => (
+                        <TableRow key={index} className=''>
+                          <TableCell className="text-justify font-normal">{item.term}</TableCell>
+                          <TableCell className="text-justify font-normal">{item.enrichment}</TableCell>
+                          <TableCell>{item.percentage}</TableCell>
+                          <TableCell>{item.count}</TableCell>
+                          <TableCell className="">{item.p_value.toExponential(4)}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                    <TableFooter>
+                    </TableFooter>
+                  </Table>
+  
+                  <section className="bg-white dark:bg-gray-900 w-1/6" style={{ overflowX: 'hidden' }}>
+                    <Accordion type="single" collapsible className="" defaultValue="item-0">
+                      {data.box.map((item, index) => (
+                        <AccordionItem key={index} value={`item-${index}`} >
+                          <AccordionTrigger className='text-2xl text-left'>{item.question}</AccordionTrigger>
+                          <AccordionContent className='text-xl whitespace-pre'>{item.answer}</AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </section>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="2xl:mt-56 2xl:mb-96 xl:mt-28 xl:mb-64 lg:mt-28 lg:mb-28 sm:mt-28 sm:mb-28">
+              <p className='text-red-800 text-lG'>No data available. Gene not found.</p>
+            </div>
+          )}
         </>
-        
-         ) : (
-          <div className="2xl:mt-56 2xl:mb-96 xl:mt-28 xl:mb-64 lg:mt-28 lg:mb-28 sm:mt-28 sm:mb-28">
-            <p className='text-red-800 text-lG'>No data available. Gene not found.</p>
-          </div>
-        )
-      } {/* Render the D3chart component */}
-      {loading && <Spinner />}
-
+      )}
     </div>
   );
+  
 };
 
 export default RemprotResult;

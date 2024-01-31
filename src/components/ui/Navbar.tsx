@@ -10,16 +10,22 @@ import HamburgerMenu from "./Hamburger";
 import { usePathname, useRouter } from "next/navigation";
 import Spinner from "./Spinner";
 import Image from "next/image";
+import { url } from '@/constants';
+
+
 // import Logo from '@/assets/remem.png'
 
 const Navbar = () => {
     const [active, setActive] = useState("home");
     const [toggle, setToggle] = useState(false);
     const [loading, setLoading] = useState(false)
+    const [searchQuery, setSearchQuery] = useState('');
+    const [geneDetails, setGeneDetails] = useState(null);
     const router = useRouter();
     const pathname = usePathname();
     const menuRef = useRef(null);
     const buttonRef = useRef(null)
+
 
     useEffect(() => {
         // Get the current route path from the router
@@ -58,19 +64,40 @@ const Navbar = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    const handleSearch = async () => {
+        try {
+            setLoading(true);
+            console.log(`${searchQuery}`)
+            const response = await fetch(`${url}/RememProt/get_gene_details/${searchQuery}`);
+            const data = await response.json();
+
+            if (response.ok) {
+                setGeneDetails(data);
+            } else {
+                console.error('Error:', data.error);
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    
     return (
         <div className="max-w-8xl mx-auto px-6 md:px-3 xl:px-6 ">
             {loading && <Spinner />}
             <nav className="w-full flex py-6 justify-between items-center navbar z-10">
                 {/* <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" /> */}
                 {/* <Image src={Logo}  alt="logo" width={50} height={50} className="w-[150px] h-[150px]" unoptimized={true} /> */}
-                <h1 className="font-bold text-4xl">REMEMProt</h1>
+                <h1 className="font-bold text-4xl me-4">REMEMProt</h1>
                 <ul className="list-none lg:flex hidden justify-center items-center flex-1">
                     {navLinks.map((nav, index) => (
                         <li
                             key={nav.id}
                             className={`font-poppins font-normal text-md cursor-pointer text-[17px] ${active === nav.id ? "text-blue-400" : "text-dimWhite"
-                                } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
+                                } ${index === navLinks.length - 1 ? "mr-1" : "mr-10"}`}
                             onClick={() => handleNavigation(nav.link)}
                         >
                             <Link href={`${nav.link}`}>{nav.title}</Link>
@@ -78,8 +105,14 @@ const Navbar = () => {
                     ))}
                 </ul>
 
-
                 <div className="flex  justify-end items-center">
+                <input type="text" placeholder="Search..."
+                    className="hidden md:flex border border-gray-300 p-2 ms-2 mr-4 rounded-md"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                   />
+                     <Button className="hidden md:flex p-2 me-3 rounded-md cursor-pointer" onClick={handleSearch}>
+                   Search  </Button>
                     <div
                         className={`w-7 flex lg:hidden h-7  flex-col justify-between cursor-pointer transition-transform duration-300 ${toggle ? "open" : ""
                             }`}
@@ -90,6 +123,8 @@ const Navbar = () => {
                         <div className={`bg-black rounded-5px w-full h-1 transform transition-transform ${toggle ? 'rotate-45 -translate-x-1' : ''}`}></div>
                         <div className={`bg-black rounded-5px w-full h-1 transform transition-transform ${toggle ? '-rotate-45 -translate-x-1 -translate-y-6' : ''}`}></div>
                     </div>
+                    
+
                     <Button className="hidden lg:flex" onClick={() => router.push('/contactus')}>Contact Us</Button>
                     <div
                         ref={menuRef}
@@ -111,7 +146,25 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav >
+
+             {/* Display gene details in a table */}
+             {geneDetails && (
+            <div className="mt-4">
+            <h2 className="text-2xl font-bold mb-2">Gene Details</h2>
+             <table className="border-collapse w-full border border-gray-800">
+            <tbody>
+                {Object.entries(geneDetails).map(([key, value]) => (
+                    <tr key={key} className="bg-gray-200">
+                        <td className="border border-gray-800 p-2 font-bold">{key}</td>
+                        <td className="border border-gray-800 p-2">{value}</td>
+                    </tr>
+                ))}
+            </tbody>
+            </table>
+        </div>
+        )}
         </div >
+        
     );
 };
 

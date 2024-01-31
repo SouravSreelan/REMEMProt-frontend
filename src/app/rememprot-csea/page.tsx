@@ -4,12 +4,13 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Textarea } from '@/components/ui/textarea'
 import React, { useState } from 'react'
 import { Label } from '@radix-ui/react-label'
+
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select'
 import speciesData from '@/constants/data.json';
 import Link from 'next/link'
 
 const REMEMProtCSEA = () => {
-    const [species, setSpecies] = useState('Homo Sapiens')
+    const [species, setSpecies] = useState('Homo sapiens')
     const [sampleText, setSampleText] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
 
@@ -40,7 +41,7 @@ const REMEMProtCSEA = () => {
                         <div className="flex flex-col w-full gap-2 max-w-xl mx-auto">
                             <div className='mb-5'>
                                 <Label htmlFor="species">Species</Label>
-                                <Select onValueChange={(value) => setSpecies(value)} defaultValue='Homo Sapiens'>
+                                <Select onValueChange={(value) => setSpecies(value)} defaultValue='Homo sapiens'>
                                     <SelectTrigger id="framework">
                                         <SelectValue placeholder="Select" />
                                     </SelectTrigger>
