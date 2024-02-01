@@ -11,6 +11,10 @@ import { usePathname, useRouter } from "next/navigation";
 import Spinner from "./Spinner";
 import Image from "next/image";
 import { url } from '@/constants';
+import { fetcher } from '@/lib/utils';
+import { useSearchParams } from 'next/navigation';
+
+
 
 
 // import Logo from '@/assets/remem.png'
@@ -21,6 +25,8 @@ const Navbar = () => {
     const [loading, setLoading] = useState(false)
     const [searchQuery, setSearchQuery] = useState('');
     const [geneDetails, setGeneDetails] = useState(null);
+    const searchParams = useSearchParams()
+    const geneSymbol = searchParams.get('geneSymbol')
     const router = useRouter();
     const pathname = usePathname();
     const menuRef = useRef(null);
@@ -46,6 +52,9 @@ const Navbar = () => {
         setToggle(false);
         router.push(link);
     };
+    const handleSearch = () => {
+        router.push(`${url}/RememProt/${encodeURIComponent(searchQuery)}`);
+    };
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (
@@ -65,24 +74,29 @@ const Navbar = () => {
         };
     }, []);
 
-    const handleSearch = async () => {
-        try {
-            setLoading(true);
-            console.log(`${searchQuery}`)
-            const response = await fetch(`${url}/RememProt/get_gene_details/${searchQuery}`);
-            const data = await response.json();
+    // const handleSearch = async () => {
+    //     try {
+    //         const postData = {
+    //             geneSymbol:geneSymbol
+             
+    //         };
+    //         setLoading(true);
+    //         console.log(`${searchQuery}`)
+    //         const response = await fetcher(`${url}/RememProt/get_gene_details`, postData);
+    //         console.log(response)
+    //         const data = await response.json();
 
-            if (response.ok) {
-                setGeneDetails(data);
-            } else {
-                console.error('Error:', data.error);
-            }
-        } catch (error) {
-            console.error('Error:', error.message);
-        } finally {
-            setLoading(false);
-        }
-    };
+    //         if (response.ok) {
+    //             setGeneDetails(data);
+    //         } else {
+    //             console.error('Error:', data.error);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error.message);
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
     
     return (
