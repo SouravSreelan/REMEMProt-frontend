@@ -13,6 +13,10 @@ import Image from "next/image";
 import { url } from '@/constants';
 import { fetcher } from '@/lib/utils';
 import { useSearchParams } from 'next/navigation';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+
+
 
 
 
@@ -171,47 +175,53 @@ const Navbar = () => {
             </nav >
 
              {/* Display gene details in a table */}
-             {showGeneDetails ? (
-                <div className="mt-4">
-                    <Button className="mb-4" onClick={handleGoBack}>
-                        Go Back
-                    </Button>
-                    <table className="border-collapse w-full border border-gray-800">
-                        <tbody>
-                            <h1 className="ms-3 mt-2">
-                                <strong>Gene Details</strong>
-                            </h1>
-                            {Object.entries(geneDetails).map(([key, value]) => (
-                                <tr key={key} className="bg-gray-200">
-                                    <td className="border border-gray-800 p-2">
-                                        {value !== undefined ? (
-                                            typeof value === 'object' ? (
-                                                Object.entries(value).map(([subKey, subValue]) => (
-                                                    <tr key={subKey}>
-                                                        <td className="border border-gray-800 p-2 font-bold">{subKey}:</td>
-                                                        <td className="border border-gray-800 p-2">{subValue}</td>
+             {showGeneDetails && (
+                <Dialog>
+                    <div className="flex flex-row-reverse items-center w-full">
+                    <DialogTrigger className="">
+                        <Button className="mb-4 text-lg">View {searchQuery} Details</Button>
+                    </DialogTrigger></div>
+                    <DialogContent className="w-full">
+                        <DialogHeader className="w-full">
+                            <DialogTitle>Gene Details</DialogTitle>
+                            <Button className="absolute top-2 right-5" onClick={handleGoBack}>
+                                Close
+                            </Button>
+                        </DialogHeader>
+                        <table className="border-collapse w-full border border-gray-800">
+                            <tbody>
+                                {Object.entries(geneDetails).map(([key, value]) => (
+                                    <tr key={key} className="bg-gray-200">
+                                        <td className="border border-gray-800 p-2">
+                                            {value !== undefined ? (
+                                                typeof value === 'object' ? (
+                                                    Object.entries(value).map(([subKey, subValue]) => (
+                                                        <tr key={subKey}>
+                                                            <td className="border border-gray-800 p-2 font-bold">{subKey}:</td>
+                                                            <td className="border border-gray-800 p-2">{subValue}</td>
+                                                        </tr>
+                                                    ))
+                                                ) : (
+                                                    <tr>
+                                                        <td className="border border-gray-800 p-2">{value}</td>
                                                     </tr>
-                                                ))
+                                                )
                                             ) : (
                                                 <tr>
-                                                    <td className="border border-gray-800 p-2">{value}</td>
+                                                    <td className="border border-gray-800 p-2">N/A</td>
                                                 </tr>
-                                            )
-                                        ) : (
-                                            <tr>
-                                                <td className="border border-gray-800 p-2">N/A</td>
-                                            </tr>
-                                        )}
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            ) : null}
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </DialogContent>
+                </Dialog>
+            )}
 
             {/* Rest of the content - conditionally rendered */}
-            {showGeneDetails ? null : (
+            {!showGeneDetails && (
                 <div>
                     {/* Display other content when gene details are not shown */}
                 </div>
@@ -219,4 +229,5 @@ const Navbar = () => {
         </div>
     );
 };
+
 export default Navbar;
