@@ -25,6 +25,7 @@ const Navbar = () => {
     const [loading, setLoading] = useState(false)
     const [searchQuery, setSearchQuery] = useState('');
     const [geneDetails, setGeneDetails] = useState(null);
+    const [showGeneDetails, setShowGeneDetails] = useState(false);   //EDIT
     const searchParams = useSearchParams()
     const geneSymbol = searchParams.get('geneSymbol')
     const router = useRouter();
@@ -50,6 +51,7 @@ const Navbar = () => {
         setLoading(true);
         setActive(link);
         setToggle(false);
+        setShowGeneDetails(false);
         router.push(link);
     };
     useEffect(() => {
@@ -73,20 +75,24 @@ const Navbar = () => {
 
     const handleSearch = async () => {
         try {
-            const postData = {
-                geneSymbol:geneSymbol
-             
-            };
             setLoading(true);
-            console.log(`${searchQuery}`)
-            const response = await fetcher(`${url}/RememProt/get_gene_details/${searchQuery}`, postData);
-            console.log(response)
-            const data = await response.json();
-
+    
+            const response = await fetch(`${url}/RememProt/get_gene_details/${searchQuery}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+    
             if (response.ok) {
+                const data = await response.json();
                 setGeneDetails(data);
+                setShowGeneDetails(true);   //EDIT
             } else {
-                console.error('Error:', data.error);
+                console.error('Error:', response.statusText);
+                console.error('Non-JSON response:', await response.text());
+                setGeneDetails(null);
+                setShowGeneDetails(false);  //EDIT
             }
         } catch (error) {
             console.error('Error:', error.message);
@@ -94,6 +100,12 @@ const Navbar = () => {
             setLoading(false);
         }
     };
+
+    const handleGoBack = () => {
+        setShowGeneDetails(false);
+        setGeneDetails(null);
+    };
+    
 
     
     return (
@@ -159,24 +171,52 @@ const Navbar = () => {
             </nav >
 
              {/* Display gene details in a table */}
-             {geneDetails && (
-            <div className="mt-4">
-            <h2 className="text-2xl font-bold mb-2">Gene Details</h2>
-             <table className="border-collapse w-full border border-gray-800">
-            <tbody>
-                {Object.entries(geneDetails).map(([key, value]) => (
-                    <tr key={key} className="bg-gray-200">
-                        <td className="border border-gray-800 p-2 font-bold">{key}</td>
-                        <td className="border border-gray-800 p-2">{value}</td>
-                    </tr>
-                ))}
-            </tbody>
-            </table>
+             {showGeneDetails ? (
+                <div className="mt-4">
+                    <Button className="mb-4" onClick={handleGoBack}>
+                        Go Back
+                    </Button>
+                    <table className="border-collapse w-full border border-gray-800">
+                        <tbody>
+                            <h1 className="ms-3 mt-2">
+                                <strong>Gene Details</strong>
+                            </h1>
+                            {Object.entries(geneDetails).map(([key, value]) => (
+                                <tr key={key} className="bg-gray-200">
+                                    <td className="border border-gray-800 p-2">
+                                        {value !== undefined ? (
+                                            typeof value === 'object' ? (
+                                                Object.entries(value).map(([subKey, subValue]) => (
+                                                    <tr key={subKey}>
+                                                        <td className="border border-gray-800 p-2 font-bold">{subKey}:</td>
+                                                        <td className="border border-gray-800 p-2">{subValue}</td>
+                                                    </tr>
+                                                ))
+                                            ) : (
+                                                <tr>
+                                                    <td className="border border-gray-800 p-2">{value}</td>
+                                                </tr>
+                                            )
+                                        ) : (
+                                            <tr>
+                                                <td className="border border-gray-800 p-2">N/A</td>
+                                            </tr>
+                                        )}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            ) : null}
+
+            {/* Rest of the content - conditionally rendered */}
+            {showGeneDetails ? null : (
+                <div>
+                    {/* Display other content when gene details are not shown */}
+                </div>
+            )}
         </div>
-        )}
-        </div >
-        
     );
 };
-
 export default Navbar;
