@@ -52,9 +52,6 @@ const Navbar = () => {
         setToggle(false);
         router.push(link);
     };
-    const handleSearch = () => {
-        router.push(`${url}/RememProt/${encodeURIComponent(searchQuery)}`);
-    };
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (
@@ -74,29 +71,29 @@ const Navbar = () => {
         };
     }, []);
 
-    // const handleSearch = async () => {
-    //     try {
-    //         const postData = {
-    //             geneSymbol:geneSymbol
+    const handleSearch = async () => {
+        try {
+            const postData = {
+                geneSymbol:geneSymbol
              
-    //         };
-    //         setLoading(true);
-    //         console.log(`${searchQuery}`)
-    //         const response = await fetcher(`${url}/RememProt/get_gene_details`, postData);
-    //         console.log(response)
-    //         const data = await response.json();
+            };
+            setLoading(true);
+            console.log(`${searchQuery}`)
+            const response = await fetcher(`${url}/RememProt/get_gene_details/${searchQuery}`, postData);
+            console.log(response)
+            const data = await response.json();
 
-    //         if (response.ok) {
-    //             setGeneDetails(data);
-    //         } else {
-    //             console.error('Error:', data.error);
-    //         }
-    //     } catch (error) {
-    //         console.error('Error:', error.message);
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
+            if (response.ok) {
+                setGeneDetails(data);
+            } else {
+                console.error('Error:', data.error);
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     
     return (
