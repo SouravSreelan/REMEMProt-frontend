@@ -116,6 +116,7 @@ const Navbar = () => {
         <div className="max-w-8xl mx-auto px-6 md:px-3 xl:px-6 ">
             {loading && <Spinner />}
             <nav className="w-full flex py-6 justify-between items-center navbar z-10">
+                
                 {/* <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" /> */}
                 {/* <Image src={Logo}  alt="logo" width={50} height={50} className="w-[150px] h-[150px]" unoptimized={true} /> */}
                 <h1 className="font-bold text-4xl me-4">REMEMProt</h1>
@@ -131,15 +132,18 @@ const Navbar = () => {
                         </li>
                     ))}
                 </ul>
-
+                <Dialog>
+               
                 <div className="flex  justify-end items-center">
+               
                 <input type="text" placeholder="Search..."
                     className="hidden md:flex border border-gray-300 p-2 ms-2 mr-4 rounded-md"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                    />
+                     <DialogTrigger>
                      <Button className="hidden md:flex p-2 me-3 rounded-md cursor-pointer" onClick={handleSearch}>
-                   Search  </Button>
+                   Search  </Button></DialogTrigger>
                     <div
                         className={`w-7 flex lg:hidden h-7  flex-col justify-between cursor-pointer transition-transform duration-300 ${toggle ? "open" : ""
                             }`}
@@ -171,21 +175,17 @@ const Navbar = () => {
                             ))}
                         </ul>
                     </div>
-                </div>
-            </nav >
+                
 
              {/* Display gene details in a table */}
              {showGeneDetails && (
-                <Dialog>
-                    <div className="flex flex-row-reverse items-center w-full">
-                    <DialogTrigger className="">
-                        <Button className="mb-4 text-lg">View {searchQuery} Details</Button>
-                    </DialogTrigger></div>
-                    <DialogContent className="w-full">
+                
+                   
+                    <DialogContent className="w-full max-w-[80vh] max-h-[80vh] overflow-y-auto">
                         <DialogHeader className="w-full">
-                            <DialogTitle>Gene Details</DialogTitle>
+                            <DialogTitle> <strong className="ms-2"> Gene Details :</strong></DialogTitle>
                             <Button className="absolute top-2 right-5" onClick={handleGoBack}>
-                                Close
+                                X
                             </Button>
                         </DialogHeader>
                         <table className="border-collapse w-full border border-gray-800">
@@ -217,7 +217,7 @@ const Navbar = () => {
                             </tbody>
                         </table>
                     </DialogContent>
-                </Dialog>
+                
             )}
 
             {/* Rest of the content - conditionally rendered */}
@@ -226,6 +226,8 @@ const Navbar = () => {
                     {/* Display other content when gene details are not shown */}
                 </div>
             )}
+            </div></Dialog>
+            </nav >
         </div>
     );
 };
