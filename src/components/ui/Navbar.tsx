@@ -81,7 +81,7 @@ const Navbar = () => {
         try {
             setLoading(true);
     
-            const response = await fetch(`${url}/RememProt/get_gene_details/${searchQuery}`, {
+            const response = await fetch(`http://127.0.0.1:8000/RememProt/get_gene_details/${searchQuery}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -184,38 +184,42 @@ const Navbar = () => {
                     <DialogContent className="w-full max-w-[80vh] max-h-[80vh] overflow-y-auto">
                         <DialogHeader className="w-full">
                             <DialogTitle> <strong className="ms-2"> Gene Details :</strong></DialogTitle>
-                            <Button className="absolute top-2 right-5" onClick={handleGoBack}>
+                            {/* <Button className="absolute top-2 right-5" onClick={handleGoBack}>
                                 X
-                            </Button>
+                            </Button> */}
                         </DialogHeader>
-                        <table className="border-collapse w-full border border-gray-800">
-                            <tbody>
+                        {Object.keys(geneDetails).length > 0 ? (
+                        <Table>
+                            <TableBody>
                                 {Object.entries(geneDetails).map(([key, value]) => (
-                                    <tr key={key} className="bg-gray-200">
-                                        <td className="border border-gray-800 p-2">
+                                    <TableRow key={key}>
+                                        <TableCell>
                                             {value !== undefined ? (
                                                 typeof value === 'object' ? (
                                                     Object.entries(value).map(([subKey, subValue]) => (
-                                                        <tr key={subKey}>
-                                                            <td className="border border-gray-800 p-2 font-bold">{subKey}:</td>
-                                                            <td className="border border-gray-800 p-2">{subValue}</td>
-                                                        </tr>
+                                                        <TableRow key={subKey}>
+                                                            <TableCell className="font-bold">{subKey}:</TableCell>
+                                                            <TableCell>{subValue}</TableCell>
+                                                        </TableRow>
                                                     ))
                                                 ) : (
-                                                    <tr>
-                                                        <td className="border border-gray-800 p-2">{value}</td>
-                                                    </tr>
+                                                    <TableRow>
+                                                        <TableCell>{value}</TableCell>
+                                                    </TableRow>
                                                 )
                                             ) : (
-                                                <tr>
-                                                    <td className="border border-gray-800 p-2">N/A</td>
-                                                </tr>
+                                                <TableRow>
+                                                    <TableCell>N/A</TableCell>
+                                                </TableRow>
                                             )}
-                                        </td>
-                                    </tr>
+                                        </TableCell>
+                                    </TableRow>
                                 ))}
-                            </tbody>
-                        </table>
+                            </TableBody>
+                        </Table>
+                         ) : (
+                            <p className="text-red-500 text-center font-bold font-sans">Gene not found. Please try a different search query.</p>
+                        )}
                     </DialogContent>
                 
             )}

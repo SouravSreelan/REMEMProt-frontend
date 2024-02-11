@@ -72,3 +72,26 @@ interface TooltipItemProps {
     rmid: string;
     p_value: number;
 }
+
+
+interface dose{
+geneNID: string
+geneId: string
+geneName: string
+geneDescription: string
+pLI: string
+DSI: string
+DPI: string
+diseaseNID1: string
+source: string
+pmid: string
+score: string
+EL: string
+EI: string
+year: string
+diseaseNID: string
+diseaseId: string
+diseaseName: string
+type: string
+
+}

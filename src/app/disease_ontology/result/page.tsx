@@ -4,103 +4,129 @@ import { url } from '@/constants';
 import { fetcher } from '@/lib/utils';
 import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Button } from "@/components/ui/button";
+
+
 
 const DiseaseResult = () => {
     const searchParams = useSearchParams();
     const doseInput = searchParams.get('doseInput');
-    const [final_np, setfinal_np] = useState<string[][]>([]);
-    const [n, setn] = useState([]);
-    const [genes, setgenes] = useState([]);
-    const [hoveredRow, setHoveredRow] = useState(-1);
+    const [mergedData, setMergedData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [total_pages, setTotalPages] = useState(1);
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        if (doseInput) {
-
-            try {
-                const getData = async () => {
-                    setLoading(true);
-                    const postData = {
-                        doseInput: doseInput,
-                    }
-                    const responseData = await fetcher(`${url}/RememProt/dose_ontology/`,  postData);
-                    setfinal_np(responseData.final_np);
-                    setgenes(responseData.genes);
-                    setn(responseData.n);
-                    setLoading(false);
-                };
-                getData();
-            } catch (error) {
-                console.error('Fetch error:', error);
-                setLoading(false);
+        const fetchData = async () => {
+          try {
+            setLoading(true);
+            const response = await fetch('http://127.0.0.1:8000/RememProt/dose_ontology/', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({  doseInput, page: currentPage }),
+            });
+            // setLoading(false);
+    
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
             }
-        }
-    }, [ doseInput]);
+    
+            const responseData = await response.json();
+            setMergedData(responseData.merged_data);
+            setTotalPages(responseData.pagination.total_pages);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }finally {
+            setLoading(false);
+          }
+        };
+    
+        fetchData();
+    }, [doseInput, currentPage]);
+  
+    const goToPage = (page) => {
+      setCurrentPage(page);
+    };
+
+      const renderTableHeader = () => {
+        if (mergedData.length === 0) return null;
+    
+        const headers = Object.keys(mergedData[0]);
+    
+        return (
+          <TableHeader>
+            <TableRow>
+              {headers.map((header) => (
+                <TableHead key={header}><strong> {header}</strong></TableHead>
+              ))}
+            </TableRow>
+          </TableHeader>
+        );
+      };
+    
+      const renderTableBody = () => {
+        return (
+          <TableBody>
+            {mergedData.map((row, rowIndex) => (
+              <TableRow key={rowIndex}>
+                {Object.values(row).map((cell, cellIndex) => (
+                  <TableCell key={cellIndex}>{cell}</TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+        );
+      };
+    
+    //   return (
+    //     <>
+    //     {loading && <Spinner />}
+
+    //     <div>
+    //       <Table className=''>
+    //         {renderTableHeader()}
+    //         {renderTableBody()}
+    //       </Table>
+    //     </div>
+    //        </>
+    //   );
 
     return (
-        <>
-            {loading && <Spinner />}
-            <div className="row justify-end mr-60 mb-1" style={{ display: 'flex', alignItems: 'center' }}>
-                    <div className="items-right justify-right border w-5 h-4 bg-blue-300 border-red-100 rounded-sm"></div>
-                        <span style={{ marginLeft: '5px' }}>Present</span>
-           
-                        <div className="ms-3 items-right justify-right border w-5 h-4 bg-white border-red-100 rounded-sm"></div>
-                     <span style={{ marginLeft: '5px' }}>Not Present</span>
-            </div>
-            <div className="flex justify-center">
-                <div className="w-11/12">
-                    <div className="relative overflow-x-auto">
-                        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead className="text-xs bg-gray-200 text-black">
-                                <tr className="text-center">
-                                    <th className="py-3 border border-white" scope="col"></th>
-                                    {n &&
-                                        n.map((item, index) => (
-                                            <th className="py-3 px-2 border border-white" scope="col" key={index}>
-                                                {item}
-                                            </th>
-                                        ))}
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {final_np &&
-                                    final_np.map((rowData, rowIndex) => (
-                                        <tr
-                                            key={rowIndex}
-                                            className="bg-white border border-gray"
-                                        >
-                                            {rowData.map(
-                                                (cellData: string | number | boolean, cellIndex: number) => (
-                                                    <td
-                                                        key={cellIndex}
-                                                        className={`px-1 py-1 border border-red-100 ${cellIndex === 0
-                                                            ? "font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                                                            : ""
-                                                            } ${cellData === 1
-                                                                ? "transition-transform duration-500 hover:scale-110 bg-blue-300" // Apply animation classes here
-                                                                : ""
-                                                            }`}
-                                                        onMouseEnter={() => setHoveredRow(rowIndex)}
-                                                        onMouseLeave={() => setHoveredRow(-1)}
-                                                    >
-                                                        {cellData === 1 || cellData === 0 ? "" : cellData}
-                                                        {hoveredRow === rowIndex && (
-                                                            <div className="bg-blue-100 p-1 absolute -top-8 left-0 w-full text-center text-black">
-                                                                {genes[rowIndex]}
-                                                            </div>
-                                                        )}
-                                                    </td>
-                                                )
-                                            )}
-                                        </tr>
-                                    ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
-
-export default DiseaseResult
+        <div>
+          {loading ? (
+            <Spinner />
+          ) : (
+            <>
+              <Table>
+                {renderTableHeader()}
+                {renderTableBody()}
+              </Table>
+              <div className='pagination'>
+                <Button className='mx-3 mt-2' onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
+                  Previous
+                </Button>
+    
+                {Array.from({ length: Math.min(total_pages, 5) }, (_, index) => {
+                  const page = currentPage - 2 + index; 
+                  return page > 0 && page <= total_pages ? (
+                    <Button className='mx-1 mt-2' key={page} onClick={() => goToPage(page)} disabled={currentPage === page}>
+                      {page}
+                    </Button>
+                  ) : null;
+                })}
+    
+                <Button className='mx-3 mt-2' onClick={() => goToPage(currentPage + 1)} disabled={currentPage === total_pages}>
+                  Next
+                </Button>
+              </div>
+            </>
+          )}
+        </div>
+      );
+    };
+    
+    
+    export default DiseaseResult;

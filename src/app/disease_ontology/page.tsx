@@ -18,6 +18,7 @@ const DiseaseOntology = () => {
 
   const handleSubmit = () => {
     const userInputGenes = sampleText.trim().split('\n');
+    console.log('User Input Genes:', userInputGenes);
 
     const foundGenes = userInputGenes.filter((userGene) =>
         speciesData.csea_new.some((gene) => gene.genesymbol === userGene)
@@ -51,6 +52,7 @@ const DiseaseOntology = () => {
                           <div className="flex justify-center gap-2 mt-5">
                               <Button onClick={handleLoadSample}>Load Sample</Button>
                               <Button onClick={handleSubmit} disabled={!sampleText}>Submit Data</Button>
+                              
                           </div>
                       </div>
                   </CardContent>
