@@ -21,7 +21,7 @@ const DiseaseResult = () => {
         const fetchData = async () => {
           try {
             setLoading(true);
-            const response = await fetch('http://127.0.0.1:8000/RememProt/dose_ontology/', {
+            const response = await fetch(`${url}/RememProt/dose_ontology/`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

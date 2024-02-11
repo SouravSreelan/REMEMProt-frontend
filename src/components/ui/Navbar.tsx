@@ -81,7 +81,7 @@ const Navbar = () => {
         try {
             setLoading(true);
     
-            const response = await fetch(`http://127.0.0.1:8000/RememProt/get_gene_details/${searchQuery}`, {
+            const response = await fetch(`${url}/RememProt/get_gene_details/${searchQuery}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
