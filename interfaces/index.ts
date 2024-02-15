@@ -84,7 +84,7 @@ DSI: string
 DPI: string
 diseaseNID1: string
 source: string
-pmid: string
+    : string
 score: string
 EL: string
 EI: string

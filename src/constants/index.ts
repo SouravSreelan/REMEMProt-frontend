@@ -37,7 +37,12 @@ export const navLinks = [
         id: 'contributors',
         title: 'Contributors',
         link: '/contributors'
-    }
+    },
+    {
+        id: 'contactus',
+        title: 'Contact us',
+        link: '/contactus'
+    },
 ]
 
 export const servicesData = [

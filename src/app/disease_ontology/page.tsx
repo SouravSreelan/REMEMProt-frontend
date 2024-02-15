@@ -12,23 +12,23 @@ const DiseaseOntology = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleLoadSample = () => {
-      const sampleData = speciesData.disease_ontology.map((gene) => gene.name);
-      setSampleText(sampleData.join('\n'));
-  };
+    const sampleData = speciesData.disease_ontology.map((gene) => gene.name);
+    setSampleText(sampleData.join('\n'));
+};
 
-  const handleSubmit = () => {
-    const userInputGenes = sampleText.trim().split('\n');
-    console.log('User Input Genes:', userInputGenes);
+const handleSubmit = () => {
+  const userInputGenes = sampleText.trim().split('\n').map(gene => gene.toLowerCase());
+  console.log('User Input Genes:', userInputGenes);
 
-    const foundGenes = userInputGenes.filter((userGene) =>
-        speciesData.csea_new.some((gene) => gene.genesymbol === userGene)
-    );
+  const foundGenes = userInputGenes.filter((userGene) =>
+      speciesData.csea_new.some((gene) => gene.genesymbol.toLowerCase() === userGene)
+  );
 
-    if (foundGenes.length > 0) {
-        window.location.href = `/disease_ontology/result?doseInput=${encodeURIComponent(sampleText)}`;
-    } else {
-        setErrorMessage('Gene(s) not found in the data');
-    }
+  if (foundGenes.length > 0) {
+      window.location.href = `/disease_ontology/result?doseInput=${encodeURIComponent(sampleText)}`;
+  } else {
+      setErrorMessage('Gene(s) not found in the data');
+  }
 };
   return (
       <div className="flex items-center justify-center h-screen/2">
