@@ -220,9 +220,9 @@ const Navbar = () => {
                       {Object.keys(geneDetails).map((geneSymbol, index) => (
                         <TableHeader key={index}>
                           <TableRow>
-                            <TableCell colSpan={2} className="font-bold">
+                            {/* <TableCell colSpan={2} className="font-bold">
                               {geneSymbol}
-                            </TableCell>
+                            </TableCell> */}
                           </TableRow>
                           {Object.entries(geneDetails[geneSymbol]).map(
                             ([key, value], index) => (

@@ -20,6 +20,8 @@ interface ResultItem {
     cancerType: string;
     cellName: string;
     isTrans: string;
+    binary: string;
+    complex: string;
 }
 
 

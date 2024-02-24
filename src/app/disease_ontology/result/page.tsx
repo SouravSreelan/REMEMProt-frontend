@@ -2,6 +2,7 @@
 import Spinner from '@/components/ui/Spinner';
 import { url } from '@/constants';
 import { fetcher } from '@/lib/utils';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -85,26 +86,19 @@ const DiseaseResult = () => {
         );
       };
     
-    //   return (
-    //     <>
-    //     {loading && <Spinner />}
-
-    //     <div>
-    //       <Table className=''>
-    //         {renderTableHeader()}
-    //         {renderTableBody()}
-    //       </Table>
-    //     </div>
-    //        </>
-    //   );
-
     return (
         <div>
+           <div className="max-w-2xl mx-auto text-center mb-10 mt-12 lg:mb-14 ">
+                    <h2 className="text-2xl font-bold md:text-4xl md:leading-tight lg:mb-10 dark:text-white">Disease Ontology Result</h2>
+                    <p className='text-md font-normal text-center max-w-9xl mb-3'> The data for disease-protein association is retrieved from the DisGeNET database</p>
+                </div>
+        
           {loading ? (
             <Spinner />
           ) : (
             <>
               <Table className='w-full'>
+                {/* <TableCaption> <h2 className='text-lg mt-3'> The data for disease-protein association is retrieved from the <Link href={"https://www.disgenet.org"} target='__blank' className='text-blue-500'> DisGeNET database</Link></h2></TableCaption> */}
                 {renderTableHeader()}
                 {renderTableBody()}
               </Table>

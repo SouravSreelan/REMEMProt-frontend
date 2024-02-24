@@ -78,13 +78,19 @@ const BqueryResult = () => {
           <TableCaption>For inquires regarding the complete dataset download, kindly <Link href={'/contactus'} className='text-blue-500'>contact us</Link></TableCaption>
           <TableHeader className='bg-slate-300'>
             <TableRow >
+            <>
               <TableHead rowSpan={2} className="text-black font-bold border-r-2 border-white">Gene Symbol</TableHead>
-              <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Transmembrane Domain status     <br />  <p> Source : <a href="https://services.healthtech.dtu.dk/services/TMHMM-2.0/" target='_blank'>TMHMM - 2.0</a> </p> </TableHead>
-              <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>Profile and/or differential expression</TableHead>
+              <TableHead rowSpan={2} className='text-black font-bold border-r-2 border-white'>Transmembrane Domain status : <a href="https://services.healthtech.dtu.dk/services/TMHMM-2.0/" target='_blank'>TMHMM - 2.0</a>   <br />   </TableHead>
+              {species == 'Homo sapiens' && (
+              <><TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>TM in any Binary Interactor</TableHead>
+              <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>TM in any Complex Interactor</TableHead></>
+              )}
+              <TableHead rowSpan={2} className='border-r-2 text-black font-bold border-white'>Presented in REMEMPROT (Profile or differential data)</TableHead>
               <TableHead rowSpan={2} className="text-center border-r-2 text-black font-bold border-white">Context of identification</TableHead>
               {species !== 'Rattus norvegicus' && (
                 <TableHead colSpan={12} className="text-center text-black font-bold">Cell Marker Status</TableHead>
               )}
+               </>
             </TableRow>
             {species !== 'Rattus norvegicus' && (
               <TableRow>
@@ -100,6 +106,13 @@ const BqueryResult = () => {
                 <>
                   <TableCell className="font-semibold" >{item.geneSymbol}</TableCell>
                   <TableCell>{item.isTrans}</TableCell>
+                  {species === 'Homo sapiens' && (
+                    <>
+                      <TableCell>{item.binary || 'NA '}</TableCell>
+                      <TableCell>{item.complex || 'NA '}</TableCell>
+                    </>
+                  )}
+                 
                   <TableCell>{item.profileOrDifex}</TableCell>
                   <TableCell className="text-justify font-normal ">{item.contxtOfIdent}</TableCell>
                   {species !== 'Rattus norvegicus' && (

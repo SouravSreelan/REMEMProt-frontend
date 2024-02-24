@@ -168,7 +168,7 @@ const Browse = () => {
                       <SelectTrigger id="framework">
                         <SelectValue
                           placeholder={
-                            species ? "Select" : "Please Select a method"
+                            species ? "Select" : "Please select a method"
                           }
                         />
                       </SelectTrigger>
@@ -188,7 +188,7 @@ const Browse = () => {
                     <SelectTrigger id="framework">
                       <SelectValue
                         placeholder={
-                          method ? "Select" : "Please Select a tissue/cell line"
+                          method ? "Select" : "Please select a tissue/cell line"
                         }
                       />
                     </SelectTrigger>
