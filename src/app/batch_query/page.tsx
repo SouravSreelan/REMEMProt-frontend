@@ -29,7 +29,8 @@ const BatchQuery = () => {
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8  lg:py-14 mx-auto mt-12 lg:mt-0">
                 <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14 ">
                     <h2 className="text-2xl font-bold md:text-4xl md:leading-tight lg:mb-10 dark:text-white">Batch Query</h2>
-                    <p className='text-md font-normal text-justify max-w-9xl'>The batch query option enables the users to conduct a collective search for multiple proteins in a single query allowing the retrieval of comprehensive information on all query proteins simultaneously.</p>
+                    <p className='text-md font-normal text-justify max-w-9xl'>The batch query option enables the users to conduct a collective search for multiple proteins in a single query to obtain their association as membrane proteins,
+                     especially taking into account the information on their Transmembrane Domain (TM), or the interactions with the TM domain containing proteins, and further, if identified using any membrane enrichment methods.</p>
                 </div>
                 <Card className="bg-slate-200 max-w-xl mx-auto ">
                     <CardHeader>

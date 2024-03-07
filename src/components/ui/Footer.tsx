@@ -30,13 +30,13 @@ const Footer = () => {
                             >
                                 Centre for Integrative Omics Data Science (CIODS)
                             </a>{' '}
-                            {`, `}
+                            {/* {` `}
                             <a
                                 className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400"
                                 href="http://csbmm.yenepoya.res.in/"
                             >
                                 Center for Systems Biology and Molecular Medicine (CSBMM)
-                            </a>
+                            </a> */}
                             {` and OMICS ANALYTICS Pvt.Ltd. supported by`}
                             <a
                                 className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400"

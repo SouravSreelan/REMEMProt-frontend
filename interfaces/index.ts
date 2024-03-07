@@ -22,6 +22,7 @@ interface ResultItem {
     isTrans: string;
     binary: string;
     complex: string;
+    
 }
 
 
@@ -86,7 +87,7 @@ DSI: string
 DPI: string
 diseaseNID1: string
 source: string
-    : string
+    // : string
 score: string
 EL: string
 EI: string
