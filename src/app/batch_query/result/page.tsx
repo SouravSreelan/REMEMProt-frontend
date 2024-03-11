@@ -377,7 +377,7 @@ const BqueryResult = () => {
                                       YES
                                     </span>
                                   </DialogTrigger>
-                                  <DialogContent className="w-4/6 h-3/6 overflow-y-scroll">
+                                  <DialogContent className="w-4/6 h-auto max-h-[50vh] overflow-y-scroll">
                                     <Card className="bg-slate-200 max-w-4/6 p-5">
                                       <h2 className="text-lg font-semibold">
                                         Tissue Type:{" "}
