@@ -217,17 +217,14 @@ const BqueryResult = () => {
                                       YES
                                     </span>
                                   </DialogTrigger>
-                                  <DialogContent className="h-4/6 w-2/6 overflow-y-scroll">
+                                  <DialogContent className="h-auto max-h-[50vh] w-2/6 overflow-y-scroll">
                                     <div>
                                       <h4 className="text-bold-600 ms-2">
                                         {" "}
                                         <b>Binary Interactor:</b>{" "}
                                       </h4>
                                     </div>
-                                    {console.log(
-                                      "Binary Info List:",
-                                      item.binary_info_list
-                                    )}
+
                                     {item.binary_info_list &&
                                       item.binary_info_list.map(
                                         (info, index) => (
@@ -255,7 +252,8 @@ const BqueryResult = () => {
                                               <span className="font-normal">
                                                 {" "}
                                                 <a
-                                                  href={`https://pubmed.ncbi.nlm.nih.gov/${info[2][1]}`}
+                                                  // href={`https://pubmed.ncbi.nlm.nih.gov/${info[2][1]}`}
+                                                  href={`https://pubmed.ncbi.nlm.nih.gov/?term=${info[2][1]}&sort=date`}
                                                   target="_blank"
                                                   rel="noopener noreferrer"
                                                 >
@@ -293,7 +291,7 @@ const BqueryResult = () => {
                                       YES
                                     </span>
                                   </DialogTrigger>
-                                  <DialogContent className="h-4/6 w-2/6 overflow-y-scroll">
+                                  <DialogContent className="h-auto max-h-[50vh] w-2/6 overflow-y-scroll">
                                     <div>
                                       <h4 className="text-bold-600 ms-2">
                                         {" "}

@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "next/image";
-import Logo from '@/assets/remprot.png'
+// import Logo from '@/assets/remprot.png' 
+import Logo from '@/assets/Home_page_fig.svg'
 
 const About = () => {
     return (
