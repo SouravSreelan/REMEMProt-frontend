@@ -67,7 +67,7 @@ export const servicesData = [
     {
         id: 4,
         title: 'Batch Query',
-        description: "Search to procure information on a group of protein of interest",
+        description: "Search to procure information on a group of protein of interest and also to assess the potential for a protein to localize to the plasma membrane",
         link: '/batch_query'
     },
 ]

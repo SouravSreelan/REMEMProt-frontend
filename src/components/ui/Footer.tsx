@@ -42,11 +42,11 @@ const Footer = () => {
                 className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400"
                 href="https://yenepoya.edu.in/"
               >
-                Yenepoya ( Deemed to be ) University
+                Yenepoya (Deemed to be) University
               </a>
             </p>
             <p className="text-gray-500">
-              © CIODS. All Rights Reserved by Yenepoya ( Deemed to be )
+              © CIODS. All Rights Reserved by Yenepoya (Deemed to be)
               University
             </p>
           </div>

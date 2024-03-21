@@ -197,7 +197,25 @@ const RemprotResult = () => {
                             {item.question}
                           </AccordionTrigger>
                           <AccordionContent className="text-xl whitespace-pre">
-                            {item.answer}
+                            {item.answer.split("\n").map((line, index) => {
+                              const colonIndex = line.indexOf(":");
+                              if (colonIndex !== -1) {
+                                const abbreviation = line
+                                  .slice(0, colonIndex)
+                                  .trim();
+                                const term = line.slice(colonIndex + 1).trim();
+                                return (
+                                  <div key={index}>
+                                    <span style={{ fontWeight: "bold" }}>
+                                      {abbreviation}
+                                    </span>{" "}
+                                    : {term}
+                                  </div>
+                                );
+                              } else {
+                                return <div key={index}>{line.trim()}</div>;
+                              }
+                            })}
                           </AccordionContent>
                         </AccordionItem>
                       ))}

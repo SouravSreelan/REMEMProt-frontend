@@ -86,6 +86,8 @@ const Browse = () => {
       // )
     } catch (error) {
       console.error("Fetch error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -117,6 +119,29 @@ const Browse = () => {
     responsive: true,
     maintainAspectRatio: true,
   };
+
+  const handleReset = async () => {
+    setSpecies("");
+    setMethod("");
+    setTissue("");
+    setMethods([]);
+    setCells([]);
+    setLoading(true);
+  
+    try {
+      const speciesData = await fetcher(`${url}/RememProt/species`);
+      if (speciesData.species) {
+        setSpecies(""); // Reset species state
+        setMethods([]);
+        setCells([]);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+      setLoading(false);
+    }
+  };
+  
 
   return (
     <>
@@ -203,7 +228,9 @@ const Browse = () => {
                 </div>
               </CardContent>
               <CardFooter className="justify-between space-x-2">
-                <Button variant="ghost">Reset</Button>
+                <Button variant="ghost" onClick={handleReset}>
+                  Reset
+                </Button>
                 <Link
                   href={{
                     pathname: "/browse/result",
@@ -223,7 +250,7 @@ const Browse = () => {
         </div>
       </div>
       <div>
-        <div className="justify-center grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
+        <div className="justify-center mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-0 xl:mx-60">
           {chartData.map((item, index) => (
             <div className="max-w-5xl mx-auto h-auto w-[30rem]" key={index}>
               <h1 className="font-bold text-2xl text-center">{item.species}</h1>
