@@ -124,14 +124,14 @@ const Browse = () => {
     setSpecies("");
     setMethod("");
     setTissue("");
+    setSpecies([]);
     setMethods([]);
     setCells([]);
     setLoading(true);
-  
+
     try {
       const speciesData = await fetcher(`${url}/RememProt/species`);
       if (speciesData.species) {
-        setSpecies(""); // Reset species state
         setMethods([]);
         setCells([]);
         setLoading(false);
@@ -141,7 +141,6 @@ const Browse = () => {
       setLoading(false);
     }
   };
-  
 
   return (
     <>
@@ -250,7 +249,7 @@ const Browse = () => {
         </div>
       </div>
       <div>
-        <div className="justify-center mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-0 xl:mx-60">
+        <div className="justify-center grid mx-auto grid-cols-1 md:grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4 xl:mx-60">
           {chartData.map((item, index) => (
             <div className="max-w-5xl mx-auto h-auto w-[30rem]" key={index}>
               <h1 className="font-bold text-2xl text-center">{item.species}</h1>
