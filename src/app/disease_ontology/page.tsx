@@ -158,7 +158,7 @@ const DiseaseOntology = () => {
           <CardContent className="">
             <div className="flex flex-col w-full gap-2 max-w-xl mx-auto">
               <Textarea
-                placeholder="Enter Genes here."
+                placeholder="Input Gene Symbol / Gene Symbol set here."
                 value={sampleText}
                 onChange={(e) => {
                   setSampleText(e.target.value);

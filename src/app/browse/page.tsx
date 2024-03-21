@@ -203,7 +203,7 @@ const Browse = () => {
                 </div>
               </CardContent>
               <CardFooter className="justify-between space-x-2">
-                <Button variant="ghost">Cancel</Button>
+                <Button variant="ghost">Reset</Button>
                 <Link
                   href={{
                     pathname: "/browse/result",

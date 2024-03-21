@@ -83,6 +83,10 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    setSearchQuery("");
+  }, [pathname]);
+
   const handleSearch = async () => {
     try {
       setLoading(true);

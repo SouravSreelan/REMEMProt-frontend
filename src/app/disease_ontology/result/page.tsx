@@ -40,16 +40,13 @@ const DiseaseResult = () => {
           requestBody.searchInput = searchInput;
         }
 
-        const response = await fetch(
-          `${url}/RememProt/dose_ontology/`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(requestBody),
-          }
-        );
+        const response = await fetch(`${url}/RememProt/dose_ontology/`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestBody),
+        });
 
         // setLoading(false);
 
@@ -105,7 +102,7 @@ const DiseaseResult = () => {
               <TableCell key={cellIndex}>
                 {key === "PMID" ? (
                   <a
-                    className="hover:text-blue-600"
+                    className="text-blue-600"
                     href={`https://pubmed.ncbi.nlm.nih.gov/${cell}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -129,13 +126,13 @@ const DiseaseResult = () => {
     <div>
       <div className="max-w-2xl mx-auto text-center mb-10 mt-12 lg:mb-14 ">
         <h2 className="text-2xl font-bold md:text-4xl md:leading-tight lg:mb-10 dark:text-white">
-          Disease Ontology Result
+          Disease Ontology Enrichment Result
         </h2>
         <p className="text-md font-normal text-center max-w-9xl mb-3">
           {" "}
           The data for disease-protein association is retrieved from the{" "}
           <a
-            className="no-underline hover:underline"
+            className="text-blue-500"
             href="https://www.disgenet.org/dbinfo"
             target="__blank"
           >
@@ -149,14 +146,15 @@ const DiseaseResult = () => {
         <Spinner />
       ) : (
         <>
-        <center>
-          <div className="flex mx-10 w-5/6 pe-10 items-center justify-center">
-            <Table className="w-full justify-center">
-              {/* <TableCaption> <h2 className='text-lg mt-3'> The data for disease-protein association is retrieved from the <Link href={"https://www.disgenet.org"} target='__blank' className='text-blue-500'> DisGeNET database</Link></h2></TableCaption> */}
-              {renderTableHeader()}
-              {renderTableBody()}
-            </Table>
-          </div></center>
+          <center>
+            <div className="flex mx-10 w-5/6 pe-10 items-center justify-center">
+              <Table className="w-full justify-center">
+                {/* <TableCaption> <h2 className='text-lg mt-3'> The data for disease-protein association is retrieved from the <Link href={"https://www.disgenet.org"} target='__blank' className='text-blue-500'> DisGeNET database</Link></h2></TableCaption> */}
+                {renderTableHeader()}
+                {renderTableBody()}
+              </Table>
+            </div>
+          </center>
           <div className="pagination">
             <Button
               className="mx-3 mt-2"

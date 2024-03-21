@@ -18,7 +18,7 @@ const ContactUs = () => {
         };
 
         try {
-            const response = await fetch(`${url}/contact/contact`, {
+            const response = await fetch(`${url}/contact/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

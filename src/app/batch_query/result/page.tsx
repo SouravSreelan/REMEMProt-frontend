@@ -111,8 +111,9 @@ const BqueryResult = () => {
           <>
             {currentPageData && currentPageData.length > 0 ? (
               <Table>
-                <TableCaption>
-                  For inquires regarding the complete dataset download, kindly{" "}
+                <TableCaption className="mt-5">
+                  For inquires regarding download of the complete dataset,
+                  kindly{" "}
                   <Link href={"/contactus"} className="text-blue-500">
                     contact us
                   </Link>
@@ -132,6 +133,7 @@ const BqueryResult = () => {
                       >
                         Transmembrane Domain status :{" "}
                         <a
+                          className="text-blue-500"
                           href="https://services.healthtech.dtu.dk/services/TMHMM-2.0/"
                           target="_blank"
                         >
@@ -159,7 +161,7 @@ const BqueryResult = () => {
                         rowSpan={2}
                         className="border-r-2 text-black font-bold border-white"
                       >
-                        REMEMPROT (Profile or differential data)
+                        REMEMProt (Profile or differential data)
                       </TableHead>
                       <TableHead
                         rowSpan={2}
@@ -195,10 +197,8 @@ const BqueryResult = () => {
                   {currentPageData.map((item) => (
                     <TableRow key={item.id} className="">
                       <>
-                        <TableCell className="font-semibold">
-                          {item.geneSymbol}
-                        </TableCell>
-                        <TableCell>{item.isTrans}</TableCell>
+                        <TableCell>{item.geneSymbol}</TableCell>
+                        <TableCell className="ms-3">{item.isTrans}</TableCell>
                         {species === "Homo sapiens" && (
                           <>
                             <TableCell>
@@ -253,6 +253,7 @@ const BqueryResult = () => {
                                                 {" "}
                                                 <a
                                                   // href={`https://pubmed.ncbi.nlm.nih.gov/${info[2][1]}`}
+                                                  className="text-blue-500"
                                                   href={`https://pubmed.ncbi.nlm.nih.gov/?term=${info[2][1]}&sort=date`}
                                                   target="_blank"
                                                   rel="noopener noreferrer"
@@ -324,6 +325,7 @@ const BqueryResult = () => {
                                             <span className="font-normal">
                                               {" "}
                                               <a
+                                                className="text-blue-500"
                                                 href={`https://pubmed.ncbi.nlm.nih.gov/${info[2][1]}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"

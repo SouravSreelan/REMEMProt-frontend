@@ -35,7 +35,7 @@ const REMEMProtCSEA = () => {
                 </div>
                 <Card className="bg-slate-200 max-w-xl mx-auto ">
                     <CardHeader>
-                        <CardTitle className='text-xl'>Enter Gene ID/ Gene Symbol :</CardTitle>
+                        <CardTitle className='text-xl'>Enter Gene Symbol :</CardTitle>
                     </CardHeader>
                     <CardContent className="">
                         <div className="flex flex-col w-full gap-2 max-w-xl mx-auto">
@@ -53,7 +53,7 @@ const REMEMProtCSEA = () => {
                                     </SelectContent>
                                 </Select>
                             </div>
-                            <Textarea placeholder="Enter Genes here." className="min-h-[20rem] rounded-xl" value={sampleText}
+                            <Textarea placeholder="Input Gene Symbol / Gene Symbol set here." className="min-h-[20rem] rounded-xl" value={sampleText}
                                 onChange={(e) => setSampleText(e.target.value)} />
                             <div className="flex justify-end  gap-2 mt-5">
                                 <Button onClick={handleLoadSample}>Load Sample</Button>
