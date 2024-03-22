@@ -100,6 +100,9 @@ const RemprotResult = () => {
 
   return (
     <div className="p-10 flex justify-center items-center flex-col">
+      <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14 ">
+                    <h2 className="text-2xl font-bold md:text-4xl md:leading-tight lg:mb-10 dark:text-white">REMEMProt-CSEA Result</h2>
+                </div>
       {loading ? (
         <Spinner />
       ) : (

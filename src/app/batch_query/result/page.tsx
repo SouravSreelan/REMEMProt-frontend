@@ -99,6 +99,9 @@ const BqueryResult = () => {
           <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
             Batch Query Results
           </h2>
+          <p className="mt-5 text-md md:text-lg md:leading-tight dark:text-white">
+            Protein membrane localization analysis
+          </p>
         </div>
         <div className="flex justify-between p-5">
           <h1 className="font-bold text-xl">
