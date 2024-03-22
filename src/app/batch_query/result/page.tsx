@@ -253,7 +253,26 @@ const BqueryResult = () => {
                                               {" "}
                                               PubMed ID:{" "}
                                               <span className="font-normal">
-                                                {" "}
+                                                {info[2][1] ? (
+                                                  <a
+                                                    href={`https://pubmed.ncbi.nlm.nih.gov/?term=${info[2][1]}&sort=date`}
+                                                    className="text-blue-500"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                  >
+                                                    {info[2][1]}
+                                                  </a>
+                                                ) : (
+                                                  <a
+                                                    href="http://cpdb.molgen.mpg.de/"
+                                                    className="text-blue-500"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                  >
+                                                    ConsensusPathDB
+                                                  </a>
+                                                )}
+                                                {/* {" "}
                                                 <a
                                                   // href={`https://pubmed.ncbi.nlm.nih.gov/${info[2][1]}`}
                                                   className="text-blue-500"
@@ -262,7 +281,7 @@ const BqueryResult = () => {
                                                   rel="noopener noreferrer"
                                                 >
                                                   {info[2][1]}
-                                                </a>
+                                                </a> */}
                                               </span>
                                             </h2>
                                             <Separator className="flex justify-center mt-5 w-4/6" />
