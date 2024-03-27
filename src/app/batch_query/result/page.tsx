@@ -103,10 +103,16 @@ const BqueryResult = () => {
             Protein membrane localization analysis
           </p>
         </div>
+
         <div className="flex justify-between p-5">
           <h1 className="font-bold text-xl">
             Organism : <span className="font-semibold text-xl">{species}</span>{" "}
           </h1>
+          <Button className="">
+            <a href="http://fcgportal.org/TCSA/gene_detail.php" target="_blank">
+              Additional Query Search{" "}
+            </a>
+          </Button>
         </div>
         {loading ? (
           <Spinner />
@@ -130,6 +136,7 @@ const BqueryResult = () => {
                       >
                         Gene Symbol
                       </TableHead>
+
                       <TableHead
                         rowSpan={2}
                         className="text-black font-bold border-r-2 border-white"
@@ -165,6 +172,12 @@ const BqueryResult = () => {
                         className="border-r-2 text-black font-bold border-white"
                       >
                         REMEMProt (Profile or differential data)
+                      </TableHead>
+                      <TableHead
+                        rowSpan={2}
+                        className="border-r-2 text-black font-bold border-white"
+                      >
+                        Subcellular Location
                       </TableHead>
                       <TableHead
                         rowSpan={2}
@@ -375,6 +388,17 @@ const BqueryResult = () => {
                         )}
 
                         <TableCell>{item.profileOrDifex}</TableCell>
+                        <TableCell>
+                          <a
+                            className="text-blue-500"
+                            href={`https://www.uniprot.org/uniprotkb/${item.accesion}/entry#subcellular_location`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {" "}
+                            {item.accesion || "NA"}
+                          </a>
+                        </TableCell>
                         <TableCell className="text-justify font-normal ">
                           {item.contxtOfIdent}
                         </TableCell>
