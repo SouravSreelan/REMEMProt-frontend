@@ -173,12 +173,16 @@ const BqueryResult = () => {
                       >
                         REMEMProt (Profile or differential data)
                       </TableHead>
-                      <TableHead
-                        rowSpan={2}
-                        className="border-r-2 text-black font-bold border-white"
-                      >
-                        Subcellular Location
-                      </TableHead>
+                      {species === "Homo sapiens" && (
+                        <>
+                          <TableHead
+                            rowSpan={2}
+                            className="border-r-2 text-black font-bold border-white"
+                          >
+                            Subcellular Location
+                          </TableHead>
+                        </>
+                      )}
                       <TableHead
                         rowSpan={2}
                         className="text-center border-r-2 text-black font-bold border-white"
@@ -388,17 +392,25 @@ const BqueryResult = () => {
                         )}
 
                         <TableCell>{item.profileOrDifex}</TableCell>
-                        <TableCell>
-                          <a
-                            className="text-blue-500"
-                            href={`https://www.uniprot.org/uniprotkb/${item.accesion}/entry#subcellular_location`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {" "}
-                            {item.accesion || "NA"}
-                          </a>
-                        </TableCell>
+                        {species === "Homo sapiens" && (
+                          <>
+                            <TableCell>
+                              {item.accesion !== null ? (
+                                <a
+                                  className="text-blue-500"
+                                  href={`https://www.uniprot.org/uniprotkb/${item.accesion}/entry#subcellular_location`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {item.accesion}
+                                </a>
+                              ) : (
+                                "NA"
+                              )}
+                            </TableCell>
+                          </>
+                        )}
+
                         <TableCell className="text-justify font-normal ">
                           {item.contxtOfIdent}
                         </TableCell>
