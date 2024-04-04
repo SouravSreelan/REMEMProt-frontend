@@ -9,6 +9,7 @@ import Link from "next/link";
 const DiseaseOntology = () => {
   const [sampleText, setSampleText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage2, setErrorMessage2] = useState("");
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
@@ -103,7 +104,7 @@ const DiseaseOntology = () => {
       )}`;
     } else {
       console.error("Gene(s) not found in the data:", foundGenes);
-      setErrorMessage("Gene(s) not found in the data");
+      setErrorMessage2("Gene(s) not found in the data");
     }
   };
   return (
@@ -143,11 +144,12 @@ const DiseaseOntology = () => {
             <div className="items-center justify-center w-5/6">
               {renderSuggestions()}
             </div>
+            <div className="flex items-center justify-center">
+              {errorMessage && <p className="text-red-600">{errorMessage}</p>}
+            </div>
           </Card>
         </div>
-        <div className="flex items-center justify-center">
-          {errorMessage && <p className="text-red-600">{errorMessage}</p>}
-        </div>
+
         <div className="flex items-center justify-center mb-10">
           <p>OR</p>
         </div>
@@ -162,15 +164,15 @@ const DiseaseOntology = () => {
                 value={sampleText}
                 onChange={(e) => {
                   setSampleText(e.target.value);
-                  setErrorMessage("");
+                  setErrorMessage2("");
                 }}
                 className="min-h-[20rem]"
               />
-              {errorMessage && <p className="text-red-600">{errorMessage}</p>}
+              {errorMessage2 && <p className="text-red-600">{errorMessage2}</p>}
               <div className="flex justify-center gap-2 mt-5">
                 <Button onClick={handleLoadSample}>Load Sample</Button>
                 <Button onClick={handleSubmit} disabled={!sampleText}>
-                  Submit Data
+                  Submit
                 </Button>
               </div>
             </div>

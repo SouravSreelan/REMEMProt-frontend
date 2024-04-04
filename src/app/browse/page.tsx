@@ -230,19 +230,18 @@ const Browse = () => {
                 <Button variant="ghost" onClick={handleReset}>
                   Reset
                 </Button>
-                <Link
-                  href={{
-                    pathname: "/browse/result",
-                    query: { species, method, tissueCell: tissue },
-                  }}
-                >
-                  <Button
-                    type="submit"
-                    disabled={!species || !method || !tissue}
+                {!species || !method || !tissue ? (
+                  <Button disabled>Submit</Button>
+                ) : (
+                  <Link
+                    href={{
+                      pathname: "/browse/result",
+                      query: { species, method, tissueCell: tissue },
+                    }}
                   >
-                    Submit
-                  </Button>
-                </Link>
+                    <Button>Submit</Button>
+                  </Link>
+                )}
               </CardFooter>
             </Card>
           </div>

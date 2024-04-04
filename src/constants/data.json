@@ -15,7 +15,7 @@
             "genes": [
                 {
                     "id": 1,
-                    "name": "PTPRC"
+                    "name": "CD244"
                 },
                 {
                     "id": 2,
@@ -31,22 +31,18 @@
                 },
                 {
                     "id": 5,
-                    "name": "CYR61"
-                },
-                {
-                    "id": 6,
                     "name": "ITGAM"
                 },
                 {
-                    "id": 7,
+                    "id": 6,
                     "name": "ITGB2"
                 },
                 {
-                    "id": 8,
+                    "id": 7,
                     "name": "FCGR2A"
                 },
                 {
-                    "id": 9,
+                    "id": 8,
                     "name": "FCGR2B"
                 }
             ]

@@ -110,7 +110,7 @@ const BqueryResult = () => {
           </h1>
           <Button className="">
             <a href="http://fcgportal.org/TCSA/gene_detail.php" target="_blank">
-              Additional Query Search{" "}
+              Additional Query Search in TCSA{" "}
             </a>
           </Button>
         </div>
