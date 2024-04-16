@@ -28,7 +28,7 @@ const Footer = () => {
                 className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400"
                 href="https://www.ciods.in"
               >
-                Centre for Integrative Omics Data Science 
+                Centre for Integrative Omics Data Science (CIODS)
               </a>{" "}
               {/* {` `}
                             <a
@@ -37,17 +37,17 @@ const Footer = () => {
                             >
                                 Center for Systems Biology and Molecular Medicine (CSBMM)
                             </a> */}
-              {` and OMICS ANALYTICS Pvt.Ltd. supported by `}
+              {` and OMICS ANALYTICS Pvt. Ltd. supported by `}
               <a
                 className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400"
                 href="https://yenepoya.edu.in/"
               >
-                Yenepoya (Deemed to be) University
-              </a>
+                Yenepoya
+              </a>{" "}
+              (Deemed to be University)
             </p>
             <p className="text-gray-500">
-              © CIODS. All Rights Reserved by Yenepoya (Deemed to be)
-              University
+              © CIODS. All Rights Reserved by Yenepoya (Deemed to be University)
             </p>
           </div>
 

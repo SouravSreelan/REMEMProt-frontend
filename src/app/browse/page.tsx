@@ -227,10 +227,10 @@ const Browse = () => {
                 </div>
               </CardContent>
               <CardFooter className="justify-between space-x-2">
-                <Button variant="ghost" onClick={handleReset}>
+                <Button onClick={handleReset}>
                   Reset
                 </Button>
-                {!species || !method || !tissue ? (
+                {!species || !method ? (
                   <Button disabled>Submit</Button>
                 ) : (
                   <Link
