@@ -40,7 +40,14 @@ const Hero = () => {
                 spectrometry-derived Proteome (REMEMProt) is an open resource of{" "}
                 experimentally-identified proteins derived by mass
                 spectrometry-based approaches uniquely from plasma membrane
-                enriched samples in diverse biological contexts.
+                enriched samples in diverse biological contexts.{" "}
+                <a
+                  href="https://pubmed.ncbi.nlm.nih.gov/38719747/"
+                  target="blank"
+                  className="font-bold underline"
+                >
+                  Cite REMEMProt
+                </a>
               </p>
               <div className="mouse_scroll">
                 <div className="mouse">
