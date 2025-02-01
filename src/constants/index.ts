@@ -72,4 +72,4 @@ export const servicesData = [
     },
 ]
 
-export const url = 'https://ciods.in' as string
+export const url = 'https://proteoark.ciods.in' as string
