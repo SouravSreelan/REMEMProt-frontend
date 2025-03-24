@@ -71,5 +71,5 @@ export const servicesData = [
         link: '/batch_query'
     },
 ]
-
-export const url = 'https://proteoark.ciods.in' as string
+export const url = 'https://www.ciods.in/api' as string
+// export const url = 'https://proteoark.ciods.in' as string

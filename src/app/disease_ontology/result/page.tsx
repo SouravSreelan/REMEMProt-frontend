@@ -39,7 +39,7 @@ const DiseaseResult = () => {
         if (searchInput) {
           requestBody.searchInput = searchInput;
         }
-
+        console.log("JSON.stringify(requestBody)", JSON.stringify(requestBody));
         const response = await fetch(`${url}/RememProt/dose_ontology/`, {
           method: "POST",
           headers: {
